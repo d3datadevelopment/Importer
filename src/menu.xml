@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<OX>
+    <OXMENU id="d3mxd3modules">
+        <MAINMENU id="d3mximporter">
+            <SUBMENU id="d3mximporter_cfg" cl="d3_importer_Application_Controller_Admin_Config_Base" list="d3_importer_Application_Controller_Admin_Config_AdminList">
+                <TAB id="d3tbclimporter_cfg_main" cl="d3_importer_Application_Controller_Admin_Config_Settings"/>
+                <TAB id="d3tbcl_licence" cl="d3_importer_Application_Controller_Admin_Config_Support"/>
+            </SUBMENU>
+            <SUBMENU id="d3mxarticleimport" cl="d3_importer_Application_Controller_Admin_Articleimport_Base" list="d3_importer_Application_Controller_Admin_Articleimport_AdminList">
+                <TAB id="d3tbclimporter_main" cl="d3_importer_Application_Controller_Admin_Articleimport_Main"/>
+                <TAB id="d3tbclimporter_fields" name="Artikelfelder" cl="d3_importer_Application_Controller_Admin_Articleimport_Fields"/>
+                <TAB id="d3tbclimporter_category" name="Kategorien" cl="d3_importer_Application_Controller_Admin_Articleimport_Category"/>
+                <TAB id="d3tbclimporter_cross" name="Cross-Selling" cl="d3_importer_Application_Controller_Admin_Articleimport_Crosselling"/>
+                <TAB id="d3tbclimporter_attrib" name="Attribute" cl="d3_importer_Application_Controller_Admin_Articleimport_Attribute"/>
+                <TAB id="d3tbclimporter_selectlist" name="Auswahllisten" cl="d3_importer_Application_Controller_Admin_Articleimport_SelectList"/>
+                <TAB id="d3tbclimporter_variants" name="Varianten" cl="d3_importer_Application_Controller_Admin_Articleimport_Variants"/>
+                <TAB id="d3tbclimporter_price2art" name="Staffelpreise" cl="d3_importer_Application_Controller_Admin_Articleimport_Scales"/>
+                <TAB id="d3tbclimporter_vendors" name="Hersteller" cl="d3_importer_Application_Controller_Admin_Articleimport_Vendors"/>
+                <TAB id="d3tbclimporter_config" name="Konfiguration" cl="d3_importer_Application_Controller_Admin_Articleimport_Config"/>
+                <TAB id="d3tbclimporter_mall" name="Mall" cl="d3_importer_Application_Controller_Admin_Articleimport_Mall"/>
+                <TAB id="d3tbclimporter_import" name="Import" cl="d3_importer_Application_Controller_Admin_Articleimport_Import"/>
+                <TAB id="d3tbclimporter_afterimport" name="NachImport" cl="d3_importer_Application_Controller_Admin_Articleimport_Afterimport"/>
+                <BTN id="d3importer_new"/>
+            </SUBMENU>
+            <SUBMENU id="d3mxpictureimport" cl="d3_importer_Application_Controller_Admin_Pictureimport_Base" list="d3_importer_Application_Controller_Admin_Pictureimport_AdminList">
+                <TAB id="d3tbclpicture_main" cl="d3_importer_Application_Controller_Admin_Pictureimport_Main"/>
+                <TAB id="d3tbclpicture_import" cl="d3_importer_Application_Controller_Admin_Pictureimport_Import"/>
+            </SUBMENU>
+            <SUBMENU id ="d3mxdesc" cl="d3_importer_Application_Controller_Admin_Desc_Base" list="d3_importer_Application_Controller_Admin_Desc_Itemlist">
+                <TAB id="d3_d3importer_controllers_admin_desc_itemmain" cl="d3_importer_Application_Controller_Admin_Desc_Main" />
+            </SUBMENU>
+            <SUBMENU id ="d3mxlog" cl="d3_importer_Application_Controller_Admin_Log_Base" list="d3_importer_Application_Controller_Admin_Log_AdminList">
+                <TAB id="d3tbcllog_main" cl="d3_cfg_log_main" />
+            </SUBMENU>
+        </MAINMENU>
+    </OXMENU>
+</OX>
