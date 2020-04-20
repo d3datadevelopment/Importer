@@ -2,8 +2,16 @@
 title: Changelog
 ---
 
-## 5.0.3.0 - (2020-02-07)
+## 5.0.4.0 - (2020-04-20)
+### Added
+- installierbar in OXID 6.2
 
+### Changed
+- Abhängigkeiten für Installationen ohne Metapackage von OXID Metapackage zu Shop-Core geändert
+
+---
+
+## 5.0.3.0 - (2020-02-07)
 ### Added
 - Composer installation supported
 

@@ -33,15 +33,12 @@ $aModule = array(
         'en' => 'n/a',
     ),
     'thumbnail'      => 'picture.png',
-    'version'        => '5.0.3.0',
+    'version'        => '5.0.4.0',
     'author'         => 'D&sup3; Data Development, Inh. Thomas Dartsch',
     'email'          => 'support@shopmodule.com',
     'url'            => 'https://www.oxidmodule.com/',
     'events'         => array(
         'onActivate' => d3install::class . '::checkUpdateStart',
-    ),
-    'd3SetupClasses' => array(
-        'd3_importer_Setup_InstallRoutine',
     ),
     'extend'         => array(),
     'files'          => array(
