@@ -29,9 +29,9 @@
     }
   },
   "require": {
-    "php": "7.1 - 7.2", "ext-ionCube-Loader": "*",
-    "oxid-esales/oxideshop-metapackage-ce": "~6.0.0 || ~6.1.0 || 6.2.0-beta.1 || 6.2.0-rc.1",
-    "d3/modcfg": "^5.2.0.000"
+    "php": "7.1 - 7.3", "ext-ionCube-Loader": "*",
+    "oxid-esales/oxideshop-ce": "6.0 - 6.5",
+    "d3/modcfg": "^5.3.0.000"
   },
   "suggest": {
     "d3/importer-demodata": "demodata files for testing purposes"

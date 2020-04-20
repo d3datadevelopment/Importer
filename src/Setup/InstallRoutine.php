@@ -26,20 +26,20 @@ class d3_importer_Setup_InstallRoutine extends d3install_updatebase
     /**
      * @var string
      */
-    public $sModVersion = '5.0.3.0';
+    public $sModVersion = '5.0.4.0';
     /**
      * @var string
      */
-    public $sModRevision = '5030';
+    public $sModRevision = '5040';
     /**
      * @var string
      */
-    public $sBaseConf = 'qQ7v2==aTRKd1Voa1dmbE9uSG5JamdOek5MU2ZOeDdXS3RjOXNZb2piOTZyYW1HVFBZMDJ6bGl3ajhFN
-E1BTzVEbE1pZmhxYXVuOFVheDRieEYzb1VwS0NkejdLWVB5UjB2RExKYUZUeCtvYVN0cWJ6cHF6dUoxa
-3FYdzIzUVEvNTVpajJXM2tjbzVIdnl5UDNVMUJlUEczeFhSYmM4WTI5QkZxelY5VEJFamxGakp1K0t4T
-jBqcWM1em4rUHFibGVHcDlycmdtVHlvdWwwYXVSWTBuQ1RSTzV1NlF4dU9jWVJDa2R3VzhuOURKRHNRQ
-jZMSmdDbzBxaGxKM2JHR0ltcDBING5DbmdVd0JFT0toVHRUTWtJa3lwME5oZmI1Y1Z2V2UzVFpqd0lKU
-1h1ZFF6d3JKdFN6ZERHc0JGZ3BERUFrdi9palVCU2J6V3ZtOGE2U1Rla0xGN1VRPT0=';
+    public $sBaseConf = '1qQv2==YzFtWTNpTU5oRTQ0NlFEU21Ua2lPeFhpRUg3V0hMMVYwVXNESVNmVnZwSnVWYktsWWdHWWdhU
+XpEd05pd05XaEJMQzdpR0JFb3JzNUhuTTZkbWxRanZjK2NlMHk5N1RKajRHZWNDTjdXeU43cDhNbnFKZ
+zY5RVdsMDhyYTNTTHpTU1Frc2NYUVprcm1iZ1dXUkdJbFVkNVlHNzlsOGNCU3JNNndsd1Fxb3pkek94Z
+2FqU3R2U0xpYUVnY2V5TTE3MEVqR0FQS294MHhlc3ptUGE5MHlwWGF6ZDNmWEtlbkI3bEJzbmlOVVBGZ
+WZSK3VsUFN5VVNZU3IvUWNvaXNWaURzM1RkMWF5ejZ0YkFhS0RHdHZrTU92S0lmSCtGOTdNVG9pVU0wM
+0FIZE9QTUFLZ3pFRC9oUUpySlBNTVV1TWsyWGlZMy8yRFZKaktnMUhFNWFnY0V3PT0=';
     /**
      * @var string
      */
@@ -51,7 +51,7 @@ jZMSmdDbzBxaGxKM2JHR0ltcDBING5DbmdVd0JFT0toVHRUTWtJa3lwME5oZmI1Y1Z2V2UzVFpqd0lKU
     /**
      * @var string
      */
-    public $sMinModCfgVersion = '5.1.1.1';
+    public $sMinModCfgVersion = '5.3.0.0';
     /**
      * Standardwerte für checkFields(), _addTable() und fixFields()
      * @var array
