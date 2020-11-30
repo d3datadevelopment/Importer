@@ -2,6 +2,15 @@
 title: Changelog
 ---
 
+## 5.0.4.1 - (2020-11-30)
+### Added
+- Freigabe für OXID 6.2.3
+
+### Changed
+- Shopid für Tabelle d3importconfig auf init(11)
+
+---
+
 ## 5.0.4.0 - (2020-04-20)
 ### Added
 - installierbar in OXID 6.2

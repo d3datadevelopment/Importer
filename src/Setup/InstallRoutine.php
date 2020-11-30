@@ -26,20 +26,20 @@ class d3_importer_Setup_InstallRoutine extends d3install_updatebase
     /**
      * @var string
      */
-    public $sModVersion = '5.0.4.0';
+    public $sModVersion = '5.0.4.1';
     /**
      * @var string
      */
-    public $sModRevision = '5040';
+    public $sModRevision = '5041';
     /**
      * @var string
      */
-    public $sBaseConf = '1qQv2==YzFtWTNpTU5oRTQ0NlFEU21Ua2lPeFhpRUg3V0hMMVYwVXNESVNmVnZwSnVWYktsWWdHWWdhU
-XpEd05pd05XaEJMQzdpR0JFb3JzNUhuTTZkbWxRanZjK2NlMHk5N1RKajRHZWNDTjdXeU43cDhNbnFKZ
-zY5RVdsMDhyYTNTTHpTU1Frc2NYUVprcm1iZ1dXUkdJbFVkNVlHNzlsOGNCU3JNNndsd1Fxb3pkek94Z
-2FqU3R2U0xpYUVnY2V5TTE3MEVqR0FQS294MHhlc3ptUGE5MHlwWGF6ZDNmWEtlbkI3bEJzbmlOVVBGZ
-WZSK3VsUFN5VVNZU3IvUWNvaXNWaURzM1RkMWF5ejZ0YkFhS0RHdHZrTU92S0lmSCtGOTdNVG9pVU0wM
-0FIZE9QTUFLZ3pFRC9oUUpySlBNTVV1TWsyWGlZMy8yRFZKaktnMUhFNWFnY0V3PT0=';
+    public $sBaseConf = 'dc9v2==RTdZNG5uYmk2Sk50T0gyTnV1STZyQUNQMWg0Snd1YitudFpXMWRYVVg1UG5HSmJ0dGZqQWZIW
+FVKdUZYSmU5dGNaQld4ZDdhVkg2dTB1Q2N1VjZDaVFJTjMzWCtnSndTNm1rV2g1YTJIaFNmZFZIZ1JQM
+Us2V0dvQ2E3V3RPOEVpY0NJVTJVeDJPUEMvaHhIMGg3VlZzemVpUjhpWFNSckN6UGR0dXhaWFpZS3d4N
+1MwcWc3Um9Qc2VMSXdpOXorYW5hK3FObjVZdk0yKzhqSHBMNXJsYlRpdnRRdW55bVVaRWxRS2xhV3RHQ
+VI0dFAwYjRXVHdhdmc0TWdwbTB6YTVCTmgvbzluT3Uzais2UHRlUG5oS093ckFuTWxwbWkyZ1BvTXEra
+kFlNEptS01uMkRPZWx5VGNnVDc1ZmFXMkc2ZkYrS2Raa3NDeDZVclZSdVd3bmt3PT0=';
     /**
      * @var string
      */
@@ -162,7 +162,7 @@ WZSK3VsUFN5VVNZU3IvUWNvaXNWaURzM1RkMWF5ejZ0YkFhS0RHdHZrTU92S0lmSCtGOTdNVG9pVU0wM
         'IMPORTCONFIG_OXSHOPID'        => array(
             'sTableName'  => 'd3importconfig',
             'sFieldName'  => 'OXSHOPID',
-            'sType'       => 'VARCHAR(32)',
+            'sType'       => 'int(11) ',
             'blNull'      => false,
             'sDefault'    => false,
             'sComment'    => false,
