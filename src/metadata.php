@@ -25,7 +25,9 @@ $sMetadataVersion = '1.2';
  */
 $aModule = array(
     'id'             => 'd3importer',
-    'title'          => (class_exists('D3\ModCfg\Application\Model\d3utils') ? d3utils::getInstance()->getD3Logo() : 'D&sup3;') . ' Importer',
+    'title'          => 
+        '<svg style="height:1em;width:1em"><image xlink:href="https://logos.oxidmodule.com/d3logo.svg" style="height:1em;width:1em" /></svg> '.
+        'Importer',
     'description'    => array(
         'de' => 'Umfangreiche Importm&ouml;glichkeiten der Artikel inkl. dem Import von Bildern, '
             . 'sowie alle Datenfelder von Artikeln, Kategorien, Crossselling, Attribute, '
@@ -33,7 +35,7 @@ $aModule = array(
         'en' => 'n/a',
     ),
     'thumbnail'      => 'picture.png',
-    'version'        => '5.0.4.0',
+    'version'        => '5.0.4.1',
     'author'         => 'D&sup3; Data Development, Inh. Thomas Dartsch',
     'email'          => 'support@shopmodule.com',
     'url'            => 'https://www.oxidmodule.com/',
