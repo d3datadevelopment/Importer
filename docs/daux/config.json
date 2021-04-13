@@ -1,9 +1,9 @@
 {
     "title": "<i class='fab fa-d3 d3fa-color-blue'></i> Importer",
-    "moduleversion": "5.0.4.1",
+    "moduleversion": "5.0.4.2",
     "titledesc": "für den Oxid eShop",
     "author": "D³ Data Development",
-    "moduledate": "30.11.2020",
+    "moduledate": "13.04.2021",
     "editors": "",
     "tagline": "",
     "image": "",
@@ -64,6 +64,7 @@
         "modulename"    : "<i class='fab fa-d3 d3fa-color-blue'></i> Importer",
         "menutitle"     : "Importer",
         "modulefolder"  : "d3/importer",
+        "metadataident" : "d3importer",
         "modcfgident"   : "d3importer",
         "composerident" : "d3/importer"
     },
