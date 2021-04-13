@@ -2,6 +2,16 @@
 title: Changelog
 ---
 
+## 5.0.4.2 - (2021-04-13)
+### Fixed
+- nicht funktionierendes Preisupdate bei EE-Subshops mit vererbten Preisen korrigiert
+
+### Changed
+- Hinweis für Preisimporte mit prozentualer Veränderung ergänzt
+- Dokumentation aktualisiert
+
+---
+
 ## 5.0.4.1 - (2020-11-30)
 ### Added
 - Freigabe für OXID 6.2.3

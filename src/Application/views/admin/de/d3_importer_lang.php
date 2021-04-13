@@ -327,7 +327,8 @@ $aLang = array(
     'D3_IMPORTER_CONFIG_OMITLINES_HELP'                => 'Geben Sie hier die Anzahl der Zeilen an die übersprungen werden sollen.' //
         . '<br>Bspw. wenn in der CSV Datei eine Kopfzeile mit Überschriften vorhanden ist, können Sie hier eine 1 eintragen.',
     'D3_IMPORTER_CONFIG_PRICEPLUSPERCENT_HELP'         => '' //
-        . '<strong>Diese Option greift nur bei dem normalen Artikelpreis (oxprice)!</strong>',
+        . '<strong>Diese Option greift nur bei dem normalen Artikelpreis (oxprice)!</strong><p>Dies ist nicht mit der Option "Importierten Artikelpreis auf x Nachkommastellen runden." kombinierbar. 
+Diese sind in zwei getrennten Importvorgängen anzuwenden und auszuführen.</p>',
     'D3_IMPORTER_CONFIG_ARTNUM2OXID_HELP'              => 'Mit dieser Einstellung wird die verwendete Artikelindentifikation als interne Shop-Indentifikatiosnnummer (oxid) genutzt.' //
         . '<br>Der Shop verwaltet die eindeutigen Shopindentifikationsnummmern selbst, ' //
         . 'daher sollte die Option mit Bedacht genutzt werden.',
@@ -336,7 +337,8 @@ $aLang = array(
     'D3_IMPORTER_CONFIG_PRICEDECIMALROUND_HELP'        => 'Geben Sie hier einen Wert ein, um den Artikelpreis zu runden.' //
         . '<b>Beispiel:</b> "2" bedeutet, dass von 12.3456 auf 12.35 oder von 1.95583 auf 1.96 gerundet wird.' //
         . '<br> bei "1" wird von 12.3456 auf 12.3 oder von 1.95583 auf 2 gerundet.' //
-        . '<br><strong>Diese Option greift nur bei dem normalen Artikelpreis (oxprice)!</strong>',
+        . '<br><strong>Diese Option greift nur bei dem normalen Artikelpreis (oxprice)!</strong>
+<p>Dies ist nicht mit der Option "Importierten Artikelpreis um x % erhöhen." kombinierbar. Diese sind in zwei getrennten Importvorgängen anzuwenden und auszuführen.</p>',
     'D3_IMPORTER_CONFIG_AFALSESETTINGS_HELP'           => 'In einer CSV Datei können verschiedene Werte für einen "Aktiv"-Haken stehen.' //
         . '<br> Bsw.: Ja/Nein, true/false, 1/0, j/n, aktiv/inaktiv.' //
         . '<br>Geben Sie die einzelnen Werte zeilenweise getrennt ein, damit beim Importvorgang die Werte für den Shop interpretiert werden können.' //
