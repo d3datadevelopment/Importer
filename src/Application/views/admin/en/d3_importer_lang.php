@@ -23,7 +23,7 @@ $aLang = array(
 
     //Navigation
     'charset'                                                            => 'ISO-8859-15',
-    'd3mximporter'                                                       => 'Importer',
+    'd3mximporter'                                                       => '<i class="fas fa-fw fa-database"></i> Importer',
     'd3mxarticleimport'                                                  => 'Article import',
     'd3mximporter_cfg'                                                   => 'Settings',
     'd3mximporter_cfg_main'                                              => 'Main',
@@ -286,7 +286,7 @@ $aLang = array(
     'D3_IMPORTER_PICTURE_PICSPERTICK'                                    => 'Start next run of pictures:',
     'D3_IMPORTER_PICTURE_PICSPERTICK_HELP'                               => 'The process of a picture import is as follows:' //
         . '<br>1. All pictures from picture import directory will be read.' //
-        . '<br>2. Looks for a relation in database (oxarticles_d3importpic1-10) per picture(name).' //
+        . '<br>2. Looks for a relation in database (oxarticles_d3importpic1-XX) per picture(name).' //
         . '<br>3. In case of one or more hits, the picture(s) will be imported and assigned to the article(s).',
     'D3_IMPORTER_PICTURE_MAXPICTURECOUNT'                                => 'after',
     'D3_IMPORTER_PICTURE_MAXPICTURECOUNT_2'                              => 'read pictures',
@@ -436,6 +436,14 @@ $aLang = array(
     'D3_IMPORTER_CONFIG_ASSIGNIDENT_D3IMPORTPIC10'     => 'Picture importfield 10',
     'D3_IMPORTER_CONFIG_ASSIGNIDENT_D3IMPORTPIC11'     => 'Picture importfield 11',
     'D3_IMPORTER_CONFIG_ASSIGNIDENT_D3IMPORTPIC12'     => 'Picture importfield 12',
+    'D3_IMPORTER_CONFIG_ASSIGNIDENT_D3IMPORTPIC13'     => 'Picture importfield 13',
+    'D3_IMPORTER_CONFIG_ASSIGNIDENT_D3IMPORTPIC14'     => 'Picture importfield 14',
+    'D3_IMPORTER_CONFIG_ASSIGNIDENT_D3IMPORTPIC15'     => 'Picture importfield 15',
+    'D3_IMPORTER_CONFIG_ASSIGNIDENT_D3IMPORTPIC16'     => 'Picture importfield 16',
+    'D3_IMPORTER_CONFIG_ASSIGNIDENT_D3IMPORTPIC17'     => 'Picture importfield 17',
+    'D3_IMPORTER_CONFIG_ASSIGNIDENT_D3IMPORTPIC18'     => 'Picture importfield 18',
+    'D3_IMPORTER_CONFIG_ASSIGNIDENT_D3IMPORTPIC19'     => 'Picture importfield 19',
+    'D3_IMPORTER_CONFIG_ASSIGNIDENT_D3IMPORTPIC20'     => 'Picture importfield 20',
     'D3_IMPORTER_ATTRIB_LEGEND'                                          => 'legend:',
     'D3_IMPORTER_ATTRIB_IMPORTCOLUM_NAME'                                => 'attributename',
     'D3_IMPORTER_ATTRIB_IMPORTCOLUM_VALUE'                               => 'attributevalue at article',

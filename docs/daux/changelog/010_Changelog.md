@@ -2,6 +2,14 @@
 title: Changelog
 ---
 
+## 5.0.5.0 - (2021-05-03)
+### Changed
+- Installierbar in OXID 6.2.4 und 6.3
+- Adminmenüeintrag um Icon ergänzt
+- fügt nur die konfigurierte Anzahl Importbilderfelder und -indizes zur Datenbank hinzu
+
+---
+
 ## 5.0.4.2 - (2021-04-13)
 ### Fixed
 - nicht funktionierendes Preisupdate bei EE-Subshops mit vererbten Preisen korrigiert

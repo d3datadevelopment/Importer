@@ -1,190 +1,453 @@
-<?php //006e8
-// This Software is the property of D³ Data Development and is protected by copyright law - it is NOT Freeware.  Any unauthorized use of this software without a valid license key is a violation of the license agreement and will be prosecuted by civil and criminal law.  Inhaber: Thomas Dartsch Alle Rechte vorbehalten  @package Importer @version 5.0.4.2 PHP56 (13.04.2021) @author  Daniel Seifert support@shopmodule.com @copyright (C) 2021, D3 Data Development @see http://www.shopmodule.com
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo("Site error: the ".(php_sapi_name()=='cli'?'ionCube':'<a href="http://www.ioncube.com">ionCube</a>')." PHP Loader needs to be installed. This is a widely used PHP extension for running ionCube protected PHP code, website security and malware blocking.\n\nPlease visit ".(php_sapi_name()=='cli'?'get-loader.ioncube.com':'<a href="http://get-loader.ioncube.com">get-loader.ioncube.com</a>')." for install assistance.\n\n");exit(199);
-?>
-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
+<?php
+
+use D3\ModCfg\Application\Model\Configuration\d3_cfg_mod;
+use OxidEsales\Eshop\Application\Model\Article as OxidArticle;
+use OxidEsales\Eshop\Application\Model\ArticleList;
+use OxidEsales\Eshop\Core\DatabaseProvider;
+use OxidEsales\Eshop\Core\Registry;
+use OxidEsales\Eshop\Core\UtilsCount;
+
+/**
+ * This Software is the property of Data Development and is protected
+ * by copyright law - it is NOT Freeware.
+ * Any unauthorized use of this software without a valid license
+ * is a violation of the license agreement and will be prosecuted by
+ * civil and criminal law.
+ * https://www.shopmodule.com
+ *
+ * @copyright (C) D3 Data Development (Inh. Thomas Dartsch)
+ * @author        D3 Data Development <support@shopmodule.com>
+ * @link          https://www.oxidmodule.com
+ */
+class d3_importer_Application_Controller_Import_Article
+{
+    /**
+     * @var d3_importer_Application_Models_ImportConfig
+     */
+    protected $importConfig;
+    /**
+     * @var int
+     */
+    protected $importFailCode = 0;
+    /**
+     * @var int
+     */
+    protected $filePointerPosition = 0;
+    /**
+     * @var
+     */
+    protected $actualLinePosition;
+    /**
+     * @var
+     */
+    protected $isEndOfFile;
+    /**
+     * @var array
+     */
+    protected $importProfile;
+
+    /**
+     * Article constructor.
+     *
+     * @param d3_importer_Application_Models_ImportConfig $importConfig
+     */
+    public function __construct(d3_importer_Application_Models_ImportConfig $importConfig)
+    {
+        $this->importConfig  = $importConfig;
+        $this->importProfile = $this->importConfig->getImportProfile();
+    }
+
+    /**
+     * @param int $actualLine
+     * @param int $actualFilePointer
+     *
+     * @return bool
+     * @throws \D3\ModCfg\Application\Model\Exception\d3ShopCompatibilityAdapterException
+     * @throws \D3\ModCfg\Application\Model\Exception\d3_cfg_mod_exception
+     * @throws \Doctrine\DBAL\DBALException
+     * @throws \OxidEsales\Eshop\Core\Exception\DatabaseConnectionException
+     * @throws \OxidEsales\Eshop\Core\Exception\DatabaseErrorException
+     * @throws \OxidEsales\Eshop\Core\Exception\StandardException
+     */
+    public function import($actualLine = 0, $actualFilePointer = 0)
+    {
+        $this->actualLinePosition  = $actualLine;
+        $this->filePointerPosition = $actualFilePointer;
+        $importFields = $this->getImportFields();
+
+        if (false == $this->isStartProcedereSuccessful($importFields)) {
+            $this->isEndOfFile = true;
+
+            return false;
+        }
+
+        if (false == $this->filePointerPosition) {
+            // set flags
+            $oDB = DatabaseProvider::getDb();
+            $oDB->execute("UPDATE `oxarticles` SET `d3importflag` = '' WHERE `d3importflag` NOT IN ('', 'manually')");
+            /* TODO: Hier muss spaeter nochmal die Importdatei geprueft werden! */
+        }
+
+        //<editor-fold desc="collect data part">
+        /** @var d3_importer_Application_Models_Csvconverter $csvConverter */
+        $csvConverter = oxNew(d3_importer_Application_Models_Csvconverter::class, $this->importConfig, $this->importProfile, $this->filePointerPosition);
+        $csvLines = $csvConverter->convertCsvToArray();
+
+        $aConfigProfile             = $this->importProfile['d3_importer_config'];
+        $articleFieldIdentification = (string)$aConfigProfile['ASSIGNIDENT'];
+        /** @var d3_importer_Application_Models_Collector $collector */
+        $collector = oxNew(d3_importer_Application_Models_Collector::class, $articleFieldIdentification);
+
+        // jetzt aktualisieren wir noch die Uebergabeparameter fuer den naechsten Tick
+        $this->filePointerPosition = ftell($this->importConfig->fpCsv);
+        $this->actualLinePosition += count($csvLines);
+        if (feof($this->importConfig->fpCsv)) {
+            $this->isEndOfFile = true;
+        }
+        fclose($this->importConfig->fpCsv);
+
+        /** @var ArticleList $articleList */
+        $articleList = oxNew(ArticleList::class);
+        $articleList->renewPriceUpdateTime();
+
+        //</editor-fold>
+        $shop        = Registry::getConfig()->getActiveShop();
+        $languageId  = $shop->getLanguage();
+        $shopId      = Registry::getConfig()->getShopId();
+        $isSuperShop = (bool)method_exists($shop, 'isSuperShop') ? $shop->isSuperShop() : false;
+
+        //<editor-fold desc="models_import_* als Interface implementieren, Klassennamen vorhalten und per foreach durchgehen und import methode umbenennen">
+        /** @var d3_importer_Application_Models_Service_Import $importService */
+        $importService = oxNew(
+            d3_importer_Application_Models_Service_Import::class,
+            $collector,
+            $this->importConfig,
+            $importFields,
+            $this->importProfile,
+            $csvLines
+        );
+
+        $importService->addProperty('isSuperShop', $isSuperShop);
+        $importService->addProperty('shopId', $shopId);
+        $importService->addProperty('languageId', $languageId);
+
+//        $models = [
+//            oxNew(d3_importer_Application_Models_Models_Import_Article::class, $importService),
+//        ];
+//        foreach ($csvLines as $index => $csvLine) {
+//            $oxid =  $collector->collectArticleIdent($csvLine[$columnIdentification]->import);
+//            if(false == empty($oxid)) {
+//                $csvLine['oxid'] = $oxid;
+//            }
+//
+//            foreach($models as $model) {
+//                /** @var d3_importer_Application_Models_Models_Import_Article $model */
+//                $oxid = $model->importLine($csvLine);
+//
+//                if(empty($oxid)) {
+//                    continue;
+//                }
+//                $csvLine['oxid'] = $oxid;
+//            }
+//        }
+//
+//        die;
+        /** @var d3_importer_Application_Models_Models_Import_Article $importer */
+        $importer = oxNew(d3_importer_Application_Models_Models_Import_Article::class, $importService);
+        //TODO catch exception
+        $importer->import();
+
+        /** @var d3_importer_Application_Models_Models_Import_Category $importCategories */
+        $importCategories = oxNew(d3_importer_Application_Models_Models_Import_Category::class, $importService);
+        //TODO catch exception
+        $importCategories->import();
+
+        /** @var d3_importer_Application_Models_Models_Import_Accessories $importAccessories */
+        $importAccessories = oxNew(d3_importer_Application_Models_Models_Import_Accessories::class, $importService);
+        //TODO catch exception
+        $importAccessories->import();
+
+        /** @var d3_importer_Application_Models_Models_Import_Crossselling $importCrossselling */
+        $importCrossselling = oxNew(d3_importer_Application_Models_Models_Import_Crossselling::class, $importService);
+        //TODO catch exception
+        $importCrossselling->import();
+
+        /** @var d3_importer_Application_Models_Models_Import_Attributes $importAttributes */
+        $importAttributes = oxNew(d3_importer_Application_Models_Models_Import_Attributes::class, $importService);
+        //TODO catch exception
+        $importAttributes->import();
+
+        /** @var d3_importer_Application_Models_Models_Import_Price2Article $importPrice2Article */
+        $importPrice2Article = oxNew(d3_importer_Application_Models_Models_Import_Price2Article::class, $importService);
+        //TODO catch exception
+        $importPrice2Article->import();
+
+        /** @var d3_importer_Application_Models_Models_Import_Vendor $importVendor */
+        $importVendor = oxNew(d3_importer_Application_Models_Models_Import_Vendor::class, $importService);
+        //TODO catch exception
+        $importVendor->import();
+
+        /** @var d3_importer_Application_Models_Models_Import_Manufacturer $importManufacturer */
+        $importManufacturer = oxNew(d3_importer_Application_Models_Models_Import_Manufacturer::class, $importService);
+        //TODO catch exception
+        $importManufacturer->import();
+
+        /** @var d3_importer_Application_Models_Models_Import_Selectlist $importSelectlist */
+        $importSelectlist = oxNew(d3_importer_Application_Models_Models_Import_Selectlist::class, $importService);
+        //TODO catch exception
+        $importSelectlist->import();
+
+        /** @var d3_importer_Application_Models_Models_Import_Selectlist $importManufacturer */
+        if (class_exists(\OxidEsales\Eshop\Application\Component\Service\Element2ShopRelationsService::class) && $isSuperShop) {
+            /** @var \OxidEsales\Eshop\Application\Model\Article $article */
+            $article = oxNew(\OxidEsales\Eshop\Application\Model\Article::class);
+            $importService->addProperty('coreTable', $article->getCoreTableName());
+            $importService->addProperty('className', $article->getClassName());
+
+            /** @var d3_importer_Application_Models_Models_Import_Mall $mallImport */
+            $mallImport = oxNew(d3_importer_Application_Models_Models_Import_Mall::class, $importService);
+
+            //TODO catch exception
+            $mallImport->import();
+        }
+        //</editor-fold>
+
+        /**
+         * reset ArticleCountCache, as last action on ticker
+         */
+        $this->resetArticleCount();
+
+        return true;
+    }
+
+    /**
+     * @param $importFields
+     *
+     * @return boolean
+     * @throws \D3\ModCfg\Application\Model\Exception\d3ShopCompatibilityAdapterException
+     * @throws \D3\ModCfg\Application\Model\Exception\d3_cfg_mod_exception
+     * @throws \Doctrine\DBAL\DBALException
+     * @throws \OxidEsales\Eshop\Core\Exception\DatabaseConnectionException
+     * @throws \OxidEsales\Eshop\Core\Exception\DatabaseErrorException
+     * @throws \OxidEsales\Eshop\Core\Exception\StandardException
+     */
+    protected function isStartProcedereSuccessful($importFields)
+    {
+        if (false == d3_cfg_mod::get('d3importer')->isActive()) {
+            $this->importFailCode = 20;//TODO: use constant!
+            $this->isEndOfFile    = true;
+
+            return false;
+        }
+
+        $profiles = $this->importConfig->getImportProfile();
+
+        if (empty($profiles)) {
+            /** @var \OxidEsales\Eshop\Core\Exception\StandardException $exception */
+            $exception = oxNew(
+                \OxidEsales\Eshop\Core\Exception\StandardException::class,
+                'import profiles are empty!'
+            );
+            throw $exception;
+        }
+
+        $this->importConfig->validateImportFile();
+
+        if (false == isset($this->importConfig->fpCsv)) {
+            $this->importFailCode = 10; //bedeutet "import-datei konnte nicht geoeffnet werden"
+            return false;
+        }
+
+        $aConfigProfile              = $profiles['d3_importer_config'];
+        $sArticleAssignmentFieldname = (string)$aConfigProfile['ASSIGNIDENT'];
+
+        //<editor-fold desc="TODO:Ueberpruefung der Konfiguration auslagern">
+        //pruefe, ob das Feld fuer die Artikelidentifikation auch zugeordnet ist
+        if (empty($sArticleAssignmentFieldname) //
+            || false == isset($importFields[$sArticleAssignmentFieldname]) //
+            || false == strlen($importFields[$sArticleAssignmentFieldname]->import)
+        ) {
+            $this->importFailCode = 11; // bedeutet: Artikelidentifikation nicht zugeordnet
+            return false;
+        }
+        //</editor-fold>
+
+        return true;
+    }
+
+    /**
+     * @return array
+     */
+    protected function getImportFields()
+    {
+        $importFields   = array();
+
+        /** @var $oArticle OxidArticle */
+        $oArticle = oxNew(OxidArticle::class);
+        $oArticle->setEnableMultilang(false);
+
+        $fieldNames     = $oArticle->getFieldNames();
+        $fieldNames     = $this->addLongdescFieldnames($fieldNames);
+        $csvCells       = $this->importProfile['d3_importer_fields']['fields'];
+        $aUpdateFields  = $this->importProfile['d3_importer_fields']['update'];
+        $aVariantFields = $this->importProfile['d3_importer_variants']['FIELD'];
+
+        foreach ($fieldNames as $fieldName) {
+            foreach ($csvCells as $csvColumn => $csvCell) {
+                $csvColumn = trim((string)$csvColumn);
+
+                if ($csvCell != $fieldName || false == isset($csvColumn) || false == strlen($csvColumn)) {
+                    continue;
+                }
+
+                $temporaryClass         = new \stdClass();
+                $temporaryClass->import = $csvColumn;
+                if (isset($aUpdateFields[$csvColumn]) && (bool)$aUpdateFields[$csvColumn]) {
+                    $temporaryClass->update = $csvColumn;
+                }
+
+                $importFields[$csvCell] = $temporaryClass;
+            }
+
+            if (false == empty($aVariantFields)) {
+                foreach ($aVariantFields as $csvCell => $csvColumn) {
+                    $csvColumn = trim((string)$csvColumn);
+
+                    if ($csvCell != $fieldName || false == isset($csvColumn) || false == strlen($csvColumn)) {
+                        continue;
+                    }
+
+                    $temporaryClass         = new \stdClass();
+                    $temporaryClass->import = $csvColumn;
+                    $temporaryClass->update = $csvColumn;
+
+                    $importFields[$csvCell] = $temporaryClass;
+                }
+            }
+        }
+
+        return $importFields;
+    }
+
+    /**
+     * @return int
+     */
+    public function getFilePointerPosition()
+    {
+        return $this->filePointerPosition;
+    }
+
+    /**
+     * @return int
+     */
+    public function getFailImport()
+    {
+        return $this->importFailCode;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getActualLinePosition()
+    {
+        return $this->actualLinePosition;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function isEndOfFile()
+    {
+        return $this->isEndOfFile;
+    }
+
+    /**
+     * @param     $action
+     * @param int $tickerMaximum
+     *
+     * @return bool
+     * @throws \D3\ModCfg\Application\Model\Exception\d3ShopCompatibilityAdapterException
+     * @throws \D3\ModCfg\Application\Model\Exception\d3_cfg_mod_exception
+     * @throws \Doctrine\DBAL\DBALException
+     * @throws \OxidEsales\Eshop\Core\Exception\DatabaseConnectionException
+     * @throws \OxidEsales\Eshop\Core\Exception\DatabaseErrorException
+     * @throws \OxidEsales\Eshop\Core\Exception\StandardException
+     * @throws Exception
+     */
+    public function afterImport($action, $tickerMaximum)
+    {
+        if (false == d3_cfg_mod::get('d3importer')->isActive()) {
+            $this->importFailCode = 20;
+            $this->isEndOfFile    = true;
+
+            return false;
+        }
+
+        if ($action != 'delete' && $action != 'inactive') {
+            $this->importFailCode = 12;
+            $this->isEndOfFile    = true;
+
+            return false;
+        }
+
+        if (false == $this->isStartProcedereSuccessful($this->getImportFields())) {
+            $this->isEndOfFile = true;
+
+            return false;
+        }
+
+        $oDB                = DatabaseProvider::getDb(DatabaseProvider::FETCH_MODE_ASSOC);
+        $oxarticlesViewname = getViewName('oxarticles');
+        $sSelect            = <<<MySQL
+SELECT `oxid` AS oxid FROM {$oxarticlesViewname} 
+WHERE d3importflag = '' 
+AND d3importprofileid = {$oDB->quote($this->importConfig->getId())} 
+LIMIT 0, {$tickerMaximum}
+MySQL;
+
+        $articleIds = $oDB->getAll($sSelect);
+        if (empty($articleIds)) {
+            $this->isEndOfFile = true;
+
+            return false;
+        }
+        $afterImport = oxNew(d3_importer_Application_Models_Afterimport::class);
+        $result      = $afterImport->afterimport($action, $articleIds);
+
+        $this->resetArticleCount();
+        return $result;
+    }
+
+    /**
+     * reset ArticleCountCache, as last action on ticker
+     * -on Category
+     * -Manufactorer
+     * -Vendor
+     */
+    protected function resetArticleCount()
+    {
+        $oUtilsCount = Registry::get(UtilsCount::class);
+        $oUtilsCount->resetCatArticleCount();
+        $oUtilsCount->resetVendorArticleCount();
+        $oUtilsCount->resetManufacturerArticleCount();
+    }
+
+    /**
+     * @param array $fieldnames
+     *
+     * @return array
+     */
+    protected function addLongdescFieldnames(array $fieldnames)
+    {
+        $fieldnames[] = 'oxlongdesc';
+        $language     = Registry::getLang();
+        $languages    = $language->getLanguageArray(null, false);
+        foreach ($languages as $language) {
+            if (0 < $language->id) {
+                $fieldnames[] = 'oxlongdesc_' . $language->id;
+            }
+        }
+
+        return $fieldnames;
+    }
+}

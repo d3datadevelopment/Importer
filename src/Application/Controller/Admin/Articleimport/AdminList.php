@@ -1,42 +1,56 @@
-<?php //006e8
-// This Software is the property of D³ Data Development and is protected by copyright law - it is NOT Freeware.  Any unauthorized use of this software without a valid license key is a violation of the license agreement and will be prosecuted by civil and criminal law.  Inhaber: Thomas Dartsch Alle Rechte vorbehalten  @package Importer @version 5.0.4.2 PHP56 (13.04.2021) @author  Daniel Seifert support@shopmodule.com @copyright (C) 2021, D3 Data Development @see http://www.shopmodule.com
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo("Site error: the ".(php_sapi_name()=='cli'?'ionCube':'<a href="http://www.ioncube.com">ionCube</a>')." PHP Loader needs to be installed. This is a widely used PHP extension for running ionCube protected PHP code, website security and malware blocking.\n\nPlease visit ".(php_sapi_name()=='cli'?'get-loader.ioncube.com':'<a href="http://get-loader.ioncube.com">get-loader.ioncube.com</a>')." for install assistance.\n\n");exit(199);
-?>
-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
+<?php
+/**
+ * This Software is the property of Data Development and is protected
+ * by copyright law - it is NOT Freeware.
+ * Any unauthorized use of this software without a valid license
+ * is a violation of the license agreement and will be prosecuted by
+ * civil and criminal law.
+ * https://www.shopmodule.com
+ *
+ * @copyright (C) D3 Data Development (Inh. Thomas Dartsch)
+ * @author        D3 Data Development <support@shopmodule.com>
+ * @link          https://www.oxidmodule.com
+ */
+use OxidEsales\Eshop\Application\Controller\Admin\AdminListController;
+
+/**
+ * Importer list manager.
+ * Performs collection and managing (such as filtering or deleting) function.
+ *
+ * @package admin
+ */
+class d3_importer_Application_Controller_Admin_Articleimport_AdminList extends AdminListController
+{
+    /**
+     * Current class template name.
+     *
+     * @var string
+     */
+    protected $_sThisTemplate = 'd3_importer_list.tpl';
+
+    /**
+     * Name of chosen object class (default null).
+     *
+     * @var string
+     */
+    protected $_sListClass = 'd3_importer_Application_Models_ImportConfig';
+
+    /**
+     * Default SQL sorting parameter (default null).
+     *
+     * @var string
+     */
+    protected $_sDefSortField = "oxtitle";
+
+    protected function _prepareWhereQuery($aWhere, $sqlFull)
+    {
+        $sQ = parent::_prepareWhereQuery($aWhere, $sqlFull);
+
+        $sTable = getViewName("d3importconfig");
+
+        $iShopId = $this->getConfig()->getShopId();
+        $sQ .= " AND {$sTable}.oxshopid = '{$iShopId}' ";
+
+        return $sQ;
+    }
+}

@@ -23,7 +23,7 @@ $aLang = array(
 
     //Navigation
     'charset'                                                            => 'ISO-8859-15',
-    'd3mximporter'                                                       => 'Importer',
+    'd3mximporter'                                                       => '<i class="fas fa-fw fa-database"></i> Importer',
     'd3mxarticleimport'                                                  => 'Artikelimport',
     'd3mximporter_cfg'                                                   => 'Einstellungen',
     'd3mximporter_cfg_main'                                              => 'Stamm',
@@ -279,7 +279,7 @@ $aLang = array(
     'D3_IMPORTER_PICTURE_PICSPERTICK'                                    => 'Start des nächsten Bilddurchlaufes:',
     'D3_IMPORTER_PICTURE_PICSPERTICK_HELP'                               => 'Der Ablauf eines Bildimports ist wie folgt (grobe Umschreibung): ' //
         . '<ol><li>Alle Bilder aus dem Bildimportverzeichnis werden eingelesen.</li>' //
-        . '<li>Pro Bild(name) wird in der Datenbank (oxarticles__d3importpic1-10) nach einer Zuordnung gesucht.</li>' //
+        . '<li>Pro Bild(name) wird in der Datenbank (oxarticles__d3importpic1-XX) nach einer Zuordnung gesucht.</li>' //
         . '<li>Werden alle Kriterien erfüllt, gibt es einen oder mehrere Treffer, die daraufhin importiert werden.</li></ol>',
     'D3_IMPORTER_PICTURE_MAXPICTURECOUNT'                                => 'nach',
     'D3_IMPORTER_PICTURE_MAXPICTURECOUNT_2'                              => 'gelesenen Bildern',
@@ -464,6 +464,14 @@ Diese sind in zwei getrennten Importvorgängen anzuwenden und auszuführen.</p>'
     'D3_IMPORTER_CONFIG_ASSIGNIDENT_D3IMPORTPIC10'     => 'Bild Importfeld 10',
     'D3_IMPORTER_CONFIG_ASSIGNIDENT_D3IMPORTPIC11'     => 'Bild Importfeld 11',
     'D3_IMPORTER_CONFIG_ASSIGNIDENT_D3IMPORTPIC12'     => 'Bild Importfeld 12',
+    'D3_IMPORTER_CONFIG_ASSIGNIDENT_D3IMPORTPIC13'     => 'Bild Importfeld 13',
+    'D3_IMPORTER_CONFIG_ASSIGNIDENT_D3IMPORTPIC14'     => 'Bild Importfeld 14',
+    'D3_IMPORTER_CONFIG_ASSIGNIDENT_D3IMPORTPIC15'     => 'Bild Importfeld 15',
+    'D3_IMPORTER_CONFIG_ASSIGNIDENT_D3IMPORTPIC16'     => 'Bild Importfeld 16',
+    'D3_IMPORTER_CONFIG_ASSIGNIDENT_D3IMPORTPIC17'     => 'Bild Importfeld 17',
+    'D3_IMPORTER_CONFIG_ASSIGNIDENT_D3IMPORTPIC18'     => 'Bild Importfeld 18',
+    'D3_IMPORTER_CONFIG_ASSIGNIDENT_D3IMPORTPIC19'     => 'Bild Importfeld 19',
+    'D3_IMPORTER_CONFIG_ASSIGNIDENT_D3IMPORTPIC20'     => 'Bild Importfeld 20',
     'D3_IMPORTER_CONFIG_ASSIGNIDENT_D3OQM_PACKAGE'     => 'Verpackungseinheit - D³ Bestellmengen Manager',
     'D3_IMPORTER_CONFIG_ASSIGNIDENT_D3OQM_MINIMUM'     => 'Minimum - D³ Bestellmengen Manager',
     'D3_IMPORTER_CONFIG_ASSIGNIDENT_D3OQM_MAXIMUM'     => 'Maximum - D³ Bestellmengen Manager',

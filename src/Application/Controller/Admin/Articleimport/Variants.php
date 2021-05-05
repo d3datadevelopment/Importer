@@ -1,92 +1,176 @@
-<?php //006e8
-// This Software is the property of D³ Data Development and is protected by copyright law - it is NOT Freeware.  Any unauthorized use of this software without a valid license key is a violation of the license agreement and will be prosecuted by civil and criminal law.  Inhaber: Thomas Dartsch Alle Rechte vorbehalten  @package Importer @version 5.0.4.2 PHP56 (13.04.2021) @author  Daniel Seifert support@shopmodule.com @copyright (C) 2021, D3 Data Development @see http://www.shopmodule.com
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo("Site error: the ".(php_sapi_name()=='cli'?'ionCube':'<a href="http://www.ioncube.com">ionCube</a>')." PHP Loader needs to be installed. This is a widely used PHP extension for running ionCube protected PHP code, website security and malware blocking.\n\nPlease visit ".(php_sapi_name()=='cli'?'get-loader.ioncube.com':'<a href="http://get-loader.ioncube.com">get-loader.ioncube.com</a>')." for install assistance.\n\n");exit(199);
-?>
-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
+<?php
+/**
+ * This Software is the property of Data Development and is protected
+ * by copyright law - it is NOT Freeware.
+ * Any unauthorized use of this software without a valid license
+ * is a violation of the license agreement and will be prosecuted by
+ * civil and criminal law.
+ * https://www.shopmodule.com
+ *
+ * @copyright (C) D3 Data Development (Inh. Thomas Dartsch)
+ * @author        D3 Data Development <support@shopmodule.com>
+ * @link          https://www.oxidmodule.com
+ */
+
+use OxidEsales\Eshop\Core\Model\BaseModel;
+use OxidEsales\Eshop\Core\Model\ListModel;
+use OxidEsales\Eshop\Core\Registry;
+
+/**
+ * Importer variants manager.
+ *
+ * @package admin
+ */
+class d3_importer_Application_Controller_Admin_Articleimport_Variants extends d3_importer_Application_Controller_Admin_Base
+{
+    /**
+     * Current class default template name.
+     *
+     * @var string
+     */
+    protected $_sThisTemplate = 'd3_importer_variants.tpl';
+
+    /**
+     * @var string
+     */
+    protected $currentProfileName = 'd3_importer_variants';
+
+    /**
+     * @var array
+     */
+    protected $articleFieldnames = [];
+
+    /**
+     * Executes parent method parent::render(), creates oxlist object,
+     * passes it's data to Smarty engine and retutns name of template
+     * file "d3_importer_category.tpl".
+     *
+     * @return string
+     * @throws \D3\ModCfg\Application\Model\Exception\d3ShopCompatibilityAdapterException
+     * @throws \D3\ModCfg\Application\Model\Exception\d3_cfg_mod_exception
+     * @throws \Doctrine\DBAL\DBALException
+     * @throws \OxidEsales\Eshop\Core\Exception\DatabaseConnectionException
+     * @throws \OxidEsales\Eshop\Core\Exception\DatabaseErrorException
+     * @throws \OxidEsales\Eshop\Core\Exception\StandardException
+     */
+    public function render()
+    {
+        $sReturn = parent::render();
+
+        $this->readCurrentCSVLine();
+        $this->addTplParam('aFieldList', $this->getArticleFieldList());
+
+        return $sReturn;
+    }
+
+    /**
+     * @param d3_importer_Application_Models_ImportConfig $oImportConfig
+     *
+     * @return array
+     */
+    protected function getFormularElements(d3_importer_Application_Models_ImportConfig $oImportConfig)
+    {
+        // TODO: Implement _getFormularElements() method.
+        return array();
+    }
+
+    /**
+     * @return array
+     * @throws \OxidEsales\Eshop\Core\Exception\SystemComponentException
+     */
+    public function getArticleFieldList()
+    {
+        if (false == empty($this->articleFieldnames)) {
+            return $this->articleFieldnames;
+        }
+        $aFieldList  = [];
+        $tplLanguage = Registry::getLang()->getTplLanguage();
+        $descriptionName = $tplLanguage ? 'oxdesc_'.$tplLanguage : 'oxdesc';
+
+        /** @var \OxidEsales\Eshop\Application\Model\Article $article */
+        $article = oxNew(\OxidEsales\Eshop\Application\Model\Article::class);
+        $article->setEnableMultilang(false);
+        $fieldnames = $article->getFieldNames();
+        $fieldnames = $this->addLongdescFields($fieldnames);
+
+        /** @var ListModel $importFields */
+        $importFields = oxNew(ListModel::class, d3_importer_Application_Models_ImporterDescription::class);
+        /** @var d3_importer_Application_Models_ImporterDescription $importerDescription */
+        $importerDescription = $importFields->getBaseObject();
+        $importerDescription->setLanguage($tplLanguage);
+
+        $sSelect = "SELECT * FROM d3importerdesc WHERE oxfield LIKE 'oxvarname%' ORDER BY oxorder";
+
+        $importFields->selectString($sSelect);
+
+        foreach ($fieldnames as $val) {
+            if (!substr_count($val, "oxvarname")) {
+                continue;
+            }
+            $temporaryClass          = new stdClass;
+            $temporaryClass->fldname = isset($val) ? (string)$val : '';
+
+            foreach ($importFields as $importField) {
+                /** @var $importField BaseModel */
+                if ($importField->getFieldData('oxfield') != $temporaryClass->fldname) {
+                    continue;
+                }
+
+                if ($importField->getFieldData('oxisdisabled')) {
+                    continue 2;
+                }
+
+                $temporaryClass->fldshowname = $importField->getFieldData($descriptionName);
+            }
+
+            $aFieldList[$temporaryClass->fldname] = $temporaryClass;
+        }
+
+        $sSelect = "SELECT * FROM d3importerdesc WHERE oxfield LIKE 'oxvarselect%' ORDER BY oxorder";
+        $importFields->selectString($sSelect);
+
+        foreach ($fieldnames as $val) {
+            if (!substr_count($val, "oxvarselect")) {
+                continue;
+            }
+
+            $temporaryClass          = new stdClass;
+            $temporaryClass->fldname = (string)$val;
+
+            foreach ($importFields as $importField) {
+                /** @var $importField BaseModel */
+                if ($importField->getFieldData('oxfield') != $temporaryClass->fldname) {
+                    continue;
+                }
+
+                if ($importField->getFieldData('oxisdisabled')) {
+                    continue 2;
+                }
+
+                $temporaryClass->fldshowname = $importField->getFieldData($descriptionName);
+            }
+
+            $aFieldList[$temporaryClass->fldname] = $temporaryClass;
+        }
+
+        return $aFieldList;
+    }
+    /**
+     * @param array $fieldnames
+     *
+     * @return array
+     */
+    protected function addLongdescFields(array $fieldnames)
+    {
+        $fieldnames[] = 'oxlongdesc';
+        $language     = Registry::getLang();
+        $languages    = $language->getLanguageArray(null, false);
+        foreach ($languages as $language) {
+            if (0 < $language->id) {
+                $fieldnames[] = 'oxlongdesc_' . $language->id;
+            }
+        }
+
+        return $fieldnames;
+    }
+}
