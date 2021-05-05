@@ -1,48 +1,82 @@
-<?php //006e8
-// This Software is the property of D³ Data Development and is protected by copyright law - it is NOT Freeware.  Any unauthorized use of this software without a valid license key is a violation of the license agreement and will be prosecuted by civil and criminal law.  Inhaber: Thomas Dartsch Alle Rechte vorbehalten  @package Importer @version 5.0.4.2 PHP71 (13.04.2021) @author  Daniel Seifert support@shopmodule.com @copyright (C) 2021, D3 Data Development @see http://www.shopmodule.com
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo("Site error: the ".(php_sapi_name()=='cli'?'ionCube':'<a href="http://www.ioncube.com">ionCube</a>')." PHP Loader needs to be installed. This is a widely used PHP extension for running ionCube protected PHP code, website security and malware blocking.\n\nPlease visit ".(php_sapi_name()=='cli'?'get-loader.ioncube.com':'<a href="http://get-loader.ioncube.com">get-loader.ioncube.com</a>')." for install assistance.\n\n");exit(199);
-?>
-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
-MtG=
+<?php
+/**
+ * This Software is the property of Data Development and is protected
+ * by copyright law - it is NOT Freeware.
+ * Any unauthorized use of this software without a valid license
+ * is a violation of the license agreement and will be prosecuted by
+ * civil and criminal law.
+ * https://www.shopmodule.com
+ *
+ * @copyright (C) D3 Data Development (Inh. Thomas Dartsch)
+ * @author        D3 Data Development <support@shopmodule.com>
+ * @link          https://www.oxidmodule.com
+ */
+use OxidEsales\Eshop\Core\Registry;
+use OxidEsales\Eshop\Core\UtilsView;
+
+/**
+ * Importer cross manager.
+ *
+ * @package admin
+ */
+class d3_importer_Application_Controller_Admin_Articleimport_Mall extends d3_importer_Application_Controller_Admin_Base
+{
+    /**
+     * Current class default template name.
+     *
+     * @var string
+     */
+    protected $_sThisTemplate = 'd3_importer_mall.tpl';
+
+    protected $currentProfileName = 'd3_importer_mall';
+
+    /**
+     *
+     * @return string
+     * @throws \D3\ModCfg\Application\Model\Exception\d3ShopCompatibilityAdapterException
+     * @throws \D3\ModCfg\Application\Model\Exception\d3_cfg_mod_exception
+     * @throws \Doctrine\DBAL\DBALException
+     * @throws \OxidEsales\Eshop\Core\Exception\DatabaseConnectionException
+     * @throws \OxidEsales\Eshop\Core\Exception\DatabaseErrorException
+     * @throws \OxidEsales\Eshop\Core\Exception\StandardException
+     */
+    public function render()
+    {
+        $sReturn = parent::render();
+
+        $this->readCurrentCSVLine();
+
+        return $sReturn;
+    }
+
+    /**
+     * @param d3_importer_Application_Models_ImportConfig $oImportConfig
+     *
+     * @return array
+     * @throws \OxidEsales\Eshop\Core\Exception\SystemComponentException
+     */
+    protected function getFormularElements(d3_importer_Application_Models_ImportConfig $oImportConfig)
+    {
+        $return = array();
+
+        /** @var d3_importer_Application_Models_Profilemapper $oMapper */
+        $oMapper = oxNew(d3_importer_Application_Models_Profilemapper::class, $oImportConfig);
+
+        try {
+            $oSetting = $oMapper->getSettingFromController( $this->getD3CurrentProfileName());
+
+            /** @var d3_importer_Application_Models_Formbuilder $oFormBuilder */
+            $oFormBuilder = oxNew(d3_importer_Application_Models_Formbuilder::class, $oSetting);
+            $aElements    = $oFormBuilder->getElements();
+
+            /** @var d3_importer_Application_Models_Groupbuilder $oGroupBuilder */
+            $oGroupBuilder = oxNew(d3_importer_Application_Models_Groupbuilder::class);
+            $return        = $oGroupBuilder->groupify($aElements, $this->getD3CurrentProfileName());
+        } catch (\Exception $exception) {
+            Registry::get(UtilsView::class)->addErrorToDisplay($exception);
+        }
+
+        return $return;
+    }
+
+}

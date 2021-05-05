@@ -3,7 +3,7 @@ title: Systemanforderungen
 ---
 
 * PHP Version
-    * 5.6.x bis 7.4.x
+    * 5.6.x bis 8.0.x
 * PHP Decoder
     * installierter ionCube Loader
 * Shopeditionen
@@ -16,6 +16,7 @@ title: Systemanforderungen
         * 6.0.x
         * 6.1.x
         * 6.2.x
+        * 6.3.x
 * Themes
     * Das Modul arbeitet unabhängig von den Frontend-Themes und 
     * bringt einen eigenen Bereich im Admin unter [ (D3) Module ] / [ Importer ] mit.

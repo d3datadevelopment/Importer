@@ -1,58 +1,88 @@
-<?php //006e8
-// This Software is the property of D³ Data Development and is protected by copyright law - it is NOT Freeware.  Any unauthorized use of this software without a valid license key is a violation of the license agreement and will be prosecuted by civil and criminal law.  Inhaber: Thomas Dartsch Alle Rechte vorbehalten  @package Importer @version 5.0.4.2 PHP71 (13.04.2021) @author  Daniel Seifert support@shopmodule.com @copyright (C) 2021, D3 Data Development @see http://www.shopmodule.com
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo("Site error: the ".(php_sapi_name()=='cli'?'ionCube':'<a href="http://www.ioncube.com">ionCube</a>')." PHP Loader needs to be installed. This is a widely used PHP extension for running ionCube protected PHP code, website security and malware blocking.\n\nPlease visit ".(php_sapi_name()=='cli'?'get-loader.ioncube.com':'<a href="http://get-loader.ioncube.com">get-loader.ioncube.com</a>')." for install assistance.\n\n");exit(199);
-?>
-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
-GAuEfJvaqihrV98iho9Mb4b4RDtfbG+aqNawNW==
+<?php
+/**
+ * This Software is the property of Data Development and is protected
+ * by copyright law - it is NOT Freeware.
+ *
+ * Any unauthorized use of this software without a valid license
+ * is a violation of the license agreement and will be prosecuted by
+ * civil and criminal law.
+ *
+ * https://www.shopmodule.com
+ *
+ * @copyright (C) D3 Data Development (Inh. Thomas Dartsch)
+ * @author        D3 Data Development - Daniel Seifert <support@shopmodule.com>
+ * @link          https://www.oxidmodule.com
+ */
+
+use OxidEsales\Eshop\Application\Controller\Admin\AdminDetailsController;
+use OxidEsales\Eshop\Core\Request;
+
+class d3_importer_Application_Controller_Admin_Desc_Main extends AdminDetailsController
+{
+    protected $_sThisTemplate = "d3_d3importer_views_admin_tpl_desc_main.tpl";
+
+    /**
+     * @return string
+     * @throws \OxidEsales\Eshop\Core\Exception\SystemComponentException
+     */
+    public function render()
+    {
+        $sRet       = parent::render();
+        $editObject = oxNew(d3_importer_Application_Models_ImporterDescription::class);
+        $editObject->setEnableMultilang(false);
+        $editObject->load($this->getEditObjectId());
+        $this->addTplParam('edit', $editObject);
+        $this->addTplParam('sHelpURL', null);
+
+        return $sRet;
+    }
+
+    /**
+     * @throws Exception
+     */
+    public function save()
+    {
+        $oxid             = $this->getEditObjectId();
+        $requestParameter = oxNew(Request::class)->getRequestParameter("editval");
+
+        $importerDesc = oxNew(d3_importer_Application_Models_ImporterDescription::class);
+        $importerDesc->setEnableMultilang(false);
+        if ($oxid != "-1") {
+            $importerDesc->load($oxid);
+        } else {
+            $requestParameter['d3importerdesc__oxid'] = null;
+        }
+
+        $importerDesc->assign($requestParameter);
+        $importerDesc->save();
+
+        $this->setEditObjectId($importerDesc->getId());
+
+        parent::save();
+    }
+
+    /**
+     * exampleItem:     array('new' => array(
+     *                      'sScript' => 'top.oxid.admin.editThis( -1 );return false;',
+     *                      'sTranslationId' => 'foo',
+     *                  )
+     * @return array
+     */
+    public function getNaviItems()
+    {
+        return array(
+            'new' => array(
+                'sScript'        => 'top.oxid.admin.editThis( -1 );return false;',
+                'sTranslationId' => 'D3IMPORTERDESC_NEW',
+            )
+        );
+    }
+
+    /**
+     * build and get url to help page
+     *
+     */
+    public function getHelpURL()
+    {
+    }
+}

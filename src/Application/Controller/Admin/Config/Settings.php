@@ -1,86 +1,152 @@
-<?php //006e8
-// This Software is the property of D³ Data Development and is protected by copyright law - it is NOT Freeware.  Any unauthorized use of this software without a valid license key is a violation of the license agreement and will be prosecuted by civil and criminal law.  Inhaber: Thomas Dartsch Alle Rechte vorbehalten  @package Importer @version 5.0.4.2 PHP71 (13.04.2021) @author  Daniel Seifert support@shopmodule.com @copyright (C) 2021, D3 Data Development @see http://www.shopmodule.com
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo("Site error: the ".(php_sapi_name()=='cli'?'ionCube':'<a href="http://www.ioncube.com">ionCube</a>')." PHP Loader needs to be installed. This is a widely used PHP extension for running ionCube protected PHP code, website security and malware blocking.\n\nPlease visit ".(php_sapi_name()=='cli'?'get-loader.ioncube.com':'<a href="http://get-loader.ioncube.com">get-loader.ioncube.com</a>')." for install assistance.\n\n");exit(199);
-?>
-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
+<?php
+/**
+ * This Software is the property of Data Development and is protected
+ * by copyright law - it is NOT Freeware.
+ * Any unauthorized use of this software without a valid license
+ * is a violation of the license agreement and will be prosecuted by
+ * civil and criminal law.
+ * https://www.shopmodule.com
+ *
+ * @copyright (C) D3 Data Development (Inh. Thomas Dartsch)
+ * @author        D3 Data Development <support@shopmodule.com>
+ * @link          https://www.oxidmodule.com
+ */
+
+use D3\ModCfg\Application\Controller\Admin\d3_cfg_mod_main;
+use OxidEsales\Eshop\Application\Model\Article;
+use OxidEsales\Eshop\Application\Model\Category;
+use OxidEsales\Eshop\Core\Model\ListModel;
+use OxidEsales\Eshop\Core\Request;
+
+/**
+ * Class d3_d3importer_controllers_admin_basesettings
+ */
+class d3_importer_Application_Controller_Admin_Config_Settings extends d3_cfg_mod_main
+{
+    protected $_sModId = 'd3importer';
+
+    protected $_sThisTemplate = 'd3_d3importer_views_admin_tpl_basesettings.tpl';
+
+    protected $_blHasDebugSwitch = false;
+
+    protected $_sDebugHelpTextIdent = 'D3_IMPORTER_SET_DEBUG_DESC';
+
+    public function save()
+    {
+        $aValue = oxNew(Request::class)->getRequestParameter('value');
+
+        if ($aValue != 0 && count($aValue) > 0) {
+            foreach ($aValue as $sKey => $aGroup) {
+                $aGroup        = $this->prepareMultilineSettings($sKey, $aGroup);
+                $aValue[$sKey] = $aGroup;
+            }
+        }
+
+        //2014-09-02 KH: this is necessary, because we change the data (string to array)
+        $_REQUEST['value'] = $_POST['value'] = $_GET['value'] = $aValue;
+
+        parent::save();
+    }
+
+    /**
+     * @param $sKey
+     * @param $aGroup
+     *
+     * @return array
+     * @throws \OxidEsales\Eshop\Core\Exception\SystemComponentException
+     */
+    public function prepareMultilineSettings($sKey, $aGroup)
+    {
+        if (in_array($sKey, d3_importer_Application_Models_ImportConfig::$multiLineSettings)) {
+            $oImportConfig = oxNew('d3_importer_Application_Models_ImportConfig');
+            $aGroup        = $oImportConfig->prepareMultilineSettings($aGroup);
+        }
+
+        return $aGroup;
+    }
+
+    /**
+     * @return array
+     * @throws \Doctrine\DBAL\DBALException
+     * @throws \OxidEsales\Eshop\Core\Exception\DatabaseConnectionException
+     * @throws \OxidEsales\Eshop\Core\Exception\DatabaseErrorException
+     * @throws \OxidEsales\Eshop\Core\Exception\SystemComponentException
+     */
+    public function getArticleFields()
+    {
+        $aArticleIndentificationFields = (array)$this->d3GetSet()->getValue('aArticleIndentificationFields');
+        $aFields                       = array();
+        foreach ($this->getArticleFieldsFromDb() as $sField) {
+            $oField           = new stdClass();
+            $oField->title    = $sField;
+            $oField->selected = (int)in_array($sField, $aArticleIndentificationFields);
+
+            $aFields[] = $oField;
+        }
+
+        return $aFields;
+    }
+
+    /**
+     * @return array
+     * @throws \OxidEsales\Eshop\Core\Exception\SystemComponentException
+     * @throws \OxidEsales\Eshop\Core\Exception\SystemComponentException
+     */
+    protected function getArticleFieldsFromDb()
+    {
+        $oArticle   = oxNew(Article::class);
+        $fieldNames = $oArticle->getFieldNames();
+
+        /** @var ListModel $importerDescList */
+        $importerDescList      = oxNew(ListModel::class, d3_importer_Application_Models_ImporterDescription::class);
+        $getDisabledFieldQuery = <<<MYSQL
+SELECT *
+FROM `{$importerDescList->getBaseObject()->getCoreTableName()}`
+WHERE oxisdisabled = 1
+MYSQL;
+
+        $importerDescList->selectString($getDisabledFieldQuery);
+        foreach ($importerDescList->getArray() as $importerDesc) {
+            /** @var $importerDesc d3_importer_Application_Models_ImporterDescription */
+            if (in_array($importerDesc->getFieldData('oxField'), $fieldNames)) {
+                $key = array_search($importerDesc->getFieldData('oxField'), $fieldNames);
+                unset($fieldNames[$key]);
+            }
+        }
+
+        return $fieldNames;
+    }
+
+    /**
+     * @return array
+     * @throws \Doctrine\DBAL\DBALException
+     * @throws \OxidEsales\Eshop\Core\Exception\DatabaseConnectionException
+     * @throws \OxidEsales\Eshop\Core\Exception\DatabaseErrorException
+     * @throws \OxidEsales\Eshop\Core\Exception\SystemComponentException
+     */
+    public function getCategorieFields()
+    {
+        $aCatIndentificationFields = (array)$this->d3GetSet()->getValue('aCategorieIndentificationFields');
+        $aFields                   = array();
+        foreach ($this->getCategorieFieldsFromDb() as $sField) {
+            $oField           = new stdClass();
+            $oField->title    = $sField;
+            $oField->selected = (int)in_array($sField, $aCatIndentificationFields);
+
+            $aFields[] = $oField;
+        }
+
+        return $aFields;
+    }
+
+    /**
+     * @return array
+     * @throws \OxidEsales\Eshop\Core\Exception\SystemComponentException
+     */
+    protected function getCategorieFieldsFromDb()
+    {
+        $oCategorie = oxNew(Category::class);
+
+        return $oCategorie->getFieldNames();
+    }
+}

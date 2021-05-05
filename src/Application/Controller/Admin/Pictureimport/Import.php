@@ -1,125 +1,252 @@
-<?php //006e8
-// This Software is the property of D³ Data Development and is protected by copyright law - it is NOT Freeware.  Any unauthorized use of this software without a valid license key is a violation of the license agreement and will be prosecuted by civil and criminal law.  Inhaber: Thomas Dartsch Alle Rechte vorbehalten  @package Importer @version 5.0.4.2 PHP71 (13.04.2021) @author  Daniel Seifert support@shopmodule.com @copyright (C) 2021, D3 Data Development @see http://www.shopmodule.com
-if(!extension_loaded('ionCube Loader')){$__oc=strtolower(substr(php_uname(),0,3));$__ln='ioncube_loader_'.$__oc.'_'.substr(phpversion(),0,3).(($__oc=='win')?'.dll':'.so');if(function_exists('dl')){@dl($__ln);}if(function_exists('_il_exec')){return _il_exec();}$__ln='/ioncube/'.$__ln;$__oid=$__id=realpath(ini_get('extension_dir'));$__here=dirname(__FILE__);if(strlen($__id)>1&&$__id[1]==':'){$__id=str_replace('\\','/',substr($__id,2));$__here=str_replace('\\','/',substr($__here,2));}$__rd=str_repeat('/..',substr_count($__id,'/')).$__here.'/';$__i=strlen($__rd);while($__i--){if($__rd[$__i]=='/'){$__lp=substr($__rd,0,$__i).$__ln;if(file_exists($__oid.$__lp)){$__ln=$__lp;break;}}}if(function_exists('dl')){@dl($__ln);}}else{die('The file '.__FILE__." is corrupted.\n");}if(function_exists('_il_exec')){return _il_exec();}echo("Site error: the ".(php_sapi_name()=='cli'?'ionCube':'<a href="http://www.ioncube.com">ionCube</a>')." PHP Loader needs to be installed. This is a widely used PHP extension for running ionCube protected PHP code, website security and malware blocking.\n\nPlease visit ".(php_sapi_name()=='cli'?'get-loader.ioncube.com':'<a href="http://get-loader.ioncube.com">get-loader.ioncube.com</a>')." for install assistance.\n\n");exit(199);
-?>
-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
+<?php
+/**
+ * This Software is the property of Data Development and is protected
+ * by copyright law - it is NOT Freeware.
+ * Any unauthorized use of this software without a valid license
+ * is a violation of the license agreement and will be prosecuted by
+ * civil and criminal law.
+ * https://www.shopmodule.com
+ *
+ * @copyright (C) D3 Data Development (Inh. Thomas Dartsch)
+ * @author        D3 Data Development <support@shopmodule.com>
+ * @link          https://www.oxidmodule.com
+ */
+
+use OxidEsales\Eshop\Core\DatabaseProvider;
+use OxidEsales\Eshop\Core\Request;
+
+/**
+ * Picture import manager.
+ *
+ * @package admin
+ */
+class d3_importer_Application_Controller_Admin_Pictureimport_Import extends d3_importer_Application_Controller_Admin_Base
+{
+    /**
+     * @var array
+     */
+    protected $displayErrors = array();
+
+    /**
+     * Current class default template name.
+     *
+     * @var string
+     */
+    protected $_sThisTemplate = 'd3_picture_import.tpl';
+
+    /**
+     * Speichert den aktuellen Fehlercode
+     *
+     * @var integer
+     */
+    protected $failConfigCode = 0;
+
+    protected $importDirFilesSummary;
+
+    protected $importedFilesSummary;
+
+    protected $finishedFilesSummary;
+
+    protected $currentProfileName = 'd3_picture_import';
+
+    /**
+     * Executes parent method parent::render(), creates oxlist object,
+     * passes it's data to Smarty engine and retutns name of template
+     * file "d3_importer_category.tpl".
+     *
+     * @return string
+     * @throws \D3\ModCfg\Application\Model\Exception\d3ShopCompatibilityAdapterException
+     * @throws \D3\ModCfg\Application\Model\Exception\d3_cfg_mod_exception
+     * @throws \Doctrine\DBAL\DBALException
+     * @throws \OxidEsales\Eshop\Core\Exception\DatabaseConnectionException
+     * @throws \OxidEsales\Eshop\Core\Exception\DatabaseErrorException
+     * @throws \OxidEsales\Eshop\Core\Exception\StandardException
+     */
+    public function render()
+    {
+        $sReturn = parent::render();
+
+        $this->setPictureDumpInformations();
+
+        $dirinfo = [];
+        $dirinfo['sumfiles']      = $this->importDirFilesSummary;
+        $dirinfo['importedfiles'] = $this->importedFilesSummary;
+        $dirinfo['finishedfiles'] = $this->finishedFilesSummary;
+        $this->addTplParam('dirinfo', $dirinfo);
+
+        return $sReturn;
+    }
+
+    /**
+     * get data from db table d3picdirdump
+     *
+     * @return void
+     * @throws \OxidEsales\Eshop\Core\Exception\DatabaseConnectionException
+     */
+    protected function setPictureDumpInformations()
+    {
+        $oDB = DatabaseProvider::GetDB();
+
+        $this->importDirFilesSummary = $oDB->getOne("select count(oxid) from d3picdirdump where 1");
+        $this->finishedFilesSummary = $oDB->getOne("select count(oxid) from d3picdirdump where oxisfinished = '1'");
+        $this->importedFilesSummary = $oDB->getOne("select count(oxid) from d3picdirdump where oxisimported = '1'");
+    }
+
+    /**
+     * Liest alle externen (http(s)) Bilder ein und speichert sie ins Bildimportverzeichnis
+     *
+     * @param null $downloadExternPictures
+     *
+     * @return void
+     * @throws \D3\ModCfg\Application\Model\Exception\d3ShopCompatibilityAdapterException
+     * @throws \D3\ModCfg\Application\Model\Exception\d3_cfg_mod_exception
+     * @throws \Doctrine\DBAL\DBALException
+     * @throws \OxidEsales\Eshop\Core\Exception\DatabaseConnectionException
+     * @throws \OxidEsales\Eshop\Core\Exception\DatabaseErrorException
+     * @throws \OxidEsales\Eshop\Core\Exception\StandardException
+     */
+    public function getExternPictures($downloadExternPictures = null)
+    {
+        $request                   = oxNew(Request::class);
+        $soxId                     = $request->getRequestParameter('oxid');
+        $iActImportExtPictureCount = $request->getRequestParameter('d3ief');
+
+        $oImportConfig = $this->getD3ImporterConfiguration();
+
+        if (false == $oImportConfig->getId()) {
+            $this->setFailConfigCode(10);
+
+            return;
+        }
+
+        /** @var d3_importer_Application_Models_PictureImport $oImporter */
+        $oImporter                            = oxNew(d3_importer_Application_Models_PictureImport::class, $oImportConfig);
+        $oImporter->numberOfExternImportedPictures = $iActImportExtPictureCount;
+        $oImporter->ImportExternPictures();
+
+        $this->displayErrors = $oImporter->getErrors();
+        $this->addTplParam("blEOD", $oImporter->isPictureImportFinished);
+        $this->addTplParam("iImportedFiles", $oImporter->numberOfExternImportedPictures);
+        $this->addTplParam("iSumFiles", $oImporter->getExtPictureTableSum(1));
+        $this->addTplParam("oxid", $soxId);
+
+        //Am Ende des externen Imports noch das Bildimportverzeichnis neu einlesen
+        if (is_null($downloadExternPictures) && $oImporter->isPictureImportFinished) {
+            $this->scanPictureDir();
+        }
+
+        $this->_sThisTemplate = 'd3_picture_extticker.tpl';
+    }
+
+    /**
+     * Speichert den aktuellen Fehlercode
+     *
+     * @param integer $iError
+     */
+    protected function setFailConfigCode($iError)
+    {
+        $this->failConfigCode = $iError;
+    }
+
+    /**
+     * scan picture import directory
+     *
+     * @return void
+     * @throws \D3\ModCfg\Application\Model\Exception\d3ShopCompatibilityAdapterException
+     * @throws \D3\ModCfg\Application\Model\Exception\d3_cfg_mod_exception
+     * @throws \Doctrine\DBAL\DBALException
+     * @throws \OxidEsales\Eshop\Core\Exception\DatabaseConnectionException
+     * @throws \OxidEsales\Eshop\Core\Exception\DatabaseErrorException
+     * @throws \OxidEsales\Eshop\Core\Exception\StandardException
+     */
+    public function scanPictureDir()
+    {
+        $request                = oxNew(Request::class);
+        $downloadExternPictures = $request->getRequestParameter('downloadExternPictures');
+        if ($downloadExternPictures) {
+            $this->getExternPictures($downloadExternPictures);
+        }
+
+        $oImportConfig = $this->getD3ImporterConfiguration();
+        /** @var d3_importer_Application_Models_PictureImport $oPictureImporter */
+        $oPictureImporter = oxNew(d3_importer_Application_Models_PictureImport::class, $oImportConfig);
+
+        $this->setFailConfigCode($oPictureImporter->scanPictureDir());
+
+        return;
+    }
+
+    /**
+     * @return array
+     */
+    public function getDisplayErrors()
+    {
+        return $this->displayErrors;
+    }
+
+    /**
+     * doing Import
+     *
+     * @return void
+     * @throws \D3\ModCfg\Application\Model\Exception\d3ShopCompatibilityAdapterException
+     * @throws \D3\ModCfg\Application\Model\Exception\d3_cfg_mod_exception
+     * @throws \Doctrine\DBAL\DBALException
+     * @throws \OxidEsales\Eshop\Core\Exception\DatabaseConnectionException
+     * @throws \OxidEsales\Eshop\Core\Exception\DatabaseErrorException
+     * @throws \OxidEsales\Eshop\Core\Exception\StandardException
+     */
+    public function doImport()
+    {
+        $request            = oxNew(Request::class);
+        $soxId              = $request->getRequestParameter('oxid');
+        $iPrevCheckedFiles  = $request->getRequestParameter('d3cf');
+        $iPrevImportedFiles = $request->getRequestParameter('d3if');
+
+        $oImportConfig = $this->getD3ImporterConfiguration();
+
+        if (false == $oImportConfig->getId()) {
+            $this->setFailConfigCode(10);
+
+            return;
+        }
+
+        $oImporter                   = oxNew(d3_importer_Application_Models_PictureImport::class, $oImportConfig);
+        $oImporter->setActCheckCount($iPrevCheckedFiles);
+        $oImporter->setActImportCount($iPrevImportedFiles);
+        $oImporter->import();
+
+        $this->setFailConfigCode($oImporter->getConfigFailure());
+
+        $this->addTplParam("blEOD", $oImporter->isPictureImportFinished);
+        $this->addTplParam("iSumFiles", $oImporter->numberOfPictureFiles);
+        $this->addTplParam("iCheckedFiles", $oImporter->getActualCheckCounter());
+        $this->addTplParam("iImportedFiles", $oImporter->getActualImportCounter());
+        $this->addTplParam("oxid", $soxId);
+        $this->_sThisTemplate               = 'd3_picture_ticker.tpl';
+    }
+
+    /**
+     * Wird fuer die Rueckgabe ans Template benoetigt
+     *
+     * @return int
+     */
+    public function getConfigFailure()
+    {
+        if (isset($this->failConfigCode) && !empty($this->failConfigCode)) {
+            return $this->failConfigCode;
+        }
+
+        return 0;
+    }
+
+    /**
+     * @param d3_importer_Application_Models_ImportConfig $oImportConfig
+     *
+     * @return array
+     */
+    protected function getFormularElements(d3_importer_Application_Models_ImportConfig $oImportConfig)
+    {
+        // TODO: Implement _getFormularElements() method.
+        return array();
+    }
+}

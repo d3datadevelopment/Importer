@@ -3,6 +3,7 @@
 use D3\ModCfg\Application\Model\Configuration\d3_cfg_mod;
 use D3\ModCfg\Application\Model\Install\d3install_updatebase;
 use Doctrine\DBAL\DBALException;
+use OxidEsales\Eshop\Application\Model\ShopList;
 use OxidEsales\Eshop\Core\DatabaseProvider;
 use OxidEsales\Eshop\Core\Exception\ConnectionException;
 use OxidEsales\Eshop\Core\Exception\DatabaseConnectionException;
@@ -26,20 +27,20 @@ class d3_importer_Setup_InstallRoutine extends d3install_updatebase
     /**
      * @var string
      */
-    public $sModVersion = '5.0.4.2';
+    public $sModVersion = '5.0.5.0';
     /**
      * @var string
      */
-    public $sModRevision = '5042';
+    public $sModRevision = '5050';
     /**
      * @var string
      */
-    public $sBaseConf = 'mrRv2==Rmd0ZCs0aXBSVDllSEVKUHZWcjQ0RFgvRnFTV1pPNnJqTUdKSHM1OVAzZEM1SzdBQWtMRE51V
-3o4cmU5RWVPN0xsb2hCOW1kdUtzWFBVMUhrNmgvWWFPclZYVU52d1JpTnZEMTkrMnY5Q1dyMGc4angyV
-kpxYXJ2MmRnTFZDZDduSkZjYTB0eVZhNFVmVmlkNnBQT0lIUW1VMHQySk5LcTc5eTRQTS9QS29YdWZtb
-GdMdUk2L090RFVXZkIxS0NneURaR2RpN0RVQW41SDlDM2xpN01mUy9mSVVvL0RjM3dVdWJJdXNaVjN1Y
-XRuM00zUXp2WmhScDhiZk1FQUlxc2ZURXczNmZGckdjckVoS216bzdKcEhiVkE0YWVXWURuWFhWQ2lHU
-HkrOWFpUGtQM2JmZXgzTjdqK0JJamltQ0gyS1p0TzA1NzJkL3pVQ05TYWVjOTVnPT0=';
+    public $sBaseConf = '7GAv2==MTBTaHlsZTkzTUEvdld1MllrOUppcmZjWk1Ha2hTMmtyclZqa3JPSDJtVzJuMk5LRFZKY2RYS
+0hFOE1zOUFEUmJCUzI3SGNPSTdteGJxVmNzTGVPRE43aFpoQXYrSWlxR0ZMK2x2R2tNbEtKUGNYdW1va
+WE1NlJ3eHhSQjF1aWVrOEIvY05rYlFFVklaMnZvM0lhTlNvMmQ1MUdVWFpWbnBJVzhWNk9HMTlBbEdBd
+U9GaS9lSENKdUNaL0x3YzJaMFRMVzR2WUltdi8wblV2TnUxVUQzZU1ETkxKOFN1Tm5rQUhLdkFKczhZa
+mt5djF6ci8wRVJ4WXFudEFYTkZLQmtuZUZOdndBYWxQUTU2eTZuVHVBM2ZuN1BPRVlhcUpkV0tBL2tBO
+DNLb2NLS1RkMGhPUUFQVU1tZmNxeG9Gd3NyYlRpeU1QTjdyak5BT2NUV21sY2h3PT0=';
     /**
      * @var string
      */
@@ -292,227 +293,7 @@ HkrOWFpUGtQM2JmZXgzTjdqK0JJamltQ0gyS1p0TzA1NzJkL3pVQ05TYWVjOTVnPT0=';
             'sExtra'      => '',
             'blMultilang' => false,
             'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC1'      => array(
-            'sTableName'  => 'oxarticles',
-            'sFieldName'  => 'D3IMPORTPIC1',
-            'sType'       => 'VARCHAR(255)',
-            'blNull'      => false,
-            'sDefault'    => false,
-            'sComment'    => false,
-            'sExtra'      => '',
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC2'      => array(
-            'sTableName'  => 'oxarticles',
-            'sFieldName'  => 'D3IMPORTPIC2',
-            'sType'       => 'VARCHAR(255)',
-            'blNull'      => false,
-            'sDefault'    => false,
-            'sComment'    => false,
-            'sExtra'      => '',
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC3'      => array(
-            'sTableName'  => 'oxarticles',
-            'sFieldName'  => 'D3IMPORTPIC3',
-            'sType'       => 'VARCHAR(255)',
-            'blNull'      => false,
-            'sDefault'    => false,
-            'sComment'    => false,
-            'sExtra'      => '',
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC4'      => array(
-            'sTableName'  => 'oxarticles',
-            'sFieldName'  => 'D3IMPORTPIC4',
-            'sType'       => 'VARCHAR(255)',
-            'blNull'      => false,
-            'sDefault'    => false,
-            'sComment'    => false,
-            'sExtra'      => '',
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC5'      => array(
-            'sTableName'  => 'oxarticles',
-            'sFieldName'  => 'D3IMPORTPIC5',
-            'sType'       => 'VARCHAR(255)',
-            'blNull'      => false,
-            'sDefault'    => false,
-            'sComment'    => false,
-            'sExtra'      => '',
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC6'      => array(
-            'sTableName'  => 'oxarticles',
-            'sFieldName'  => 'D3IMPORTPIC6',
-            'sType'       => 'VARCHAR(255)',
-            'blNull'      => false,
-            'sDefault'    => false,
-            'sComment'    => false,
-            'sExtra'      => '',
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC7'      => array(
-            'sTableName'  => 'oxarticles',
-            'sFieldName'  => 'D3IMPORTPIC7',
-            'sType'       => 'VARCHAR(255)',
-            'blNull'      => false,
-            'sDefault'    => false,
-            'sComment'    => false,
-            'sExtra'      => '',
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC8'      => array(
-            'sTableName'  => 'oxarticles',
-            'sFieldName'  => 'D3IMPORTPIC8',
-            'sType'       => 'VARCHAR(255)',
-            'blNull'      => false,
-            'sDefault'    => false,
-            'sComment'    => false,
-            'sExtra'      => '',
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC9'      => array(
-            'sTableName'  => 'oxarticles',
-            'sFieldName'  => 'D3IMPORTPIC9',
-            'sType'       => 'VARCHAR(255)',
-            'blNull'      => false,
-            'sDefault'    => false,
-            'sComment'    => false,
-            'sExtra'      => '',
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC10'     => array(
-            'sTableName'  => 'oxarticles',
-            'sFieldName'  => 'D3IMPORTPIC10',
-            'sType'       => 'VARCHAR(255)',
-            'blNull'      => false,
-            'sDefault'    => false,
-            'sComment'    => false,
-            'sExtra'      => '',
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC11'     => array(
-            'sTableName'  => 'oxarticles',
-            'sFieldName'  => 'D3IMPORTPIC11',
-            'sType'       => 'VARCHAR(255)',
-            'blNull'      => false,
-            'sDefault'    => false,
-            'sComment'    => false,
-            'sExtra'      => '',
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC12'     => array(
-            'sTableName'  => 'oxarticles',
-            'sFieldName'  => 'D3IMPORTPIC12',
-            'sType'       => 'VARCHAR(255)',
-            'blNull'      => false,
-            'sDefault'    => false,
-            'sComment'    => false,
-            'sExtra'      => '',
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC13'     => array(
-            'sTableName'  => 'oxarticles',
-            'sFieldName'  => 'D3IMPORTPIC13',
-            'sType'       => 'VARCHAR(255)',
-            'blNull'      => false,
-            'sDefault'    => false,
-            'sComment'    => false,
-            'sExtra'      => '',
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC14'     => array(
-            'sTableName'  => 'oxarticles',
-            'sFieldName'  => 'D3IMPORTPIC14',
-            'sType'       => 'VARCHAR(255)',
-            'blNull'      => false,
-            'sDefault'    => false,
-            'sComment'    => false,
-            'sExtra'      => '',
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC15'     => array(
-            'sTableName'  => 'oxarticles',
-            'sFieldName'  => 'D3IMPORTPIC15',
-            'sType'       => 'VARCHAR(255)',
-            'blNull'      => false,
-            'sDefault'    => false,
-            'sComment'    => false,
-            'sExtra'      => '',
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC16'     => array(
-            'sTableName'  => 'oxarticles',
-            'sFieldName'  => 'D3IMPORTPIC16',
-            'sType'       => 'VARCHAR(255)',
-            'blNull'      => false,
-            'sDefault'    => false,
-            'sComment'    => false,
-            'sExtra'      => '',
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC17'     => array(
-            'sTableName'  => 'oxarticles',
-            'sFieldName'  => 'D3IMPORTPIC17',
-            'sType'       => 'VARCHAR(255)',
-            'blNull'      => false,
-            'sDefault'    => false,
-            'sComment'    => false,
-            'sExtra'      => '',
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC18'     => array(
-            'sTableName'  => 'oxarticles',
-            'sFieldName'  => 'D3IMPORTPIC18',
-            'sType'       => 'VARCHAR(255)',
-            'blNull'      => false,
-            'sDefault'    => false,
-            'sComment'    => false,
-            'sExtra'      => '',
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC19'     => array(
-            'sTableName'  => 'oxarticles',
-            'sFieldName'  => 'D3IMPORTPIC19',
-            'sType'       => 'VARCHAR(255)',
-            'blNull'      => false,
-            'sDefault'    => false,
-            'sComment'    => false,
-            'sExtra'      => '',
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC20'     => array(
-            'sTableName'  => 'oxarticles',
-            'sFieldName'  => 'D3IMPORTPIC20',
-            'sType'       => 'VARCHAR(255)',
-            'blNull'      => false,
-            'sDefault'    => false,
-            'sComment'    => false,
-            'sExtra'      => '',
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
+        )
     );
 
     /*******************************************************************************************/
@@ -619,207 +400,7 @@ HkrOWFpUGtQM2JmZXgzTjdqK0JJamltQ0gyS1p0TzA1NzJkL3pVQ05TYWVjOTVnPT0=';
             ),
             'blMultilang' => false,
             'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC1'      => array(
-            'sTableName'  => 'oxarticles',
-            'sType'       => '',
-            'sName'       => 'D3IMPORTPIC1',
-            'aFields'     => array(
-                'D3IMPORTPIC1' => 'D3IMPORTPIC1',
-            ),
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC2'      => array(
-            'sTableName'  => 'oxarticles',
-            'sType'       => '',
-            'sName'       => 'D3IMPORTPIC2',
-            'aFields'     => array(
-                'D3IMPORTPIC2' => 'D3IMPORTPIC2',
-            ),
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC3'      => array(
-            'sTableName'  => 'oxarticles',
-            'sType'       => '',
-            'sName'       => 'D3IMPORTPIC3',
-            'aFields'     => array(
-                'D3IMPORTPIC3' => 'D3IMPORTPIC3',
-            ),
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC4'      => array(
-            'sTableName'  => 'oxarticles',
-            'sType'       => '',
-            'sName'       => 'D3IMPORTPIC4',
-            'aFields'     => array(
-                'D3IMPORTPIC4' => 'D3IMPORTPIC4',
-            ),
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC5'      => array(
-            'sTableName'  => 'oxarticles',
-            'sType'       => '',
-            'sName'       => 'D3IMPORTPIC5',
-            'aFields'     => array(
-                'D3IMPORTPIC5' => 'D3IMPORTPIC5',
-            ),
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC6'      => array(
-            'sTableName'  => 'oxarticles',
-            'sType'       => '',
-            'sName'       => 'D3IMPORTPIC6',
-            'aFields'     => array(
-                'D3IMPORTPIC6' => 'D3IMPORTPIC6',
-            ),
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC7'      => array(
-            'sTableName'  => 'oxarticles',
-            'sType'       => '',
-            'sName'       => 'D3IMPORTPIC7',
-            'aFields'     => array(
-                'D3IMPORTPIC7' => 'D3IMPORTPIC7',
-            ),
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC8'      => array(
-            'sTableName'  => 'oxarticles',
-            'sType'       => '',
-            'sName'       => 'D3IMPORTPIC8',
-            'aFields'     => array(
-                'D3IMPORTPIC8' => 'D3IMPORTPIC8',
-            ),
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC9'      => array(
-            'sTableName'  => 'oxarticles',
-            'sType'       => '',
-            'sName'       => 'D3IMPORTPIC9',
-            'aFields'     => array(
-                'D3IMPORTPIC9' => 'D3IMPORTPIC9',
-            ),
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC10'     => array(
-            'sTableName'  => 'oxarticles',
-            'sType'       => '',
-            'sName'       => 'D3IMPORTPIC10',
-            'aFields'     => array(
-                'D3IMPORTPIC10' => 'D3IMPORTPIC10',
-            ),
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC11'     => array(
-            'sTableName'  => 'oxarticles',
-            'sType'       => '',
-            'sName'       => 'D3IMPORTPIC11',
-            'aFields'     => array(
-                'D3IMPORTPIC11' => 'D3IMPORTPIC11',
-            ),
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC12'     => array(
-            'sTableName'  => 'oxarticles',
-            'sType'       => '',
-            'sName'       => 'D3IMPORTPIC12',
-            'aFields'     => array(
-                'D3IMPORTPIC12' => 'D3IMPORTPIC12',
-            ),
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC13'     => array(
-            'sTableName'  => 'oxarticles',
-            'sType'       => '',
-            'sName'       => 'D3IMPORTPIC13',
-            'aFields'     => array(
-                'D3IMPORTPIC13' => 'D3IMPORTPIC13',
-            ),
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC14'     => array(
-            'sTableName'  => 'oxarticles',
-            'sType'       => '',
-            'sName'       => 'D3IMPORTPIC14',
-            'aFields'     => array(
-                'D3IMPORTPIC14' => 'D3IMPORTPIC14',
-            ),
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC15'     => array(
-            'sTableName'  => 'oxarticles',
-            'sType'       => '',
-            'sName'       => 'D3IMPORTPIC15',
-            'aFields'     => array(
-                'D3IMPORTPIC15' => 'D3IMPORTPIC15',
-            ),
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC16'     => array(
-            'sTableName'  => 'oxarticles',
-            'sType'       => '',
-            'sName'       => 'D3IMPORTPIC16',
-            'aFields'     => array(
-                'D3IMPORTPIC16' => 'D3IMPORTPIC16',
-            ),
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC17'     => array(
-            'sTableName'  => 'oxarticles',
-            'sType'       => '',
-            'sName'       => 'D3IMPORTPIC17',
-            'aFields'     => array(
-                'D3IMPORTPIC17' => 'D3IMPORTPIC17',
-            ),
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC18'     => array(
-            'sTableName'  => 'oxarticles',
-            'sType'       => '',
-            'sName'       => 'D3IMPORTPIC18',
-            'aFields'     => array(
-                'D3IMPORTPIC18' => 'D3IMPORTPIC18',
-            ),
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC19'     => array(
-            'sTableName'  => 'oxarticles',
-            'sType'       => '',
-            'sName'       => 'D3IMPORTPIC19',
-            'aFields'     => array(
-                'D3IMPORTPIC19' => 'D3IMPORTPIC19',
-            ),
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
-        'OXARTICLES_D3IMPORTPIC20'     => array(
-            'sTableName'  => 'oxarticles',
-            'sType'       => '',
-            'sName'       => 'D3IMPORTPIC20',
-            'aFields'     => array(
-                'D3IMPORTPIC110' => 'D3IMPORTPIC20',
-            ),
-            'blMultilang' => false,
-            'blAddBreak'  => true
-        ),
+        )
     );
 
     // Standardwerte für checkFields(), _addTable() und fixFields()
@@ -954,8 +535,54 @@ HkrOWFpUGtQM2JmZXgzTjdqK0JJamltQ0gyS1p0TzA1NzJkL3pVQ05TYWVjOTVnPT0=';
     {
         parent::__construct();
 
+        $this->addPictureDatabaseFieldDefinitions();
         $this->setOxconfigEntriesOnFirstInstallation();
 
+    }
+
+    public function addPictureDatabaseFieldDefinitions()
+    {
+        $sCurrentShopId = Registry::getConfig()->getActiveShop()->getId();
+        /** @var ShopList $oShopList */
+        $oShopList = $this->getShopList();
+
+        $iMaxPicCount = 0;
+
+        /** @var Shop $oShop */
+        foreach ($oShopList as $sKey => $oShop) {
+            $this->_changeToShop($oShop->getId());
+
+            $iPicCount = Registry::getConfig()->getConfigParam('iPicCount');
+
+            $iMaxPicCount = $iPicCount > $iMaxPicCount ? $iPicCount : $iMaxPicCount;
+        }
+
+        $this->_changeToShop($sCurrentShopId);
+
+        for ($i = 1; $i <= $iMaxPicCount; $i++) {
+            $this->aFields['OXARTICLES_D3IMPORTPIC'.$i] = array(
+                'sTableName'  => 'oxarticles',
+                'sFieldName'  => 'D3IMPORTPIC'.$i,
+                'sType'       => 'VARCHAR(255)',
+                'blNull'      => false,
+                'sDefault'    => false,
+                'sComment'    => false,
+                'sExtra'      => '',
+                'blMultilang' => false,
+                'blAddBreak'  => true
+            );
+
+            $this->aIndizes['OXARTICLES_D3IMPORTPIC'.$i] = array(
+                'sTableName'  => 'oxarticles',
+                'sType'       => '',
+                'sName'       => 'D3IMPORTPIC'.$i,
+                'aFields'     => array(
+                    'D3IMPORTPIC'.$i => 'D3IMPORTPIC'.$i,
+                ),
+                'blMultilang' => false,
+                'blAddBreak'  => true
+            );
+        }
     }
 
     /**
