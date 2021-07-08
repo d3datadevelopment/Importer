@@ -535,7 +535,8 @@ Diese sind in zwei getrennten Importvorgängen anzuwenden und auszuführen.</p>'
         . 'Damit können Sie die Auswahl der benötigten Felder im Admin verringern oder neue Felder hinzufügen.',
     'D3_IMPORTER_PRICE2ART_PERCENTOPTION'                                => 'ist % Rabatt Preis?',
     'HELP_D3_IMPORTER_PRICE2ART_PERCENTOPTION'                           => 'Wenn diese Option gesetzt ist, wird der Preis als prozentualer Preis abgespeichert. Mehr Infos finden Sie im Admin unter /Artikel verwalten/Artikel/Lager/Staffelpreise/.',
-    'HELP_D3_IMPORTER_PRICE2ART_PRICE'                                   => 'Hinterlegen Sie einen Preis für die Staffel (Kommas werden durch einen Punkt ersetzt, daher vorsicht bei 1,234.56 Angaben. Besser: 1234,56 oder 1234.56).<br><br>Um prozentuale Staffelpreise zu importieren, nutzen Sie das % Zeichen dazu. Bspw: 10% oder 1,23% oder 1.23%',
+    'HELP_D3_IMPORTER_PRICE2ART_PRICE'                                   => 'Hinterlegen Sie einen Preis für die Staffel (Kommas werden durch einen Punkt ersetzt, daher vorsicht bei 1,234.56 Angaben. Besser: 1234,56 oder 1234.56).<br><br>Um prozentuale Staffelpreise zu importieren, nutzen Sie das % Zeichen dazu. Bspw: 10% oder 1,23% oder 1.23%
+<p>Die Rundung wird durch die Option "Nicht ganzzahlige Eingaben bei Artikelmengen erlauben (z.B. 1,5)" unter Stammddaten --> Grundeinstellungen --> Einstellungen --> Bestellungen gesteuert.</p>',
     'D3_PICTURE_IMPORT_LOAD_PROFILE'                                     => 'Bitte wählen Sie ein Importprofil aus.',
     'HELP_D3_PICTURE_EXTPICTURE_START'                                   => 'Setzen Sie den Haken, wenn die zu importierenden Bilder auf externen URL\'s vorliegen. <br>Bspw.: https://placeimg.com/1000/1000/any.jpg.' //
         . '<br><br>Der Bildimport wird die URL\'s aufrufen und die Bilder in das definierte Bildverzeichnis herunterladen.',

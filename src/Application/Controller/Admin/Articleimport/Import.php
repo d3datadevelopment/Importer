@@ -14,6 +14,7 @@
 
 use OxidEsales\Eshop\Core\DatabaseProvider;
 use OxidEsales\Eshop\Core\Request;
+use OxidEsales\Eshop\Core\TableViewNameGenerator;
 
 /**
  * Importer import manager.
@@ -80,13 +81,15 @@ class d3_importer_Application_Controller_Admin_Articleimport_Import extends d3_i
      */
     public function getStatisticData($sData)
     {
+        $sArticleTableView = oxNew(TableViewNameGenerator::class)->getViewName('oxarticles');
+
         $oDB = DatabaseProvider::getDb();
         switch ($sData) {
             case "imported":
-                return $oDB->getOne("select count(oxid) from oxarticles where d3importflag = 'IMPORTED'");
+                return $oDB->getOne("select count(oxid) from $sArticleTableView as oxarticles where d3importflag = 'IMPORTED'");
                 break;
             case "updated":
-                return $oDB->getOne("select count(oxid) from oxarticles where d3importflag = 'UPDATED'");
+                return $oDB->getOne("select count(oxid) from $sArticleTableView as oxarticles where d3importflag = 'UPDATED'");
                 break;
             default:
                 return "";

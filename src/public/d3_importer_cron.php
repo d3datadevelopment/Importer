@@ -15,6 +15,7 @@
 
 use OxidEsales\Eshop\Core\DatabaseProvider;
 use OxidEsales\Eshop\Core\Registry;
+use OxidEsales\Eshop\Core\TableViewNameGenerator;
 
 define("OX_IS_ADMIN", true);
 
@@ -88,8 +89,10 @@ try {
     exit(7);
 }
 
-echo $getD3ImportTimestamp() . " Imported: {$oDB->getOne("SELECT COUNT(oxid) FROM oxarticles WHERE d3importflag = 'IMPORTED'")} articles" . PHP_EOL;
-echo $getD3ImportTimestamp() . " Updated: {$oDB->getOne("SELECT COUNT(oxid) FROM oxarticles WHERE d3importflag = 'UPDATED'")} articles" . PHP_EOL;
+$sArticleTableView = oxNew(TableViewNameGenerator::class)->getViewName('oxarticles');
+
+echo $getD3ImportTimestamp() . " Imported: {$oDB->getOne("SELECT COUNT(oxid) FROM $sArticleTableView as oxarticles WHERE d3importflag = 'IMPORTED'")} articles" . PHP_EOL;
+echo $getD3ImportTimestamp() . " Updated: {$oDB->getOne("SELECT COUNT(oxid) FROM $sArticleTableView as oxarticles WHERE d3importflag = 'UPDATED'")} articles" . PHP_EOL;
 
 $aViewData                = array();
 $aViewData["iFailImport"] = $articleImport->getFailImport();

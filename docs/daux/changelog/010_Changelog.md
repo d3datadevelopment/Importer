@@ -2,6 +2,15 @@
 title: Changelog
 ---
 
+## 5.0.6.0 - (2021-07-08)
+### Fixed
+- Fehlerhafte Verwendung beim Aufruf von oxarticles behoben
+- Import der Staffelpreise nun auch mit nicht ganzzahlige Werten möglich
+- Probleme mit der Shop-ID behoben, die neue leere Artikel erzeugt hat
+
+
+---
+
 ## 5.0.5.0 - (2021-05-03)
 ### Changed
 - Installierbar in OXID 6.2.4 und 6.3

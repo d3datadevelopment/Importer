@@ -15,6 +15,7 @@
 use OxidEsales\Eshop\Core\DatabaseProvider;
 use OxidEsales\Eshop\Core\Registry;
 use OxidEsales\Eshop\Core\Request;
+use OxidEsales\Eshop\Core\TableViewNameGenerator;
 
 /**
  * Importer import manager.
@@ -120,32 +121,34 @@ class d3_importer_Application_Controller_Admin_Articleimport_Afterimport extends
         $soxId   = oxNew(Request::class)->getRequestParameter("oxid");
         $sSQLAdd = " AND d3importprofileid = " . DatabaseProvider::getDb()->quote($soxId);
 
+        $sArticleTableView = oxNew(TableViewNameGenerator::class)->getViewName('oxarticles');
+
         $oDB = DatabaseProvider::getDb();
         if ("profile" === $sData) {
-            return $oDB->getOne("SELECT COUNT(oxid) FROM oxarticles WHERE 1 " . $sSQLAdd);
+            return $oDB->getOne("SELECT COUNT(oxid) FROM $sArticleTableView as oxarticles WHERE 1 " . $sSQLAdd);
         }
 
         if ("imported" === $sData) {
-            return $oDB->getOne("SELECT COUNT(oxid) FROM oxarticles WHERE d3importflag = 'imported' " . $sSQLAdd);
+            return $oDB->getOne("SELECT COUNT(oxid) FROM $sArticleTableView as oxarticles WHERE d3importflag = 'imported' " . $sSQLAdd);
         }
 
         if ("updated" === $sData) {
-            return $oDB->getOne("SELECT COUNT(oxid) FROM oxarticles WHERE d3importflag = 'updated' " . $sSQLAdd);
+            return $oDB->getOne("SELECT COUNT(oxid) FROM $sArticleTableView as oxarticles WHERE d3importflag = 'updated' " . $sSQLAdd);
         }
 
         if ("notimported_all" === $sData) {
-            return $oDB->getOne("SELECT COUNT(oxid) FROM oxarticles WHERE d3importflag = '' " . $sSQLAdd);
+            return $oDB->getOne("SELECT COUNT(oxid) FROM $sArticleTableView as oxarticles WHERE d3importflag = '' " . $sSQLAdd);
         }
 
         if ("notimported_main" === $sData) {
             return $oDB->getOne(
-                "SELECT COUNT(oxid) FROM oxarticles WHERE d3importflag = '' AND oxparentid = '' " . $sSQLAdd
+                "SELECT COUNT(oxid) FROM $sArticleTableView as oxarticles WHERE d3importflag = '' AND oxparentid = '' " . $sSQLAdd
             );
         }
 
         if ("notimported_variants" === $sData) {
             return $oDB->getOne(
-                "SELECT COUNT(oxid) FROM oxarticles WHERE d3importflag = '' AND oxparentid != '' " . $sSQLAdd
+                "SELECT COUNT(oxid) FROM $sArticleTableView as oxarticles WHERE d3importflag = '' AND oxparentid != '' " . $sSQLAdd
             );
         }
 
