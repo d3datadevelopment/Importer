@@ -21,6 +21,9 @@ use OxidEsales\Eshop\Core\Request;
  */
 class d3_importer_Application_Controller_Admin_Articleimport_Main extends d3_importer_Application_Controller_Admin_Base
 {
+    const SIZE_KILOBYTE_IN_BYTE = 1024;
+    const SIZE_MEGABYTE_IN_BYTE = 1048576;
+    const SIZE_GIGABYTE_IN_BYTE = 1073741824;
 
     /**
      * boolean Upload file failed
@@ -285,5 +288,52 @@ class d3_importer_Application_Controller_Admin_Articleimport_Main extends d3_imp
     {
         // TODO: Implement _getFormularElements() method.
         return array();
+    }
+
+    /**
+     * @return int
+     */
+    public function getSmallestSystemUploadRestrictions()
+    {
+        $unlimitedSize = self::SIZE_GIGABYTE_IN_BYTE;
+
+        //select maximum upload size
+        $max_upload = $this->_getIniSizeValuesInByte('upload_max_filesize') ?: $unlimitedSize;
+        //select post limit
+        $max_post = $this->_getIniSizeValuesInByte('post_max_size') ?: $unlimitedSize;
+        //select memory limit
+        $memory_limit = $this->_getIniSizeValuesInByte('memory_limit') ?: $unlimitedSize;
+        // return the smallest of them, this defines the real limit
+        return min($max_upload, $max_post, $memory_limit);
+    }
+
+    /**
+     * @param $sVarName
+     *
+     * @return int
+     */
+    protected function _getIniSizeValuesInByte($sVarName)
+    {
+        $sSize = ini_get($sVarName);
+        $iSize = (int) $sSize;
+        $sSizeUnit = strtoupper(trim(str_replace($iSize, '', $sSize)));
+
+        switch ($sSizeUnit) {
+            case 'K':
+                return $iSize * self::SIZE_KILOBYTE_IN_BYTE;
+            case 'M':
+                return $iSize * self::SIZE_MEGABYTE_IN_BYTE;
+            case 'G':
+                return $iSize * self::SIZE_GIGABYTE_IN_BYTE;
+        }
+
+        return $iSize;
+    }
+
+    public function getFormattedMaxUploadFileSize()
+    {
+        /** @var d3filesystem $oFileSystem */
+        $oFileSystem = oxNew(d3filesystem::class);
+        return $oFileSystem->formatBytes($this->getSmallestSystemUploadRestrictions());
     }
 }

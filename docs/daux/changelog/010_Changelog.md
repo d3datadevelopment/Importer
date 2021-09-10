@@ -2,6 +2,18 @@
 title: Changelog
 ---
 
+## 5.0.6.1 - (2021-09-10)
+### Added
+- Hinweis auf zu große Uploaddatei
+- Installierbar in OXID 6.3.1
+
+### Fixed
+- Import überschreibt mandantenspezifische Felder mit Standardwerten aus Hauptmandant
+- veraltete explizit dem Bildimport zugewiesene Thumb- und Icondateien werden gelöscht (wenn aktiviert)
+- veraltete Bilder aus Image Slots abweichend vom Import Slot werden gelöscht (wenn aktiviert)
+
+---
+
 ## 5.0.6.0 - (2021-07-08)
 ### Fixed
 - Fehlerhafte Verwendung beim Aufruf von oxarticles behoben
