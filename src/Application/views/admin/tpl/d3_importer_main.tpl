@@ -92,14 +92,17 @@
                         </tr>
                         <tr>
                             <td class="edittext" width="70" valign="top" nowrap>
-                                [{oxmultilang ident="D3_IMPORTER_MAIN_NEWFILE"}]
+                                [{oxmultilang ident="D3_IMPORTER_MAIN_NEWFILE" args=$oView->getFormattedMaxUploadFileSize()}]
                                 [{oxinputhelp ident="D3_IMPORTER_MAIN_ALLOWEXT_MAXFILESIZE_HELP"}]
                             </td>
                             <td class="edittext">
                                 <input type="file"
                                        size="40"
                                        maxlength="255"
-                                       name="newuploadfile" [{$readonly}]>
+                                       name="newuploadfile"
+                                       id="newuploadfile"
+                                       [{$readonly}]
+                                >
                             </td>
                         </tr>
                         <tr>
@@ -280,6 +283,26 @@
         </span>
     </form>
 [{/if}]
+
+[{capture name="javaScript"}][{strip}]
+    document.getElementById("newuploadfile").addEventListener("change", function (e) {
+        var count=1;
+        var files = e.currentTarget.files;
+
+        for (var x in files) {
+            var filesize = files[x].size;
+            let filename = files[x].name;
+            var maxfilesize = '[{$oView->getFormattedMaxUploadFileSize()}]';
+
+            if (filename !== "item" && typeof filename !== "undefined" && filesize !== "undefined" && filesize > [{$oView->getSmallestSystemUploadRestrictions()}]) {
+                alert(`[{oxmultilang ident="D3_IMPORTER_MAIN_EXCEEDS_MAXFILESIZE"}]`);
+            }
+        }
+
+    });
+[{/strip}][{/capture}]
+
+[{oxscript add=$smarty.capture.javaScript}]
 
 [{include file="bottomnaviitem.tpl"}]
 [{include file="bottomitem.tpl"}]

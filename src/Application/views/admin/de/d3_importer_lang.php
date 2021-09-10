@@ -59,13 +59,11 @@ $aLang = array(
     'D3_IMPORTER_MAIN_DESCRIPTION'                                       => 'Profilname',
     'D3_IMPORTER_MAIN_IMPORTFILE'                                        => 'Importdatei',
     'D3_IMPORTER_MAIN_NOFILE'                                            => '-- keine --',
-    'D3_IMPORTER_MAIN_NEWFILE'                                           => 'neue Datei hochladen',
-    'D3_IMPORTER_MAIN_ALLOWEXT_MAXFILESIZE_HELP'                         => 'Erlaubte Dateitypen sind "csv" oder "txt".<br>' //
-        . 'Serverlimit für Dateiupload: ' //
-        . '<span style="font-weight:bold">' //
-        . ini_get("upload_max_filesize") . ' Byte</span>',
+    'D3_IMPORTER_MAIN_NEWFILE'                                           => 'neue Datei hochladen (max. Größe: %1$s)',
+    'D3_IMPORTER_MAIN_ALLOWEXT_MAXFILESIZE_HELP'                         => 'Erlaubte Dateitypen sind "csv" oder "txt".',
+    'D3_IMPORTER_MAIN_EXCEEDS_MAXFILESIZE'                               => '"${filename}" übersteigt die maximale Dateigröße von ${maxfilesize}.',
     'D3_IMPORTER_MAIN_COLSEP'                                            => 'Datei-Spaltentrennung',
-    'D3_IMPORTER_MALL_COLUMSEPARATOR_MALL_HELP'        => 'z.B. , ; oder TAB (TAB = Tabulator)',
+    'D3_IMPORTER_MALL_COLUMSEPARATOR_MALL_HELP'                          => 'z.B. , ; oder TAB (TAB = Tabulator)',
     'D3_IMPORTER_MAIN_TEXTSEP'                                           => 'Texttrenner (optional)',
     'D3_IMPORTER_MAIN_TEXTSEPDESCRIPTION_HELP'                           => 'z.B. \' oder "',
     'D3_IMPORTER_MAIN_FIFELINFO_HEAD'                                    => 'Datei-Info',

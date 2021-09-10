@@ -59,13 +59,11 @@ $aLang = array(
     'D3_IMPORTER_MAIN_DESCRIPTION'                                       => 'Profile name',
     'D3_IMPORTER_MAIN_IMPORTFILE'                                        => 'Import file',
     'D3_IMPORTER_MAIN_NOFILE'                                            => '-- none --',
-    'D3_IMPORTER_MAIN_NEWFILE'                                           => 'Upload new file',
-    'D3_IMPORTER_MAIN_ALLOWEXT_MAXFILESIZE_HELP'                         => 'permitted filetypes "csv" or "txt"<br>' //
-        . 'Serverlimit for fileupload: ' //
-        . '<span style="font-weight:bold">' //
-        . ini_get("upload_max_filesize") . ' Byte</span>',
+    'D3_IMPORTER_MAIN_NEWFILE'                                           => 'Upload new file (max. file size: %1$s)',
+    'D3_IMPORTER_MAIN_ALLOWEXT_MAXFILESIZE_HELP'                         => 'permitted filetypes "csv" or "txt"',
+    'D3_IMPORTER_MAIN_EXCEEDS_MAXFILESIZE'                               => '"${filename}" exceeds the maximum file size of ${maxfilesize}.',
     'D3_IMPORTER_MAIN_COLSEP'                                            => 'Fields separated by:',
-    'D3_IMPORTER_MALL_COLUMSEPARATOR_MALL_HELP'        => 'e.g. ; or TAB (TAB = Tabulator)',
+    'D3_IMPORTER_MALL_COLUMSEPARATOR_MALL_HELP'                          => 'e.g. ; or TAB (TAB = Tabulator)',
     'D3_IMPORTER_MAIN_TEXTSEP'                                           => 'Fields enclosed by (optional):',
     'D3_IMPORTER_MAIN_TEXTSEPDESCRIPTION_HELP'                           => 'e.g. \' or "',
     'D3_IMPORTER_MAIN_FIFELINFO_HEAD'                                    => 'File info',
