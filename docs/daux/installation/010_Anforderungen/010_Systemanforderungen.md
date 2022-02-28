@@ -17,6 +17,7 @@ title: Systemanforderungen
         * 6.1.x
         * 6.2.x
         * 6.3.x
+        * 6.4.x
 * Themes
     * Das Modul arbeitet unabhängig von den Frontend-Themes und 
     * bringt einen eigenen Bereich im Admin unter [ (D3) Module ] / [ Importer ] mit.
