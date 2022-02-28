@@ -2,6 +2,13 @@
 title: Changelog
 ---
 
+## 5.0.6.2 - (2022-02-28)
+### Added
+- Installierbar in OXID 6.4.x
+
+### Fixed
+- Importtyp "import" legt keinen neuen Artikel an, wenn der Artikelidentifikation existiert
+
 ## 5.0.6.1 - (2021-09-10)
 ### Added
 - Hinweis auf zu große Uploaddatei
