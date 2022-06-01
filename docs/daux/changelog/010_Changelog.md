@@ -1,6 +1,12 @@
 ---
 title: Changelog
 ---
+## 5.0.6.3 - (2022-06-01)
+### Added
+- aktuelle Modul-Screenshots
+
+### Fixed
+- Staffelpreise vorher löschen bei Update
 
 ## 5.0.6.2 - (2022-02-28)
 ### Added

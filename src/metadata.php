@@ -34,7 +34,7 @@ $aModule = array(
         'en' => 'n/a',
     ),
     'thumbnail'      => 'picture.png',
-    'version'        => '5.0.6.2',
+    'version'        => '5.0.6.3',
     'author'         => 'D&sup3; Data Development, Inh. Thomas Dartsch',
     'email'          => 'support@shopmodule.com',
     'url'            => 'https://www.oxidmodule.com/',
