@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html class="no-js" lang="de">
+<head>
+    <title>Changelog -  Importer</title>
+        <meta name="description" content="">
+    <meta name="author" content="D³ Data Development">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="icon" href="../themes/d3/img/favicon.png" type="image/x-icon">
+
+    <!-- Mobile -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font -->
+    
+    <!-- CSS -->
+    <link href='../themes/d3/css/theme-blue.min.css' rel='stylesheet' type='text/css'><link href='../themes/d3/css/d3.css' rel='stylesheet' type='text/css'>
+            <!-- Tipue Search -->
+        <link href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    <!--[if lt IE 9]>
+    <script src="../themes/d3/js/html5shiv-3.7.3.min.js"></script>
+    <![endif]-->
+</head>
+<body class=" ">
+<div class="Columns content">
+    <aside class="Columns__left Collapsible">
+        <button type="button" class="Button Collapsible__trigger">
+            <span class="Collapsible__trigger__bar"></span>
+            <span class="Collapsible__trigger__bar"></span>
+            <span class="Collapsible__trigger__bar"></span>
+        </button>
+
+        <a class="Brand" href="../index.html"><i class='fab fa-d3 d3fa-color-blue'></i> Importer</a>
+
+    <div class="Search">
+        <svg class="Search__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 451 451">
+            <path d="M447.05 428l-109.6-109.6c29.4-33.8 47.2-77.9 47.2-126.1C384.65 86.2 298.35 0 192.35 0 86.25 0 .05 86.3.05 192.3s86.3 192.3 192.3 192.3c48.2 0 92.3-17.8 126.1-47.2L428.05 447c2.6 2.6 6.1 4 9.5 4s6.9-1.3 9.5-4c5.2-5.2 5.2-13.8 0-19zM26.95 192.3c0-91.2 74.2-165.3 165.3-165.3 91.2 0 165.3 74.2 165.3 165.3s-74.1 165.4-165.3 165.4c-91.1 0-165.3-74.2-165.3-165.4z"/>
+        </svg>
+        <input type="search" id="tipue_search_input" class="Search__field" placeholder="Suchen..." autocomplete="on"
+               results=25 autosave=text_search>
+    </div>
+
+        <div class="Collapsible__content">
+            <!-- Navigation -->
+            <ul class='Nav'><li class='Nav__item Nav__item--active'><a href="../changelog/Changelog.html">Changelog</a></li></ul>
+            
+
+
+            <div class="Links">
+                <hr/>
+                <a href="https://www.oxidmodule.com" target="_blank">Shop</a><br />
+                <a href="https://blog.oxidmodule.com" target="_blank">Blog</a><br />
+                <a href="https://faq.d3data.de" target="_blank">FAQ</a><br />
+                <a href="https://docs.oxidmodule.com" target="_blank">Dokumentationen</a><br />
+                <a href="https://support.oxidmodule.com" target="_blank">D³ Support Center</a><br />
+                <a href="https://www.oxidmodule.com/kontakt" target="_blank">Kontakt</a><br />
+                <a href="https://www.oxidmodule.com/impressum" target="_blank">Impressum</a><br />
+                            </div>
+
+            
+                
+                        </div>
+    </aside>
+    <div class="Columns__right Columns__right--full">
+        <div class="Columns__right__content">
+            <div class="doc_content">
+                <article class="Page">
+
+    <div class="Page__header">
+        <h1><a href="../changelog/Changelog.html">Changelog</a></h1>
+                <span class="ModifiedDate">
+                        13.06.2022        </span>
+                    </div>
+
+    <div class="s-content">
+        <h2 id="page_5-0-6-3-2022-06-01">5.0.6.3 - (2022-06-01)</h2>
+<h3 id="page_Added">Added</h3>
+<ul>
+<li>aktuelle Modul-Screenshots</li>
+</ul>
+<h3 id="page_Fixed">Fixed</h3>
+<ul>
+<li>Staffelpreise vorher löschen bei Update</li>
+</ul>
+<h2 id="page_5-0-6-2-2022-02-28">5.0.6.2 - (2022-02-28)</h2>
+<h3 id="page_Added-2">Added</h3>
+<ul>
+<li>Installierbar in OXID 6.4.x</li>
+</ul>
+<h3 id="page_Fixed-2">Fixed</h3>
+<ul>
+<li>Importtyp &quot;import&quot; legt keinen neuen Artikel an, wenn der Artikelidentifikation existiert</li>
+</ul>
+<h2 id="page_5-0-6-1-2021-09-10">5.0.6.1 - (2021-09-10)</h2>
+<h3 id="page_Added-2">Added</h3>
+<ul>
+<li>Hinweis auf zu große Uploaddatei</li>
+<li>Installierbar in OXID 6.3.1</li>
+</ul>
+<h3 id="page_Fixed-2">Fixed</h3>
+<ul>
+<li>Import überschreibt mandantenspezifische Felder mit Standardwerten aus Hauptmandant</li>
+<li>veraltete explizit dem Bildimport zugewiesene Thumb- und Icondateien werden gelöscht (wenn aktiviert)</li>
+<li>veraltete Bilder aus Image Slots abweichend vom Import Slot werden gelöscht (wenn aktiviert)</li>
+</ul>
+<hr />
+<h2 id="page_5-0-6-0-2021-07-08">5.0.6.0 - (2021-07-08)</h2>
+<h3 id="page_Fixed-2">Fixed</h3>
+<ul>
+<li>Fehlerhafte Verwendung beim Aufruf von oxarticles behoben</li>
+<li>Import der Staffelpreise nun auch mit nicht ganzzahlige Werten möglich</li>
+<li>Probleme mit der Shop-ID behoben, die neue leere Artikel erzeugt hat</li>
+</ul>
+<hr />
+<h2 id="page_5-0-5-0-2021-05-03">5.0.5.0 - (2021-05-03)</h2>
+<h3 id="page_Changed">Changed</h3>
+<ul>
+<li>Installierbar in OXID 6.2.4 und 6.3</li>
+<li>Adminmenüeintrag um Icon ergänzt</li>
+<li>fügt nur die konfigurierte Anzahl Importbilderfelder und -indizes zur Datenbank hinzu</li>
+</ul>
+<hr />
+<h2 id="page_5-0-4-2-2021-04-13">5.0.4.2 - (2021-04-13)</h2>
+<h3 id="page_Fixed-2">Fixed</h3>
+<ul>
+<li>nicht funktionierendes Preisupdate bei EE-Subshops mit vererbten Preisen korrigiert</li>
+</ul>
+<h3 id="page_Changed-2">Changed</h3>
+<ul>
+<li>Hinweis für Preisimporte mit prozentualer Veränderung ergänzt</li>
+<li>Dokumentation aktualisiert</li>
+</ul>
+<hr />
+<h2 id="page_5-0-4-1-2020-11-30">5.0.4.1 - (2020-11-30)</h2>
+<h3 id="page_Added-2">Added</h3>
+<ul>
+<li>Freigabe für OXID 6.2.3</li>
+</ul>
+<h3 id="page_Changed-2">Changed</h3>
+<ul>
+<li>Shopid für Tabelle d3importconfig auf init(11)</li>
+</ul>
+<hr />
+<h2 id="page_5-0-4-0-2020-04-20">5.0.4.0 - (2020-04-20)</h2>
+<h3 id="page_Added-2">Added</h3>
+<ul>
+<li>installierbar in OXID 6.2</li>
+</ul>
+<h3 id="page_Changed-2">Changed</h3>
+<ul>
+<li>Abhängigkeiten für Installationen ohne Metapackage von OXID Metapackage zu Shop-Core geändert</li>
+</ul>
+<hr />
+<h2 id="page_5-0-3-0-2020-02-07">5.0.3.0 - (2020-02-07)</h2>
+<h3 id="page_Added-2">Added</h3>
+<ul>
+<li>Composer installation supported</li>
+</ul>
+<h3 id="page_Changed-2">Changed</h3>
+<ul>
+<li>documentation adjusted</li>
+</ul>
+<h3 id="page_fixed">fixed</h3>
+<ul>
+<li>0000000: external picture import runs endlessly when importing 10 or more images</li>
+</ul>
+<hr />
+<h2 id="page_5-0-2-0">5.0.2.0</h2>
+<ul>
+<li>0001991: Neue Option - Bilder im Importverzeichnis löschen, verschieben</li>
+<li>0002805: neue Bildimportoption &quot;Master Bilder am Artikel erst löschen, dann importieren&quot;</li>
+<li>0002002: Alle Update Checkboxen an/abwählen</li>
+<li>0007825: Mall Tab erlaubt keine Leer Möglichkeit</li>
+<li>0000000: <span class="navi_element">fixed</span> category import add's a relationship with oxrootid if column is empty</li>
+<li>0000000: refactored \d3_importer_Application_Models_Models_Import_Article::setUpdate</li>
+<li>0000000: refactored \d3_importer_Application_Models_Models_Import_Article::setInsert</li>
+<li>0000000: added methods in class \d3_importer_Application_Models_Models_Import_Article: setArticleOxid, setRemindActiveFlag, addPriceFields</li>
+<li>0000000: refactored collector -&gt; moved methods to importService: getCsvLines, addOxidToCSVData</li>
+<li>0000000: added class \d3_importer_Application_Models_Service_Import and modified constructor of \d3_importer_Application_Models_Interface_Import + \d3_importer_Application_Models_ImportAbstract</li>
+<li>0000000: refactored import models &gt; moved method's getArticleRecords into \d3_importer_Application_Models_Collector;
+the \d3_importer_Application_Models_Collector assign's oxid's, if they are present in the database</li>
+<li>0000000: added abstract class \d3_importer_Application_Models_ImportAbstract for future refactorings in import models</li>
+<li>0000000: added interface \d3_importer_Application_Models_Interface_Import for future refactorings in import models</li>
+<li>0000000: refactored moved method \d3_importer_Application_Models_Models_Import_Accessories::getImportFields \d3_importer_Application_Controller_Import_Article::getImportFields</li>
+<li>0000000: refactored moved method \d3_importer_Application_Models_Models_Import_Article::getImportFields \d3_importer_Application_Controller_Import_Article::getImportFields</li>
+<li>0000000: refactored moved method \d3_importer_Application_Models_Models_Import_Attributes::getImportFields \d3_importer_Application_Controller_Import_Article::getImportFields</li>
+<li>0000000: refactored moved method \d3_importer_Application_Models_Models_Import_Category::getImportFields \d3_importer_Application_Controller_Import_Article::getImportFields</li>
+<li>0000000: refactored moved method \d3_importer_Application_Models_Models_Import_Crossselling::getImportFields \d3_importer_Application_Controller_Import_Article::getImportFields</li>
+<li>0000000: refactored moved method \d3_importer_Application_Models_Models_Import_Mall::getImportFields \d3_importer_Application_Controller_Import_Article::getImportFields</li>
+<li>0000000: refactored moved method \d3_importer_Application_Models_Models_Import_Manufacturer::getImportFields \d3_importer_Application_Controller_Import_Article::getImportFields</li>
+<li>0000000: refactored moved method \d3_importer_Application_Models_Models_Import_Price2Article::getImportFields \d3_importer_Application_Controller_Import_Article::getImportFields</li>
+<li>0000000: refactored moved method \d3_importer_Application_Models_Models_Import_Selectlist::getImportFields \d3_importer_Application_Controller_Import_Article::getImportFields</li>
+<li>0000000: refactored moved method \d3_importer_Application_Models_Models_Import_Vendor::getImportFields \d3_importer_Application_Controller_Import_Article::getImportFields</li>
+<li>0000000: refactored variable names in \d3_importer_Application_Controller_Import_Article::getImportFields</li>
+</ul>
+<hr />
+<h2 id="page_5-0-1-1">5.0.1.1</h2>
+<ul>
+<li>0008260: make it possible to import d3 content tabs fields</li>
+<li>0008033: longdesc couldn't imported into variants</li>
+<li>0000000: optical changes in picture import</li>
+<li>0006221: articlefields will not translated into english</li>
+</ul>
+<hr />
+<h2 id="page_5-0-1-0">5.0.1.0</h2>
+<ul>
+<li>0007694: v6 after import &quot;delete/deactivate articles&quot; doesn't work</li>
+<li>0007613: &quot;deactivate articles&quot; overwrite values in table oxarticles</li>
+<li>0007733: import scale prices absolute or percentally</li>
+<li>0007759: crossselling and accessories works partially</li>
+<li>0004280: verify EE compatibility</li>
+<li>0000000: update demo importprofile + csv data</li>
+</ul>
+<hr />
+<h2 id="page_5-0-0-1">5.0.0.1</h2>
+<h3 id="page_added">added</h3>
+<ul>
+<li>0000000: added exception empty if profile is empty</li>
+</ul>
+<h3 id="page_changed">changed</h3>
+<ul>
+<li>0000000: refactored template methods to template variables (templates d3_importer_main.tpl + erromessages.tpl)</li>
+<li>0000000: closed resource handle</li>
+<li>0000000: solved inspection code - results</li>
+<li>0000000: reset metadata module id to d3importer</li>
+<li>0000000: improve code (use getOne instead of getAll, reduced code)</li>
+<li>0000000: replaced execute to getAll while using select query in category model</li>
+<li>0000000: replaced select to delete query in deleteArticleAssign method in Selectlist model</li>
+<li>0000000: removed unused deleteArticleAssign in vendor model</li>
+<li>0000000: corrected some germans typo's</li>
+<li>0000000: added notice for category import</li>
+</ul>
+<h3 id="page_fixed-2">fixed</h3>
+<ul>
+<li>0000000: handling in d3_importer_cron.php doesn't work</li>
+<li>0000000: importer fields in frontend (admin)</li>
+<li>0000000: after import ticker</li>
+<li>0006856: pictureimport: checkboxes will not saved</li>
+</ul>
+<hr />
+<h2 id="page_5-0-0-0">5.0.0.0</h2>
+<p><strong>Minor version upgrade notice: there are some backward-incompatible changes to this release.</strong></p>
+<ul>
+<li>0005803: upgrade to oxid eShop version 6.0.0.0</li>
+<li>0000000: drop support of oxid eShop version 4.10.x / 5.3.x</li>
+</ul>
+<hr />
+<h2 id="page_4-5-0-0">4.5.0.0</h2>
+<p><strong>Minor version upgrade notice: there are some backward-incompatible changes to this release.</strong></p>
+<ul>
+<li>0000000: Modul wurde grundlegend überarbeitet</li>
+<li>0006523: Zeitstempel und weitere Informationen im Cronjob hinzugefügt</li>
+<li>0002014: nur EE: Profile in anderen Subshops ausblenden</li>
+<li>0004280: EE testen und anpassen - Zuweisung Artikel</li>
+<li>0006371: Textinfo &quot;Pflicht...Artikelnummer&quot; ist falsch</li>
+<li>0000000: Leerwert für Artikelidentifikation hinzugefügt</li>
+<li>0000000: Fehler in den &quot;ja&quot;/&quot;nein&quot; Definition behoben</li>
+<li>0000000: Button für den Bilderimport hinzugefügt</li>
+<li>0000000: Mall Tab nutzt Formularbuilder</li>
+<li>0000000: Altes Attributshandling wurde entfernt</li>
+</ul>
+<hr />
+<h2 id="page_4-4-2-0">4.4.2.0</h2>
+<ul>
+<li>0004766: Überarbeitung der automatischen Installation</li>
+<li>0004836: Tags werden beim Importvorgang gekürzt</li>
+<li>0000000: 4.8.x/5.1.x wird nicht mehr unterstützt</li>
+<li>0000000: unbenutzte Felder im Code entfernt</li>
+<li>0000000: Sprachidents für d3importpic13-20 hinzugefügt</li>
+<li>0005377: d3importerdesc editierbar machen</li>
+<li>0005378: Felder für D3 Content Tabs im Importer aufnehmen</li>
+<li>0004705: Zeilenumbrüche werden nicht erkannt v4.4.1.6</li>
+<li>0004657: oxid als &quot;Auswahl für Artikelidentifikationsfelder&quot; nicht möglich</li>
+<li>0004876: Leere Attribute werden angelegt</li>
+<li>0004870: Import von Attributen: EE - Handling</li>
+<li>0004487: nur 12 Bilder (bis oxpic12) statt 20 können beim Bilderimport verwendet werden</li>
+<li>0004771: Navigation speichert Profil ab</li>
+<li>0004506: doppelte Kategorien, Hersteller und Lieferanten bei Subsprache</li>
+</ul>
+<hr />
+<h2 id="page_4-4-1-6">4.4.1.6</h2>
+<ul>
+<li>0003728: seo URl's werden bei der Einstellung &quot;Artikel-Kat.-Zuordnungen vorher löschen&quot; nicht gelöscht</li>
+<li>0003724: oxremindactive wird nicht aktualisiert</li>
+</ul>
+<hr />
+<h2 id="page_4-4-1-5">4.4.1.5</h2>
+<ul>
+<li>0003570: Vordefinierte Werte funktionieren nicht.</li>
+<li>0003572: Fehlerhafte Zählung der aktualisierten Artikel im CronJob</li>
+<li>0003681: min. Connector - Version auf 4.3.1.2 setzen</li>
+<li>0003624: Hinweise deutlich sichtbarer, wenn eine Demolizenz benutzt wird</li>
+<li>0003643: Templates durch Blöcke erweitern</li>
+</ul>
+<hr />
+<h2 id="page_4-4-1-4">4.4.1.4</h2>
+<ul>
+<li>Aufteilung der automatischen Installation</li>
+<li>Strukturänderung: Datei für das automatische Update von models nach setup verschoben</li>
+<li>fehlende Übersetzungen nachgetragen</li>
+<li>Hilfe-Link korrigiert</li>
+<li>Korrektur der automatischen Installation, Übernahme des bereits hinterlegten Lizenzschlüssels</li>
+</ul>
+<hr />
+<h2 id="page_4-4-1-3">4.4.1.3</h2>
+<ul>
+<li>Korrektur des Imports von Tags</li>
+<li>Korrektur zu Kategoriezuweisungen welche nicht übernommen wurden</li>
+<li>Fehler im Admin behoben - die erste CSV-Spalte konnte in der Kategoriezuweisung nicht abgespeichert werden.</li>
+<li>Korrektur dass alle Bilder beim Aufruf via Cronjob abgearbeitet werden</li>
+</ul>
+<hr />
+<h2 id="page_4-4-1-2">4.4.1.2</h2>
+<ul>
+<li>Inkompatibilität mit 4.9.0 behoben</li>
+<li>Hilfetext bei Auswahllisten korrigiert</li>
+<li>Fehler bei noch nicht gespeicherten Grundeinstellungen behoben</li>
+<li>Fehler im Cronjob behoben - Update entfernt Nachkommastellen bei Preisen mit , (Hinweis: der Cronjob nutzt nun den Admin Modus)</li>
+</ul>
+<hr />
+<h2 id="page_4-4-1-1">4.4.1.1</h2>
+<ul>
+<li>d3importflag von enum zu varchar(32) umgeändert</li>
+<li>Bugfix: Attribute wurden nicht importiert</li>
+<li>Demoprofil aktualisiert</li>
+</ul>
+<hr />
+<h2 id="page_4-4-1-0">4.4.1.0</h2>
+<ul>
+<li>neue mehrsprachige Attributszuordnungen inkl. Fallback</li>
+<li>Bugfix: im Demomodus werden Profile nicht mehr gespeichert, wenn die maximale Anzahl der Profile erreicht ist</li>
+<li>Wenn das Modul inaktiv ist, werden die Formulare gesperrt</li>
+<li>technische Verbesserungen im Quellcode</li>
+</ul>
+<hr />
+<h2 id="page_4-4-0-2">4.4.0.2</h2>
+<ul>
+<li>Bugfix: Bilder mit Umlauten werden nicht importiert</li>
+<li>Bugfix: Bei einem Update werden Preise mit , abgeschnitten</li>
+<li>Neue Grundeinstellung &quot;Auswahl für Kategorieidentifikationsfelder&quot;</li>
+<li>Bugfix: Import einer Kategorie ohne Namen, sobald ein Trennzeichen an letzter Stelle steht: &quot;Kat1,Kat2,Kat3,&quot;</li>
+<li>Bugfix: Bilder mit Sonderzeichen werden nicht importiert</li>
+</ul>
+<hr />
+<h2 id="page_4-4-0-1">4.4.0.1</h2>
+<ul>
+<li>Bugfix: defekte XML Profile (Importer &lt; 4.4.0.0) werden nicht migriert</li>
+<li>Bugfix: wenn MwSt leer importiert wird, wird nun null statt 0 geschrieben</li>
+<li>Bugfix: Export von Profilen korrigiert</li>
+<li>Beispiele von Conjob Shell Dateien für Profihost.com Server erweitert</li>
+</ul>
+<hr />
+<h2 id="page_4-4-0-0">4.4.0.0</h2>
+<ul>
+<li>Neues Feature Grundeinstellungen</li>
+<li>Neuer Menüpunkt Logging</li>
+<li>Neue Einstellungen für den Bilderimport</li>
+<li>technische Verbesserung im Admin</li>
+<li>Anzahl der Bilder wird aus der Shopconfiguration ausgelesen</li>
+<li>Logging &quot;externe Bilder einlesen&quot; implementiert</li>
+<li>Große CSV-Dateien werden im Admin performanter ausgelesen</li>
+<li>Auslagerung der Hilfetexte im Admin in ? - Boxen</li>
+<li>Übernahme der Importer-Smarty-Datei in das Modulverzeichnis</li>
+<li>externe Bilder werden anhand der Profil ID eingelesen</li>
+<li>Grosschreibung der Endung von CSV- / TXT-Dateien ermöglichen</li>
+<li>Bugfix: letzte Zeile der Importdatei importieren</li>
+</ul>
+<hr />
+<h2 id="page_4-3-3-1">4.3.3.1</h2>
+<ul>
+<li>Update der precheck.php</li>
+</ul>
+<hr />
+<h2 id="page_4-3-3-0">4.3.3.0</h2>
+<ul>
+<li>Zurücksetzen der Artikelanzahl in Kategorien, Lieferanten und Hersteller</li>
+<li>Bugfix für 4.8.3</li>
+<li>Bugfix PHP 5.4-Kompatibilität hergestellt</li>
+<li>Bugfix nach Anlegen eines neuen Profils war das Profil nicht ausgewählt</li>
+<li>Bugfix Dateinamen für den Bilderimport auf 128 Zeichen (wie oxid Standard) festgelegt</li>
+<li>Testprofil und CSV Dateien wurden hinzugefügt</li>
+</ul>
+<hr />
+<h2 id="page_4-3-2-4">4.3.2.4</h2>
+<ul>
+<li>Bugfix im Bilderimport, lediglich ein Bild wurde importiert</li>
+</ul>
+<hr />
+<h2 id="page_4-3-2-3">4.3.2.3</h2>
+<ul>
+<li>Bugfix in der Demoversion beim Bearbeiten der Bilder</li>
+</ul>
+<hr />
+<h2 id="page_4-3-2-2">4.3.2.2</h2>
+<ul>
+<li>PHP 5.4-Kompatibilität hergestellt</li>
+</ul>
+<hr />
+<h2 id="page_4-3-2-1">4.3.2.1</h2>
+<ul>
+<li>Call By References entfernt (PHP 5.4-Kompatibilität)</li>
+<li>Installationsfehler korrigiert</li>
+</ul>
+<hr />
+<h2 id="page_4-3-2-0">4.3.2.0</h2>
+<ul>
+<li>Fehlermeldungen beim laden der Konfiguration werden abgefangen und unter <span class="navi_element">Importer</span>-&gt;<span class="navi_element">Einstellungen</span>-&gt;<span class="navi_element">Stamm</span> ausgegeben</li>
+<li>simple Exportfunktion für Importprofile unter <span class="navi_element">Importer</span>-&gt;<span class="navi_element">Einstellungen</span>-&gt;<span class="navi_element">Stamm</span> hinzugefügt (SQL basierend)</li>
+<li>Bugfix beim Speichern von Dateinamen mit Umlauten</li>
+<li>Bugfix Auslesen nicht zugeordneter Felder (im Tab Artikelfelder) verursachte einen Fatal Error</li>
+<li>Bugfix automatische Installation</li>
+</ul>
+<hr />
+<h2 id="page_4-3-1-2">4.3.1.2</h2>
+<ul>
+<li>Bugfix beim Einlesen der zu importierenden Bilder behoben (Admin fand nur 1 Bild)</li>
+</ul>
+<hr />
+<h2 id="page_4-3-1-1">4.3.1.1</h2>
+<ul>
+<li>Bugfix bei Import von Kategorien, welche nicht &quot;via Name&quot; importiert werden</li>
+</ul>
+<hr />
+<h2 id="page_4-3-1-0">4.3.1.0</h2>
+<ul>
+<li>automatische Installation eingefügt</li>
+<li>Aktivierung durch Seriennummern</li>
+</ul>
+<hr />
+<h2 id="page_4-3-0-0">4.3.0.0</h2>
+<ul>
+<li>komplette Überarbeitung des Moduls für die neue Shopstruktur des OXID eShop 4.7/5.0</li>
+</ul>
+<hr />
+<h2 id="page_4-2-5-1">4.2.5.1</h2>
+<ul>
+<li>Modulversionsnummer und Vorschaubild im Admin korrigiert</li>
+</ul>
+<hr />
+<h2 id="page_4-2-5">4.2.5</h2>
+<ul>
+<li>Integration der Profil-ID bei bearbeiteten Artikeln. Damit Möglichkeit den &quot;Nach Import&quot; auf die vom Profil betroffenen Artikeln zu beschränken</li>
+<li>Erweiterung des externen Bilderimports um Fehlerbehandlung und Bildtypprüfung
+<ul>
+<li>Änderung des Downloadverfahrens auf Curl für ein besseres Fehlerhandling</li>
+<li>Der externe Bilderimport geht nun nicht mehr in eine Endlosschleife wenn ungültige Urls importiert wurden</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="page_4-2-4">4.2.4</h2>
+<ul>
+<li>Nötige Änderungen für Shopversion 4.6.0 eingebaut</li>
+<li>Support für Shopversionen &lt; 4.2.0 entfernt</li>
+<li>Install-Doku überarbeitet</li>
+</ul>
+<hr />
+<h2 id="page_4-2-3">4.2.3</h2>
+<ul>
+<li>Fehler beim Zuordnen mehrerer Artikelbilder über verschiedene Bildslots zu einem Artikel behoben (Shopversion &lt; 4.5.0)</li>
+<li>kein Update der Langtexte bei älteren Shopversionen</li>
+</ul>
+<hr />
+<h2 id="page_4-2-2">4.2.2</h2>
+<ul>
+<li>Zusammenfassen bisheriger Bugfixes</li>
+<li>fehlende Bildslots in Shopversion &lt; 4.5.0</li>
+</ul>
+<hr />
+<h2 id="page_4-2-1">4.2.1</h2>
+<ul>
+<li>&quot;Nach Import&quot; konnte nicht korrekt gestartet werden</li>
+<li>Neuer Menüpunkt &quot;Einstellungen&quot; zur besseren Kontrolle der Modulversion</li>
+<li>Optimierung des Importvorgangs durch Indizierung  diverser DB-Felder</li>
+<li>Button &quot;Neues Importprofil&quot;</li>
+<li>In älteren Template-Versionen wurden veraltete Smartyvariablen korrigiert</li>
+<li>ModId angepasst</li>
+</ul>
+<hr />
+<h2 id="page_4-2-0">4.2.0</h2>
+<ul>
+<li>Einbau eines Import-cronjobs</li>
+<li>Überarbeitung diverser Moduldateien für die cronjob-Funktionalität</li>
+</ul>
+<hr />
+<h2 id="page_4-1-7">4.1.7</h2>
+<ul>
+<li>Fehler beim Bilderimport behoben. Pro Bilderimport konnte immer nur 1 Bild pro Artikel importiert werden</li>
+</ul>
+<hr />
+<h2 id="page_4-1-6">4.1.6</h2>
+<ul>
+<li>Neue Bildstruktur ab 4.5.1 wird nun unterstützt</li>
+<li>ggf. vorhandene weitere Datenbankfelder in oxartextends können nun importiert werden (longdesc2 etc.)</li>
+</ul>
+<hr />
+<h2 id="page_4-1-5">4.1.5</h2>
+<ul>
+<li>Engl. Sprachkomponenten eingefügt</li>
+<li>Bugfix mit Langtexten und Varianten behoben</li>
+</ul>
+<hr />
+<h2 id="page_4-1-4">4.1.4</h2>
+<ul>
+<li>OXID 4.5: Probleme mit Einlesen von Datenfeldern aus oxarticles und oxartextends behoben</li>
+<li>OXID 4.5: Lupenfunktion auf der Artikeldetailseite funktioniert nun wieder</li>
+</ul>
+<hr />
+<h2 id="page_4-1-3">4.1.3</h2>
+<ul>
+<li>OXID 4.5.0: nötige Templateanpassungen (Smartyvariablen) durchgeführt</li>
+<li>OXID 4.5.0: getAbsDynImageDir() wurde von OXID entfernt</li>
+<li>OXID 4.5.0: Probleme mit Bilderweiterungen &quot;_pX&quot; z.B. &quot;bild_p1.jpg&quot; auf der Detailseite. Generierte Bilder erhalten darum nun keine Extension mehr z.B. &quot;bild.jpg&quot;</li>
+<li>trim() auf Einzelwerte der Kategorienamen</li>
+<li>Problem mit Mehrsprachigkeit behoben</li>
+<li>einfaches Profiling eingebaut</li>
+</ul>
+<hr />
+<h2 id="page_4-1-2">4.1.2</h2>
+<ul>
+<li>Fehler mit den Zoombildern gefixt</li>
+<li>Einbau des externen Bilderimports (Bild liegt in einer externen Url)</li>
+</ul>
+<hr />
+<h2 id="page_4-1-1">4.1.1</h2>
+<ul>
+<li>oxTags werden nun beim Import unterstützt</li>
+<li>&quot;list&quot;-Templates nuntzen nun die globalen JS-Funktionen wie editThis etc.</li>
+<li>Problem mit fehlendenden oxartextends Einträgen behoben (Artikel-oxId wurde mit NULL aus oxartextends überschrieben)</li>
+<li>Standard-Datenfelder (oxactive etc.) werden jetzt nur noch mit Standrad-Werten befüllt, wenn die Felder nicht explizit über Importspalten belegt werden</li>
+<li>&quot;sZoomImageSize&quot; wird nun als globale Zoombildgröße genutzt (seit OXID 4.3.0)</li>
+<li>&quot;oxpicsgenerated&quot; wird nun generell auf &quot;12&quot; gesetzt (seit OXID 4.3.0)</li>
+<li>Aktualisierung der language-Datei und der Tabelle &quot;oximporterdesc&quot;</li>
+</ul>
+<hr />
+<h2 id="page_4-1">4.1</h2>
+<ul>
+<li>kompletter UTF8 Support für Importdateien und Shop</li>
+<li>optionaler Texttrenner in der CSV, so dass auch HTML-Langtexte mit Zeilenumbrüchen korrekt importiert werden</li>
+<li>Korrektur der Zeilenanzahl bei CSV-Inhalten, die über mehrere Dateizeilen gehen (z.B. HTML-Daten)</li>
+<li>Wird die Importdatei z.B. per FTP aktualisiert, so erkennt das Modul nun automatisch im Reiter &quot;Stamm&quot; die geänderten Dateiwerte</li>
+<li>Lieferanten integriert</li>
+<li>Staffelpreise integriert</li>
+<li>Auswahllisten integriert</li>
+<li>Kurzinfo nach Import</li>
+<li>Löschmöglichkeit nach dem Import</li>
+<li>Übersetzung für oxarticles-Felder in lang.php hinzugefügt</li>
+<li>copy_this ab OXID 4.1.4 (nötige Templateänderungen) hinzugefügt</li>
+<li>Importe mit mehr als einer Kategoriespalte schlugen fehl</li>
+<li>diverse kleinere Bugfixes</li>
+</ul>
+<hr />
+<h2 id="page_4-0">4.0</h2>
+<ul>
+<li>Komplette Migration des Moduls auf OXID4.</li>
+</ul>
+    </div>
+
+        <nav>
+        <ul class="Pager">
+            <li class=Pager--prev><a href="../index.html">Zurück</a></li>            <li class=Pager--next><a href="../installation/Installation.html">Weiter</a></li>        </ul>
+    </nav>
+    </article>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- JS -->
+<script src="../themes/d3/js/jquery-1.11.3.min.js"></script><script src="../themes/d3/js/highlight.pack.js"></script><script src="../themes/d3/js/daux.js"></script><script src="../themes/d3/js/fontawesome-all.js"></script>
+    <!-- Tipue Search -->
+    <script type="text/javascript" src="../tipuesearch/tipuesearch.js"></script>
+
+    <script>
+        window.onunload = function(){}; // force $(document).ready to be called on back/forward navigation in firefox
+        $(function() {
+            tipuesearch({
+                'base_url': '../'
+            });
+        });
+    </script>
+
+</body>
+</html>
