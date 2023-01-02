@@ -5,7 +5,8 @@ title: Systemanforderungen
 * PHP Version
     * 5.6.x bis 8.0.x
 * PHP Decoder
-    * installierter ionCube Loader
+    * installierter ionCube Loader (PHP bis 7.4) *oder*
+    * installierter SourceGuardian Loader (PHP ab 8.0)
 * Shopeditionen
     * OXID eShop Community Edition (CE)
     * OXID eShop Professional Edition (PE)
@@ -18,6 +19,7 @@ title: Systemanforderungen
         * 6.2.x
         * 6.3.x
         * 6.4.x
+        * 6.5.x
 * Themes
     * Das Modul arbeitet unabhängig von den Frontend-Themes und 
     * bringt einen eigenen Bereich im Admin unter [ (D3) Module ] / [ Importer ] mit.
