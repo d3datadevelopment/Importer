@@ -2,6 +2,10 @@
 title: Changelog
 ---
 
+## [5.0.6.5](https://git.d3data.de/D3Private/Importer/compare/5.0.6.4...5.0.6.5) - 2023-03-30
+### Added
+- installierbar in OXID 6.5.2 (CE 6.14)
+
 ## 5.0.6.4 - (2023-01-02)
 ### Added
 - installierbar in OXID 6.5
