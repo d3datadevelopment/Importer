@@ -2,7 +2,11 @@
 title: Changelog
 ---
 
-## [5.0.6.5](https://git.d3data.de/D3Private/Importer/compare/5.0.6.5...5.0.6.6) - 2023-05-25
+## [5.0.7.0](https://git.d3data.de/D3Private/Importer/compare/5.0.6.6...5.0.7.0) - 2023-08-23
+### Fixed
+- switch data-getter to raw-getter at Article-import
+
+## [5.0.6.6](https://git.d3data.de/D3Private/Importer/compare/5.0.6.5...5.0.6.6) - 2023-05-25
 ### Fixed
 - typo in table name
 
