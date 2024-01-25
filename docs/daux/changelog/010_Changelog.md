@@ -2,6 +2,44 @@
 title: Changelog
 ---
 
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased](https://git.d3data.de/D3Private/Importer/compare/6.0.0.0...rel_6.x)
+
+
+## [6.0.0.0](https://git.d3data.de/D3Private/Importer/compare/5.0.7.2...6.0.0.0) - 2024-01-24
+### added
+- installierbar in OXID 7.0.x
+- verfügbar in PHP 8
+### removed
+- nicht installierbar in OXID < 7.0
+- nicht verfügbar mit PHP < 8.0
+
+## [5.0.7.2](https://git.d3data.de/D3Private/Importer/compare/5.0.7.1...5.0.7.2) - 2023-10-26
+### Fixed
+- fix import attributes in different languages
+
+## [5.0.7.1](https://git.d3data.de/D3Private/Importer/compare/5.0.7.0...5.0.7.1) - 2023-10-20
+### Fixed
+- switch data-getter to FieldObject to assure Shop-Version independent accessibility at Article-import
+
+## [5.0.7.0](https://git.d3data.de/D3Private/Importer/compare/5.0.6.6...5.0.7.0) - 2023-08-23
+### Fixed
+- switch data-getter to raw-getter at Article-import
+### Added
+- multiple assignment for attributes
+
+## [5.0.6.6](https://git.d3data.de/D3Private/Importer/compare/5.0.6.5...5.0.6.6) - 2023-05-25
+### Fixed
+- typo in table name
+
+## [5.0.6.5](https://git.d3data.de/D3Private/Importer/compare/5.0.6.4...5.0.6.5) - 2023-03-30
+### Added
+- installierbar in OXID 6.5.2 (CE 6.14)
+
 ## 5.0.6.4 - (2023-01-02)
 ### Added
 - installierbar in OXID 6.5

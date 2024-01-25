@@ -22,22 +22,31 @@
   "license": [
     "proprietary"
   ],
-  "extra": {
-    "oxideshop": {
-      "source-directory": "/src",
-      "target-directory": "d3/importer"
-    }
-  },
   "require": {
-    "php": "5.6 - 7.0",
-    "ext-ionCube-Loader": "*",
-    "oxid-esales/oxideshop-ce": "6.0 - 6.13",
-    "d3/modcfg": "^5.3.0.000 || ^6.0"
+    "oxid-esales/oxideshop-ce": "7.0 - 7.0",
+    "d3/modcfg": "^7.0",
+    "oxid-esales/smarty-component": "*"
+  },
+  "require-dev": {
+    "mikey179/vfsstream": "^1.4",
+    "friendsofphp/php-cs-fixer": "~3.13.0",
+    "phpstan/phpstan": "^1.10",
+    "boxblinkracer/phpunuhi": "^1.12"
   },
   "suggest": {
     "d3/importer-demodata": "demodata files for testing purposes"
   },
-  "require-dev": {
-    "mikey179/vfsstream": "^1.4"
+  "autoload": {
+    "psr-4": {
+      "D3\\Importer\\": ""
+    }
+  },
+  "scripts": {
+    "php-cs-fixer": "vendor/bin/php-cs-fixer fix --config=vendor/d3/importer/.php-cs-fixer.php",
+
+    "phpstan": "vendor/bin/phpstan --configuration=vendor/d3/importer/phpstan.neon analyse",
+    "phpstan-report": "vendor/bin/phpstan --configuration=vendor/d3/importer/phpstan.neon analyse --error-format=json > vendor/d3/importer/sources/tests/phpstan.report.json",
+
+    "phpunuhi": "./vendor/bin/phpunuhi --configuration=vendor/d3/importer/phpunuhi.xml validate"
   }
 }
