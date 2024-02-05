@@ -27,7 +27,7 @@ class d3_importer_Setup_InstallRoutine extends d3install_updatebase
     /**
      * @var string
      */
-    public $sModVersion = '5.0.7.1';
+    public $sModVersion = '5.0.7.2';
     /**
      * @var string
      */
@@ -36,12 +36,12 @@ class d3_importer_Setup_InstallRoutine extends d3install_updatebase
      * @var string
      */
     public $sBaseConf = '--------------------------------------------------------------------------------
-l8dv2==SW5UbS82WFhmNWkwWmhmNkxtSUNid0lSRytBK1VBR2lSRXQwMkZyQURXa3R1TU9vTVUvenJ3R
-khwRmNGbm8ySGt2cWpzWjNFSTFOUW9sL1RCUHkxRlBBTzhlSFJobE91dDh5dHJtNEIySkFZdE00ZytvR
-TVsYmkxK1c3U1dpOWV6ZTVPcVNwTmc4QVdWbnhka3RHa3JiYktWVHNrbHlyRVFFRkhuV0JTLzhYQ1phT
-itKb0dIU2tWTDExTCs4aXpaeUUrZ01ZUjdKVHZ1U0FrS254dm1PeGtNYjU5aDdScW5mK3o0MEN6R3JwY
-zlqZERVMkVRWmdsVU5RbnQ1bVUyeUp0d3NVZGQvZ2pvRnMvRUJMMlN1N0lRR3Z0c1JxT2VVWDhFVVFQW
-HpFVXZJMVBZTjNXS0VLVDBPVjI3THZTZ0JxOVFBWW5HZG4yUmJZb2JGcC9XeXl3PT0=
+suuv2==YWdPU3lTS3hsMnllazlxSGZ1a0kxVjdOTTd2c1hGN3pUWjJvNUVzOWFTK3pyMC9aQ1VhNlIxQ
+1FpeUtQb0h0NFBKUzJ4WXFXY3g5VHZEVHFUN2dxOCtXQVlPNlJQMVBsUkptUFJJVnNlUkRFdjM1cW41Q
+lRVU2JUcmJLc0dYUTBYUlJXVUVrMG5ISUs3TGxDVjJiODZXS3hMcVBReVpkUHJiTURFdEZWSHJ4UC93b
+TJtNGF4NUNKNkNHVDdDanN0QVdXWm4yR21WdXdMbENNcW9lV2wzdmRzdWJGZjBNN0t5VE1kbHd6YVhFM
+DhNbEY0akdOU0luNzlJU2NQWWtDMVBDTE5lMG0yaGpvcVMrT0x2Uys5SU9sRHNBMXBUbzJSMU9udXRVV
+FcrQm5QSTBKRHpDV3luM2dxeVhUdE9yOGRpTm03elpaS3Q3eG5hb1NzYXdNSHhRPT0=
 --------------------------------------------------------------------------------';
     /**
      * @var string

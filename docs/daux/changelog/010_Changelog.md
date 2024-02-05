@@ -2,6 +2,14 @@
 title: Changelog
 ---
 
+## [5.0.7.2](https://git.d3data.de/D3Private/Importer/compare/5.0.7.1...5.0.7.2) - 2023-10-26
+### Fixed
+- fix import attributes in different languages
+
+## [5.0.7.1](https://git.d3data.de/D3Private/Importer/compare/5.0.7.0...5.0.7.1) - 2023-10-20
+### Fixed
+- switch data-getter to FieldObject to assure Shop-Version independent accessibility at Article-import
+
 ## [5.0.7.0](https://git.d3data.de/D3Private/Importer/compare/5.0.6.6...5.0.7.0) - 2023-08-23
 ### Fixed
 - switch data-getter to raw-getter at Article-import
