@@ -7,10 +7,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://git.d3data.de/D3Private/Importer/compare/6.0.0.0...rel_6.x)
+## [Unreleased](https://git.d3data.de/D3Private/Importer/compare/6.0.0.1...rel_6.x)
 
+## [6.0.0.1](https://git.d3data.de/D3Private/Importer/compare/6.0.0.0...6.0.0.1) - 2024-02-20
+### fixed
+- fehlende Setupaufgaben zum Anlegen von Bildtabellen wiederhergestellt
 
 ## [6.0.0.0](https://git.d3data.de/D3Private/Importer/compare/5.0.7.2...6.0.0.0) - 2024-01-24
+
+**Major version upgrade notice: there are some backward-incompatible changes to this release.**
+
 ### added
 - installierbar in OXID 7.0.x
 - verfügbar in PHP 8
