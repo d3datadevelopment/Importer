@@ -1,0 +1,130 @@
+{% include "headitem.html.twig" with {title: "GENERAL_ADMIN_TITLE"|translate, box: "list"} %}
+{% set where = oView.getListFilter() %}
+
+{% if readonly %}
+    {% set readonly = "readonly disabled" %}
+{% else %}
+    {% set readonly = "" %}
+{% endif %}
+
+<script type="text/javascript">
+    <!--
+    window.onload = function () {
+        top.reloadEditFrame();
+        {% if updatelist == 1 %}
+        top.oxid.admin.updateList('{{  oxid  }}');
+        {% endif %}
+    };
+    //-->
+</script>
+
+<div id="liste">
+
+    <form name="search" id="search" action="{{ oViewConf.getSelfLink()|raw }}" method="post">
+        {% include "_formparams.html.twig" with {cl: oViewConf.getActiveClassName(), lstrt: lstrt, actedit: actedit, oxid: oxid, fnc: "", language: actlang, editlanguage: actlang} %}
+        <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <colgroup>
+                <col width="89%">
+                <col width="2%">
+            </colgroup>
+            {% block d3_d3importer_views_admin_tpl_d3_picture_list_header %}
+                <tr class="listitem">
+                    <td valign="top" class="listfilter first" height="20" colspan="2">
+                        <div class="r1">
+                            <div class="b1">
+                                <div class="find">
+                                    <select name="changelang"
+                                            onChange="top.oxid.admin.changeLanguage();">
+                                        {% for lang in languages %}
+                                            <option value="{{ lang.id }}"
+                                                    {% if lang.selected %}SELECTED{% endif %}>{{ lang.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                    <input class="listedit"
+                                           type="submit"
+                                           name="submitit"
+                                           value="{{ translate({ ident: "GENERAL_SEARCH" }) }}">
+                                </div>
+
+                                <input class="listedit"
+                                       type="text"
+                                       size="60"
+                                       maxlength="128"
+                                       name="where[d3importconfig][oxtitle]"
+                                       value="{{ where.d3importconfig.oxtitle }}">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="listheader first"
+                        height="15"
+                        colspan="2">
+                        &nbsp;<a href="Javascript:document.search.sort.value='oxtitle';document.search.submit();"
+                                 class="listheader">{{ translate({ ident: "GENERAL_DESCRIPTION" }) }}</a>
+                    </td>
+                </tr>
+            {% endblock %}
+
+            {% block d3_d3importer_views_admin_tpl_d3_picture_list_items %}
+                {% set blWhite = "" %}
+                {% set _cnt = 0 %}
+                {% for listitem in mylist %}
+                    {% set _cnt = _cnt+1 %}
+                    <tr id="row.{{ _cnt }}">
+
+                        {% if listitem.blacklist == 1 %}
+                            {% set listclass = "listitem3" %}
+                        {% else %}
+                            {% set listclass = "listitem"|cat(blWhite) %}
+                        {% endif %}
+                        {% if listitem.getId() == oxid %}
+                            {% set listclass = "listitem4" %}
+                        {% endif %}
+                        <td valign="top" class="{{ listclass }}" height="15">
+                            <div class="listitemfloating">&nbsp;<a
+                                        href="Javascript:top.oxid.admin.editThis('{{ listitem.d3importconfig__oxid.value }}');"
+                                        class="{{ listclass }}">{{ listitem.d3importconfig__oxtitle.value }}</a>
+                            </div>
+                        </td>
+                        <td class="{{ listclass }}">
+                            {% if not listitem.isinternal %}
+                                {% if readonly == "" %}
+                                    <a href="Javascript:top.oxid.admin.deleteThis('{{ listitem.d3importconfig__oxid.value }}');"
+                                       class="delete"
+                                       id="del.{{ _cnt }}"
+                                       title="" {% include "help.html.twig" with {helpid: "item_delete"} %}></a>
+                                {% endif %}
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% if blWhite == "2" %}
+                        {% set blWhite = "" %}
+                    {% else %}
+                        {% set blWhite = "2" %}
+                    {% endif %}
+                {% endfor %}
+            {% endblock %}
+            {% include "pagenavisnippet.html.twig" with {colspan: "2"} %}
+        </table>
+    </form>
+</div>
+
+{% include "pagetabsnippet.html.twig" %}
+
+{% set emptyCapture %}
+    <script type="text/javascript">
+        {% set d3JavaScript %}
+        if (parent.parent) {
+            parent.parent.sShopTitle = "{{ actshopobj.oxshops__oxname.value }}";
+            parent.parent.sMenuItem = "{{ translate({ ident: "D3_IMPORTER_MENUITEM" }) }}";
+            parent.parent.sMenuSubItem = "{{ translate({ ident: "D3_PICTURE_LIST_MENUSUBITEM" }) }}";
+            parent.parent.sWorkArea = "{{ _act }}";
+            parent.parent.setTitle();
+        }
+        {% endset %}
+    </script>
+{% endset %}
+
+{{ script({ add: d3JavaScript.__toString(), dynamic: __oxid_include_dynamic }) }}
+{% include "bottomitem.html.twig" %}

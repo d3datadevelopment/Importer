@@ -1,0 +1,36 @@
+{% if oxid != " - 1" and not isfailupload and dirinfo %}
+    <div class="container text-left">
+        <div class="row border border-bottom-0 p-2">
+            <legend class="lead">
+                {{ translate({ ident: "D3_PICTURE_IMPORT_INFO_1" }) }}
+            </legend>
+            <div class="col-md-8">
+                <div class="row p-2">
+                    <div class="col-md-4">{{ translate({ ident: "D3_PICTURE_IMPORT_INFO_2" }) }}</div>
+                    <div class="col-md-4">{{ dirinfo.sumfiles }}</div>
+                </div>
+                <div class="row p-2">
+                    <div class="col-md-4">{{ translate({ ident: "D3_PICTURE_IMPORT_INFO_3" }) }}</div>
+                    <div class="col-md-4">{{ dirinfo.finishedfiles }}</div>
+                </div>
+                <div class="row p-2">
+                    <div class="col-md-4">{{ translate({ ident: "D3_PICTURE_IMPORT_INFO_4" }) }}</div>
+                    <div class="col-md-4">{{ dirinfo.importedfiles }}</div>
+                </div>
+            </div>
+        </div>
+        <div class="row border border-top-0 p-2">
+            <div class="col">
+                {% if not dirinfo.sumfiles %}
+                    {{ translate({ ident: "D3_PICTURE_IMPORT_NOTICE_1" }) }}
+                {% elseif dirinfo.sumfiles and dirinfo.sumfiles == dirinfo.finishedfiles %}
+                    {{ translate({ ident: "D3_PICTURE_IMPORT_NOTICE_2" }) }}
+                {% elseif dirinfo.finishedfiles %}
+                    {{ translate({ ident: "D3_PICTURE_IMPORT_NOTICE_3" }) }}
+                {% elseif dirinfo.sumfiles %}
+                    {{ translate({ ident: "D3_PICTURE_IMPORT_NOTICE_4" }) }}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endif %}

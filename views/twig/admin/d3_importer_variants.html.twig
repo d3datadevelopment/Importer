@@ -1,0 +1,144 @@
+{% include "headitem.html.twig" with {title: "GENERAL_ADMIN_TITLE"|translate, box: "box"} %}
+{{ style({ include: oViewConf.getModuleUrl('d3modcfg_lib', 'out/admin/src/d3_mod_cfg.min.css') }) }}
+{{ style() }}
+{% include "@d3importer/admin/errormessages.html.twig" %}
+
+{% if readonly %}
+    {% set readonly = "readonly disabled" %}
+{% else %}
+    {% set readonly = "" %}
+{% endif %}
+<style type="text/css">
+    <!--
+    select {
+        max-width : 375px;
+    }
+    -->
+</style>
+<script type="text/javascript">
+    <!--
+    {% if updatelist == 1 %}
+    UpdateList('{{ oxid }}');
+    {% endif %}
+    function UpdateList(sID) {
+        var oSearch = parent.list.document.getElementById("search");
+        oSearch.oxid.value = sID;
+        oSearch.submit();
+    }
+    function ChangeLine(iLine) {
+        var oFormEdit = document.getElementById("myedit");
+        oFormEdit.line.value = iLine;
+        oFormEdit.fnc.value = '';
+        oFormEdit.submit();
+    }
+    //-->
+</script>
+
+<form name="transfer" id="transfer" action="{{ oViewConf.getSelfLink()|raw }}" method="post">
+    {{ oViewConf.getHiddenSid()|raw }}
+    <input type="hidden" name="oxid" value="{{ oxid }}">
+    <input type="hidden" name="cl" value="{{ oViewConf.getActiveClassName() }}">
+    <input type="hidden" name="editlanguage" value="{{ editlanguage }}">
+</form>
+<form name="myedit" id="myedit" enctype="multipart/form-data" action="{{ oViewConf.getSelfLink()|raw }}" method="post">
+    <div>
+        {{ oViewConf.getHiddenSid()|raw }}
+        <input type="hidden" name="cl" value="{{ oViewConf.getActiveClassName() }}">
+        <input type="hidden" name="fnc" value="">
+        <input type="hidden" name="oxid" value="{{ oxid }}">
+        <input type="hidden" name="line" value="{{ actcsvline }}">
+    </div>
+    <table border="0" width="98%" style="border-collapse: collapse">
+        <colgroup>
+            <col width="25%">
+            <col width="75%">
+        </colgroup>
+        {% include "@d3importer/admin/d3_importer_inc_nav.html.twig" with {colspan: "2"} %}
+        {% if maxcsvline %}
+            {% block d3_d3importer_views_admin_tpl_d3_importer_variants_head %}
+                <tr style="background-color: #f9f9f9;">
+                    <td class="edittext" style="padding:5px;">
+                        {{ translate({ ident: "D3_IMPORTER_VARIANTS_IMPORTTYPE" }) }}
+                        {% include "inputhelp.html.twig" with {'sHelpId': help_id("D3_IMPORTER_VARIANTS_IMPORTTYPEINFO"), 'sHelpText': help_text("D3_IMPORTER_VARIANTS_IMPORTTYPEINFO")} %}
+                    </td>
+                    <td class="edittext" style="padding:5px;">
+                        <select name="xmlval[IMPORTTYPE]" {{ readonly }}>
+                            <option value="import"
+                                    {% if aProfile.IMPORTTYPE == "import" %}SELECTED{% endif %}>{{ translate({ ident: "D3_IMPORTER_VARIANTS_IMPORTTYPE1" }) }}</option>
+                            <option value="clearbefore"
+                                    {% if aProfile.IMPORTTYPE == "clearbefore" %}SELECTED{% endif %}>{{ translate({ ident: "D3_IMPORTER_VARIANTS_IMPORTTYPE2" }) }}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr style="background-color: #eee;">
+                    <td class="edittext" style="padding:5px;">
+                        {{ translate({ ident: "D3_IMPORTER_VARIANTS_IMPORTCOLUM" }) }}
+                        {% include "inputhelp.html.twig" with {'sHelpId': help_id("D3_IMPORTER_VARIANTS_IMPORTCOLUMINFO"), 'sHelpText': help_text("D3_IMPORTER_VARIANTS_IMPORTCOLUMINFO")} %}
+                    </td>
+                    <td class="edittext" style="padding:5px;">
+                        <select name="xmlval[IMPORTCOLUM]" {{ readonly }}>
+                            <option value="">{{ translate({ ident: "D3_IMPORTER_VARIANTS_NOASSIGN" }) }}</option>
+                            {% for key, name in aCSVLines %}
+                                <option value="{{ key }}"
+                                        {% if aProfile.IMPORTCOLUM == key and aProfile.IMPORTCOLUM != "" %}selected{% endif %}>{{ name|striptags|truncate(70, "&nbsp;...", false) }}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                </tr>
+            {% endblock %}
+            <tr>
+                <td class="edittext" colspan="2" style="height:1px; border: 1px #7A7A7A solid; border-bottom: 0"></td>
+            </tr>
+            {% block d3_d3importer_views_admin_tpl_d3_importer_variants_items %}
+                {% for oField in aFieldList %}
+                    {% set sColor = '#f9f9f9' %}
+                    {% if loop.index % 2 == 0 %}
+                        {% set sColor = '#eee' %}
+                    {% endif %}
+                    <tr style="background-color: {{ sColor }};">
+                        <td class="edittext" style="padding:5px; border-left:1px #7A7A7A solid;">
+                            {{ oField.fldshowname }}
+                        </td>
+                        <td class="edittext" style="padding:5px; border-right:1px #7A7A7A solid;">
+                            <select name="xmlval[FIELD][{{ oField.fldname }}]" {{ readonly }}>
+                                <option value="">{{ translate({ ident: "D3_IMPORTER_VARIANTS_NOASSIGN" }) }}</option>
+                                {% for key, name in aCSVLines %}
+                                    {% set select = false %}
+                                    {% set selectfield = sFieldvalue %}
+                                    {% for sFieldname, sFieldvalue in aProfile.FIELD %}
+                                        {% if sFieldname == oField.fldname %}
+                                            {% set selectfield = sFieldvalue %}
+                                        {% endif %}
+                                    {% endfor %}
+                                    <option value="{{ key }}"
+                                        {% if selectfield == key and selectfield != "" %}selected{% endif %}
+                                    >
+                                        {{ name|striptags|truncate(70, "&nbsp;...", false) }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </td>
+                    </tr>
+                {% endfor %}
+            {% endblock %}
+            <tr>
+                <td class="edittext" colspan="2" style="height:1px; border: 1px #7A7A7A solid; border-top: 0"></td>
+            </tr>
+            <tr>
+                <td class="edittext" colspan="2">
+                    <br>
+                    <span class="d3modcfg_btn fixed icon status_ok">
+                        <input type="submit" class="edittext" name="saveImportProfile"
+                               value="{{ translate({ ident: "GENERAL_SAVE" }) }}"
+                               onClick="document.myedit.fnc.value='saveImportProfile'" {{ readonly }}>
+                        <span></span>
+                    </span>
+                    <br>
+                </td>
+            </tr>
+        {% endif %}
+    </table>
+</form>
+
+{% include "bottomnaviitem.html.twig" %}
+{% include "bottomitem.html.twig" %}

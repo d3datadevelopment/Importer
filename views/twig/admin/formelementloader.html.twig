@@ -1,0 +1,37 @@
+<table>
+    <tr>
+        <td>
+            {% block d3_d3importer_views_admin_tpl_formelementloader %}
+                {% for sMultilangLegend, aGroup in aElements %}
+                    <fieldset style="margin-bottom: 10px;">
+                        <legend style="font-weight: bold;">{{ translate({ ident: sMultilangLegend }) }}</legend>
+                        <table cellspacing="0">
+                            {% for sMultilangLegend, oElement in aGroup %}
+                                {% set sColor = '#f9f9f9' %}
+                                {% if loop.index % 2 == 0 %}
+                                    {% set sColor = '#eee' %}
+                                {% endif %}
+                                <tr style="background-color: {{ sColor }};">
+                                    {% include "@d3importer/admin/forms/"|cat(oElement.type)|cat(".html.twig") with {oElement: oElement} %}
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </fieldset>
+                {% endfor %}
+            {% endblock %}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <br/>
+            <span class="d3modcfg_btn fixed icon status_ok">
+                <input type="submit" class="edittext" name="saveImportProfile"
+                       value="{{ translate({ ident: "GENERAL_SAVE" }) }}"
+                       onClick="document.myedit.fnc.value='saveImportProfile'" {{ readonly }}>
+                <span></span>
+            </span>
+            <br/>
+            <br/>
+        </td>
+    </tr>
+</table>

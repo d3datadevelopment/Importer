@@ -1,0 +1,16 @@
+{% block d3_d3importer_views_admin_tpl_forms_bool %}
+    <td class="edittext">
+        <input type="hidden" name="{{ oElement.getFormName() }}" value="0" {{ readonly }}>
+        <label for="{{ oElement.id }}">
+            {{ translate({ ident: oElement.translationIdent }) }}
+        </label>
+        {% include "inputhelp.html.twig" with {'sHelpId': help_id(oElement.translationHelpIdent), 'sHelpText': help_text(oElement.translationHelpIdent)} %}
+    </td>
+    <td class="edittext">
+        <input id="{{ oElement.id }}"
+               type="checkbox"
+               name="{{ oElement.getFormName() }}"
+               value="1"{% if oElement.value %} checked{% endif %}
+                {{ readonly }}>
+    </td>
+{% endblock %}

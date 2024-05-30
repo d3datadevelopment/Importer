@@ -1,0 +1,15 @@
+{% extends "bottomnaviitem.html.twig" %}
+
+{% block admin_bottomnavicustom %}
+    {% if bottom_buttons.d3importer_new  %}
+        <li>
+            <a {% if not firstitem %}class="firstitem"{% set firstitem = "1" %}{% endif %} id="btn.new" href="#"
+               onClick="top.oxid.admin.editThis( -1 );return false"
+               target="edit">
+                {{ translate({ ident: "D3_TOOLTIPS_NEWIMPORTPROFIL" }) }}
+            </a> |
+        </li>
+    {% endif %}
+
+    {{ parent() }}
+{% endblock %}

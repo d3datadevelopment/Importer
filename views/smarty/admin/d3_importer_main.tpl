@@ -111,7 +111,7 @@
                                 [{oxinputhelp ident="D3_IMPORTER_MAIN_COLSEPDESCRIPTION_HELP"}]
                             </td>
                             <td class="edittext">
-                                <input type="text" size="3" maxlength="10"
+                                <input type="text" size="3" maxlength="1"
                                        name="xmlval[FILESEPARATOR]"
                                        value="[{$aProfile.FILESEPARATOR}]" [{$readonly}]>
                             </td>
@@ -122,7 +122,7 @@
                                 [{oxinputhelp ident="D3_IMPORTER_MAIN_TEXTSEPDESCRIPTION_HELP"}]
                             </td>
                             <td class="edittext">
-                                <input type="text" size="3" maxlength="10"
+                                <input type="text" size="3" maxlength="1"
                                        name="xmlval[TEXTSEPARATOR]"
                                        value=[{if $aProfile.TEXTSEPARATOR == '"'}]'[{$aProfile.TEXTSEPARATOR}]'[{else}]
                                 "[{$aProfile.TEXTSEPARATOR}]"[{/if}] [{$readonly}]>

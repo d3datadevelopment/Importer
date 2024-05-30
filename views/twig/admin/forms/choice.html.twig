@@ -1,0 +1,19 @@
+{% block d3_d3importer_views_admin_tpl_forms_choice %}
+    <td class="edittext">
+        <label for="{{ oElement.id }}">
+            {{ translate({ ident: oElement.translationIdent }) }}
+        </label>
+        {% include "inputhelp.html.twig" with {'sHelpId': help_id(oElement.translationHelpIdent), 'sHelpText': help_text(oElement.translationHelpIdent)} %}
+    </td>
+    <td class="edittext">
+        <select name="{{ oElement.getFormName() }}" id="{{ oElement.id }}" {{ readonly }}>
+            {% for choiceIdent, sChoice in oElement.choices %}
+                <option value="{{ choiceIdent }}" {% if oElement.value == choiceIdent %}selected{% endif %}>
+                    {% set ident = oElement.translationIdent|cat("_")|cat(sChoice)|upper %}
+                    {{ translate({ noerror: true, alternative: ident, ident: ident }) }} -
+                    ({{ sChoice|default("empty")|striptags|truncate(70, "&nbsp;...", false) }})
+                </option>
+            {% endfor %}
+        </select>
+    </td>
+{% endblock %}

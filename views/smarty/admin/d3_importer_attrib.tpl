@@ -72,7 +72,7 @@
                 </tr>
             [{/block}]
             [{assign var="count" value=1}]
-            [{if is_string($aProfile.IMPORTCOLUM)}]
+            [{if $attributeOldValues}]
                 [{block name="d3_d3importer_views_admin_tpl_d3_importer_attrib_oldvalues"}]
                     <tr>
                         <td class="extension_warning" style="padding:5px;" colspan="2">

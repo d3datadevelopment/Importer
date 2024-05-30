@@ -1,0 +1,423 @@
+{% include "headitem.html.twig" with {title: "GENERAL_ADMIN_TITLE"|translate, box: "box"} %}
+{{ script({ include: "js/libs/jquery.min.js", dynamic: __oxid_include_dynamic }) }}
+
+{% if readonly %}
+    {% set readonly = "readonly disabled" %}
+{% else %}
+    {% set readonly = "" %}
+{% endif %}
+{{ style({ include: oViewConf.getModuleUrl('d3modcfg_lib', 'out/admin/src/d3_mod_cfg.min.css') }) }}
+{{ style() }}
+
+<style type="text/css">
+    #pathToMove {
+        width: 99%;
+    }
+</style>
+{% include "@d3importer/admin/errormessages.html.twig" %}
+
+{% set doNotShow %}
+<script type="text/javascript">
+    {% set javaScript %}
+    {% if updatelist == 1 %}
+        UpdateList('{{ oxid }}');
+    {% endif %}
+    function UpdateList(sID) {
+        var oSearch = parent.list.document.getElementById("search");
+        oSearch.oxid.value = sID;
+        oSearch.submit();
+    }
+    var jQueryNoConflict= $.noConflict();
+    jQueryNoConflict('#picturesActionAfterImport').live('change', function(e) {
+        var pathToMove = jQueryNoConflict('#pathToMove');
+        pathToMove.attr('disabled', 'disabled');
+        if(e.target.options[e.target.selectedIndex].value === 'move') {
+            pathToMove.removeAttr('disabled');
+        }
+    });
+
+    function startUp() {
+        var pathToMove = jQueryNoConflict('#pathToMove');
+        pathToMove.attr('disabled',
+            'disabled');
+        jQueryNoConflict('#picturesActionAfterImport option:selected').each(function () {
+            if (jQueryNoConflict(this).val() === 'move') {
+                pathToMove.removeAttr('disabled');
+            }
+        });
+    }
+    startUp();
+    {% endset %}
+</script>
+{% endset %}
+
+{{ script({ add: javaScript.__toString(), dynamic: __oxid_include_dynamic }) }}
+
+<form name="transfer" id="transfer" action="{{ oViewConf.getSelfLink()|raw }}" method="post">
+    {{ oViewConf.getHiddenSid()|raw }}
+    <input type="hidden" name="oxid" value="{{ oxid }}">
+    <input type="hidden" name="cl" value="{{ oViewConf.getActiveClassName() }}">
+    <input type="hidden" name="editlanguage" value="{{ editlanguage }}">
+</form>
+
+{% set iError = oView.getConfigFailure() %}
+{% if iError %}
+    {% block d3_d3importer_views_admin_tpl_d3_picture_main_failure %}
+        <tr>
+            <td valign="top" colspan="2">
+                <div class="errorbox">{{ translate({ ident: "D3_PICTURE_FAILCONFIG_"|cat(iError) }) }}</div>
+            </td>
+        </tr>
+    {% endblock %}
+{% else %}
+    <form name="myedit" id="myedit" enctype="multipart/form-data" action="{{ oViewConf.getSelfLink()|raw }}" method="post">
+        <div>
+            {{ oViewConf.getHiddenSid()|raw }}
+            <input type="hidden" name="cl" value="{{ oViewConf.getActiveClassName() }}">
+            <input type="hidden" name="fnc" value="">
+            <input type="hidden" name="oxid" value="{{ oxid }}">
+            <input type="hidden" name="editval[d3importconfig__oxid]" value="{{ oxid }}">
+        </div>
+        <table cellspacing="0" cellpadding="0" border="0" width="98%">
+            {% if isfailupload %}
+                <tr>
+                    <td valign="top" colspan="2">
+                        <div class="errorbox">{{ translate({ ident: "D3_IMPORTER_FAILUPLOAD_"|cat(isfailupload) }) }}</div>
+                    </td>
+                </tr>
+            {% endif %}
+
+            {% if oxid == -1 %}
+                <tr>
+                    <td>
+                        <div class="messagebox">
+                            {{ translate({ ident: "D3_PICTURE_IMPORT_LOAD_PROFILE" }) }}
+                        </div>
+                    </td>
+                </tr>
+            {% else %}
+                {% block d3_d3importer_views_admin_tpl_d3_picture_main_items %}
+                    {% for key, aActualField in aProfile.aXMLPictureParams %}
+                        {% if aActualField is iterable %}
+                            <tr>
+                                <td style="border: 1px #7A7A7A solid; padding:10px; border-right: 0;">
+                                    {{ translate({ ident: "D3_PICTURE_IMPORTFIELD" }) }}
+                                </td>
+                                <td
+                                        style="border: 1px #7A7A7A solid; padding:10px; border-right: 0; border-left: 0;">
+                                    <select name="xmlpictureval[{{ key }}][IMPORTFIELD]" {{ readonly }}>
+                                        <option value="">{{ translate({ ident: "D3_PICTURE_NOASSIGN" }) }}</option>
+                                        {% for realname, showname in importfieldlist %}
+                                            <option value="{{ realname }}"
+                                                    {% if aActualField.IMPORTFIELD == realname %}SELECTED{% endif %}>{{ showname }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </td>
+                                <td style="border: 1px #7A7A7A solid; padding:10px; border-right: 0; border-left: 0;">
+                                    <h1>=&gt;</h1>
+                                </td>
+                                <td style="border: 1px #7A7A7A solid; padding:10px; border-left: 0;">
+                                    <table cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td class="edittext">
+                                                <label>
+                                                    <input type="checkbox"
+                                                        name="xmlpictureval[{{ key }}][IMAGEFIELDS][oxthumb]"
+                                                        value="1"
+                                                        {{ readonly }}
+                                                        {% if aActualField.IMAGEFIELDS.oxthumb %}checked{% endif %}
+                                                    >
+                                                    {{ imagefieldlist.oxthumb.fldshowname }}
+                                                </label>
+                                                <label>
+                                                    <input type="checkbox"
+                                                        name="xmlpictureval[{{ key }}][IMAGEFIELDS][oxicon]"
+                                                        {{ readonly }}
+                                                        value="1"
+                                                        {% if aActualField.IMAGEFIELDS.oxicon %}checked{% endif %}
+                                                    >
+                                                    {{ imagefieldlist.oxicon.fldshowname }}
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        {% if imagefieldlist.oxzoom1 %}
+                                            <tr>
+                                                <td class="edittext">
+                                                    {% for picRow in 1..iPicCount+1 %}
+                                                        {% set iIndex = loop.index %}
+                                                        {% set sFieldName = "oxzoom"|cat(iIndex) %}
+                                                        <label>
+                                                            <input type="checkbox"
+                                                                name="xmlpictureval[{{ key }}][IMAGEFIELDS][{{ sFieldName }}]"
+                                                                {{ readonly }}
+                                                                value="1"
+                                                                {% if aActualField.IMAGEFIELDS[sFieldName] %}checked{% endif %}
+                                                            >
+                                                            {{ translate({ ident: "D3_PICTURE_IMPORTFIELD_OXZOOM" }) }} {{ iIndex }}
+                                                        </label>
+                                                        {% if iIndex % 6 == 0 %}<br>{% endif %}
+                                                    {% endfor %}
+                                                </td>
+                                            </tr>
+                                        {% endif %}
+                                        <tr>
+                                            <td class="edittext">
+                                                {% for picRow in 1..iPicCount+1 %}
+                                                    {% set iIndex = loop.index %}
+                                                    {% set sFieldName = "oxpic"|cat(iIndex) %}
+                                                    <label>
+                                                        <input type="checkbox"
+                                                            name="xmlpictureval[{{ key }}][IMAGEFIELDS][{{ sFieldName }}]"
+                                                            {{ readonly }}
+                                                            value="1"
+                                                            {% if aActualField.IMAGEFIELDS[sFieldName] %}checked{% endif %}
+                                                        >
+                                                        {{ translate({ ident: "D3_PICTURE_IMPORTFIELD_OXPIC" }) }} {{ iIndex }}
+                                                    </label>
+                                                    {% if iIndex % 6 == 0 %}<br>{% endif %}
+                                                {% endfor %}
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="4">&nbsp;</td>
+                            </tr>
+                            {% set sNextKey = key+1 %}
+                        {% endif %}
+                    {% endfor %}
+                    <tr>
+                        <td style="border: 1px #7A7A7A solid; padding:10px; border-right: 0;">
+                            {{ translate({ ident: "D3_PICTURE_IMPORTFIELD" }) }}
+                        </td>
+                        <td style="border: 1px #7A7A7A solid; padding:10px; border-right: 0; border-left: 0;">
+                            <select name="xmlpictureval[{{ sNextKey }}][IMPORTFIELD]" {{ readonly }}>
+                                <option value="">{{ translate({ ident: "D3_PICTURE_NOASSIGN" }) }}</option>
+                                {% for realname, showname in importfieldlist %}
+                                    <option value="{{ realname }}">{{ showname }}</option>
+                                {% endfor %}
+                            </select>
+                        </td>
+                        <td style="border: 1px #7A7A7A solid; padding:10px; border-right: 0; border-left: 0;">
+                            <h1>=&gt;</h1>
+                        </td>
+                        <td style="border: 1px #7A7A7A solid; padding:10px; border-left: 0;">
+                            <table cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td class="edittext">
+                                        <label>
+                                            <input type="checkbox"
+                                                    {{ readonly }}
+                                                   name="xmlpictureval[{{ sNextKey }}][IMAGEFIELDS][oxthumb]"
+                                                   value="1">
+                                            {{ imagefieldlist.oxthumb.fldshowname }}
+                                        </label>
+                                        <label>
+                                            <input type="checkbox"
+                                                    {{ readonly }}
+                                                   name="xmlpictureval[{{ sNextKey }}][IMAGEFIELDS][oxicon]"
+                                                   value="1">
+                                            {{ imagefieldlist.oxicon.fldshowname }}
+                                        </label>
+                                    </td>
+                                </tr>
+                                {% if imagefieldlist.oxzoom1 %}
+                                    <tr>
+                                        <td class="edittext">
+                                            {% for picRow in 1..iPicCount+1 %}
+                                                {% set iIndex = loop.index %}
+                                                {% set sFieldName = "oxzoom"|cat(iIndex) %}
+                                                <label>
+                                                    <input type="checkbox"
+                                                            {{ readonly }}
+                                                           name="xmlpictureval[{{ sNextKey }}][IMAGEFIELDS][{{ sFieldName }}]"
+                                                           value="1">
+                                                    {{ translate({ ident: "D3_PICTURE_IMPORTFIELD_OXZOOM" }) }} {{ iIndex }}
+                                                </label>
+                                                {% if iIndex % 6 == 0 %}<br>{% endif %}
+                                            {% endfor %}
+                                        </td>
+                                    </tr>
+                                {% endif %}
+                                <tr>
+                                    <td class="edittext">
+                                        {% for picRow in 1..iPicCount+1 %}
+                                            {% set iIndex = loop.index %}
+                                            {% set sFieldName = "oxpic"|cat(iIndex) %}
+                                            <label>
+                                                <input type="checkbox"
+                                                        {{ readonly }}
+                                                       name="xmlpictureval[{{ sNextKey }}][IMAGEFIELDS][{{ sFieldName }}]"
+                                                       value="1">
+                                                {{ translate({ ident: "D3_PICTURE_IMPORTFIELD_OXPIC" }) }} {{ iIndex }}
+                                            </label>
+                                            {% if iIndex % 6 == 0 %}<br>{% endif %}
+                                        {% endfor %}
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">&nbsp;</td>
+                    </tr>
+                {% endblock %}
+                {% block d3_d3importer_views_admin_tpl_d3_picture_main_settings %}
+                    {% set aPictureSettings = edit.getDefaultPictureSettings() %}
+                    <tr>
+                        <td class="edittext"
+                            valign="top"
+                            style="border: 1px #7A7A7A solid; padding:5px 10px 10px; border-right: 0; border-bottom:0;">
+                            {{ translate({ ident: "D3_IMPORTER_PICTURE_PICSPERTICK" }) }}
+                            {% include "inputhelp.html.twig" with {'sHelpId': help_id("D3_IMPORTER_PICTURE_PICSPERTICK_HELP"), 'sHelpText': help_text("D3_IMPORTER_PICTURE_PICSPERTICK_HELP")} %}
+                        </td>
+                        <td style="border: 1px #7A7A7A solid; border-left:0; padding:5px 10px 10px;border-bottom:0;"
+                            colspan="3">
+                            <label>
+                                {{ translate({ ident: "D3_IMPORTER_PICTURE_MAXPICTURECOUNT" }) }}
+                                <input name="aPictureSettings[iMaxPictureCount]"
+                                        {{ readonly }}
+                                       value="{{ aPictureSettings.iMaxPictureCount|default(50) }}">
+                                {{ translate({ ident: "D3_IMPORTER_PICTURE_MAXPICTURECOUNT_2" }) }}
+                            </label>
+                            {% include "inputhelp.html.twig" with {'sHelpId': help_id("D3_IMPORTER_PICTURE_MAXPICTURECOUNT_HELP"), 'sHelpText': help_text("D3_IMPORTER_PICTURE_MAXPICTURECOUNT_HELP")} %}
+                            <label>
+                                {{ translate({ ident: "D3_IMPORTER_PICTURE_MAXIMPORTCOUNT" }) }}
+                                <input id="aPictureSettings[iMaxImportCount]"
+                                       name="aPictureSettings[iMaxImportCount]"
+                                        {{ readonly }}
+                                       value="{{ aPictureSettings.iMaxImportCount|default(5) }}">
+                                {{ translate({ ident: "D3_IMPORTER_PICTURE_MAXIMPORTCOUNT_2" }) }}
+                            </label>
+                            {% include "inputhelp.html.twig" with {'sHelpId': help_id("D3_IMPORTER_PICTURE_MAXIMPORTCOUNT_HELP"), 'sHelpText': help_text("D3_IMPORTER_PICTURE_MAXIMPORTCOUNT_HELP")} %}
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="edittext"
+                            valign="top"
+                            style="border: 1px #7A7A7A solid; padding:5px 10px 10px; border-right: 0; border-bottom:0;">
+                            {{ translate({ ident: "D3_IMPORTER_CONFIG_OVERRIDEEXTERNPICTURES" }) }}
+                            {% include "inputhelp.html.twig" with {'sHelpId': help_id("D3_IMPORTER_CONFIG_OVERRIDEEXTERNPICTURES_HELP"), 'sHelpText': help_text("D3_IMPORTER_CONFIG_OVERRIDEEXTERNPICTURES_HELP")} %}
+                        </td>
+                        <td style="border: 1px #7A7A7A solid; border-left:0; padding:5px 10px 10px;border-bottom:0;" colspan="3">
+                            {% set iOverrideExternPictures = aProfile.aPictureSettings.iOverrideExternPictures %}
+                            {% if iOverrideExternPictures == "" %}
+                                {% set iOverrideExternPictures = aPictureSettings.iOverrideExternPictures %}
+                            {% endif %}
+                            <input type="hidden"
+                                    {{ readonly }}
+                                   name="aPictureSettings[iOverrideExternPictures]"
+                                   value="0">
+                            <label>
+                                <input type="checkbox"
+                                        {{ readonly }}
+                                       name="aPictureSettings[iOverrideExternPictures]"
+                                        {% if iOverrideExternPictures %}
+                                            checked
+                                        {% endif %}
+                                       value="1">
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="edittext"
+                            valign="top"
+                            style="border: 1px #7A7A7A solid; padding:5px 10px 10px; border-right: 0;border-bottom:0;">
+                            {{ translate({ ident: "D3_IMPORTER_CONFIG_BLDELETEMASTERPICTURE" }) }}
+                            {% include "inputhelp.html.twig" with {'sHelpId': help_id("D3_IMPORTER_CONFIG_BLDELETEMASTERPICTURE_HELP"), 'sHelpText': help_text("D3_IMPORTER_CONFIG_BLDELETEMASTERPICTURE_HELP")} %}
+                        </td>
+                        <td style="border: 1px #7A7A7A solid; border-left:0; padding:5px 10px 10px;border-bottom:0;" colspan="3">
+
+                            {% set blDeleteMasterPicture = aProfile.aPictureSettings.blDeleteMasterPicture %}
+                            {% if blDeleteMasterPicture == "" %}
+                                {% set blDeleteMasterPicture = aPictureSettings.blDeleteMasterPicture %}
+                            {% endif %}
+                            <input type="hidden"
+                                    {{ readonly }}
+                                   name="aPictureSettings[blDeleteMasterPicture]"
+                                   value="0">
+                            <label>
+                                <input type="checkbox"
+                                        {{ readonly }}
+                                       name="aPictureSettings[blDeleteMasterPicture]"
+                                        {% if blDeleteMasterPicture %}
+                                            checked
+                                        {% endif %}
+                                       value="1">
+                            </label>
+                        </td>
+                    </tr>
+                    {% set disabledInDemo = "" %}
+                    {% if isImporterDemoMode %}
+                        {% set disabledInDemo = "disabled=\"disabled\"" %}
+                    {% endif %}
+                    <tr>
+                        <td class="edittext"
+                            valign="top"
+                            style="border: 1px #7A7A7A solid; padding:5px 10px 10px; border-right: 0;border-bottom:0;">
+                            <label for="picturesActionAfterImport">
+                                {{ translate({ ident: "D3_IMPORTER_CONFIG_PATHTOMOVE" }) }}
+                            </label>
+                            {% include "inputhelp.html.twig" with {'sHelpId': help_id("D3_IMPORTER_CONFIG_PATHTOMOVE_HELP"), 'sHelpText': help_text("D3_IMPORTER_CONFIG_PATHTOMOVE_HELP")} %}
+                        </td>
+                        <td style="border: 1px #7A7A7A solid; border-left:0; padding:5px 10px 10px;border-bottom:0;" colspan="3">
+                            {% set picturesActionAfterImport = aProfile.aPictureSettings.picturesActionAfterImport %}
+                            {% if picturesActionAfterImport == "" %}
+                                {% set picturesActionAfterImport = aPictureSettings.picturesActionAfterImport %}
+                            {% endif %}
+                                <select {{ readonly }} {{ disabledInDemo }}
+                                        name="aPictureSettings[picturesActionAfterImport]"
+                                        id="picturesActionAfterImport"
+                                        id="picturesActionAfterImport"
+                                >
+                                    <option value="">-</option>
+                                    <option value="delete" {% if picturesActionAfterImport == "delete" %} selected{% endif %}>{{ translate({ ident: "D3_IMPORTER_CONFIG_PICTURESACTIONAFTERIMPORT_DELETE" }) }}</option>
+                                    <option value="move" {% if picturesActionAfterImport == "move" %} selected{% endif %}>{{ translate({ ident: "D3_IMPORTER_CONFIG_PICTURESACTIONAFTERIMPORT_MOVE" }) }}</option>
+                                </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="edittext"
+                            valign="top"
+                            style="border: 1px #7A7A7A solid; padding:5px 10px 10px; border-right: 0;border-top:0;">
+                            <label for="picturesActionAfterImport">
+                                {{ translate({ ident: "D3_IMPORTER_CONFIG_FOLDER" }) }}
+                            </label>
+                            {% include "inputhelp.html.twig" with {'sHelpId': help_id("D3_IMPORTER_CONFIG_FOLDER_HELP"), 'sHelpText': help_text("D3_IMPORTER_CONFIG_FOLDER_HELP")} %}
+                        </td>
+                        <td style="border: 1px #7A7A7A solid; border-left:0; padding:5px 10px 10px;border-top:0;" colspan="3">
+                            {% set pathToMove = aProfile.aPictureSettings.pathToMove %}
+                            {% if pathToMove == "" %}
+                                {% set pathToMove = aPictureSettings.pathToMove %}
+                            {% endif %}
+                            <label>
+                                <input type="text"
+                                       {{ readonly }} {{ disabledInDemo }}
+                                       name="aPictureSettings[pathToMove]"
+                                       id="pathToMove"
+                                       value="{{ pathToMove }}"
+                                >
+                            </label>
+                        </td>
+                    </tr>
+                {% endblock %}
+                <tr>
+                    <td colspan="4">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                    <span class="d3modcfg_btn fixed icon status_ok">
+                        <input type="submit" name="saveImportProfile" value="{{ translate({ ident: "GENERAL_SAVE" }) }}"
+                               onClick="document.myedit.fnc.value='saveImportProfile'" {{ readonly }}>
+                        <span></span>
+                    </span>
+                    </td>
+                </tr>
+            {% endif %}
+        </table>
+    </form>
+{% endif %}
+{% include "bottomnaviitem.html.twig" %}
+{% include "bottomitem.html.twig" %}

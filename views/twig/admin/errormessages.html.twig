@@ -1,0 +1,33 @@
+{% if d3ModConfigErrorMessage %}
+    {% block d3_d3importer_views_admin_tpl_errormessages_moduleerror %}
+        <div class="extension_error">
+            {{ d3ModConfigErrorMessage }}
+        </div>
+    {% endblock %}
+{% endif %}
+
+{% if isfailconfig %}
+    {% block d3_d3importer_views_admin_tpl_errormessages_configerror %}
+        <div class="extension_error">
+            {{ translate({ ident: "D3_IMPORTER_FAILCONFIG_"|cat(isfailconfig) }) }}
+        </div>
+    {% endblock %}
+{% endif %}
+
+{% if aImporterErrors and count(aImporterErrors) > 0 %}
+    {% block d3_d3importer_views_admin_tpl_errormessages_importerrors %}
+        <div class="extension_error">
+            {% for sErrorMessage in aImporterErrors %}
+                <p>{{ sErrorMessage }}</p>
+            {% endfor %}
+        </div>
+    {% endblock %}
+{% endif %}
+
+{% if isImporterDemoMode %}
+    {% block d3_d3importer_views_admin_tpl_errormessages_demomode %}
+        <div class="extension_warning">
+            {{ translate({ ident: "D3_IMPORTER_IMPORT_TESTLICENCE_NOTICE" }) }}
+        </div>
+    {% endblock %}
+{% endif %}

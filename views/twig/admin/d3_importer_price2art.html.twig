@@ -1,0 +1,207 @@
+{% include "headitem.html.twig" with {title: "GENERAL_ADMIN_TITLE"|translate, box: "box"} %}
+{{ style({ include: oViewConf.getModuleUrl('d3modcfg_lib', 'out/admin/src/d3_mod_cfg.min.css') }) }}
+{{ style() }}
+{% include "@d3importer/admin/errormessages.html.twig" %}
+
+{% if readonly %}
+    {% set readonly = "readonly disabled" %}
+{% else %}
+    {% set readonly = "" %}
+{% endif %}
+<style type="text/css">
+    <!--
+    select {
+        max-width : 375px;
+    }
+    -->
+</style>
+<script type="text/javascript">
+    <!--
+    {% if updatelist == 1 %}
+    UpdateList('{{ oxid }}');
+    {% endif %}
+    function UpdateList(sID) {
+        var oSearch = parent.list.document.getElementById("search");
+        oSearch.oxid.value = sID;
+        oSearch.submit();
+    }
+    function ChangeLine(iLine) {
+        var oFormEdit = document.getElementById("myedit");
+        oFormEdit.line.value = iLine;
+        oFormEdit.fnc.value = '';
+        oFormEdit.submit();
+    }
+    //-->
+</script>
+
+<form name="transfer" id="transfer" action="{{ oViewConf.getSelfLink()|raw }}" method="post">
+    {{ oViewConf.getHiddenSid()|raw }}
+    <input type="hidden" name="oxid" value="{{ oxid }}">
+    <input type="hidden" name="cl" value="{{ oViewConf.getActiveClassName() }}">
+    <input type="hidden" name="editlanguage" value="{{ editlanguage }}">
+</form>
+<form name="myedit" id="myedit" enctype="multipart/form-data" action="{{ oViewConf.getSelfLink()|raw }}" method="post">
+    <div>
+        {{ oViewConf.getHiddenSid()|raw }}
+        <input type="hidden" name="cl" value="{{ oViewConf.getActiveClassName() }}">
+        <input type="hidden" name="fnc" value="">
+        <input type="hidden" name="oxid" value="{{ oxid }}">
+        <input type="hidden" name="line" value="{{ actcsvline }}">
+    </div>
+
+    <table border="0" width="98%" style="border-collapse: collapse">
+        <colgroup>
+            <col width="25%">
+            <col width="25%">
+            <col width="25%">
+            <col width="25%">
+        </colgroup>
+        {% include "@d3importer/admin/d3_importer_inc_nav.html.twig" with {colspan: "4"} %}
+        {% if maxcsvline %}
+            {% block d3_d3importer_views_admin_tpl_d3_importer_price2art_head %}
+                <tr>
+                    <td class="edittext">
+                        {{ translate({ ident: "D3_IMPORTER_PRICE2ART_IMPORTTYPE" }) }}
+                        {% include "inputhelp.html.twig" with {'sHelpId': help_id("D3_IMPORTER_PRICE2ART_IMPORTTYPEINFO_HELP"), 'sHelpText': help_text("D3_IMPORTER_PRICE2ART_IMPORTTYPEINFO_HELP")} %}
+                    </td>
+                    <td class="edittext" colspan="3">
+                        <select name="xmlval[IMPORTTYPE]" {{ readonly }}>
+                            <option value="import"
+                                    {% if aProfile.IMPORTTYPE == "import" %}SELECTED{% endif %}>{{ translate({ ident: "D3_IMPORTER_PRICE2ART_IMPORTTYPE1" }) }}</option>
+                            <option value="clearbefore"
+                                    {% if aProfile.IMPORTTYPE == "clearbefore" %}SELECTED{% endif %}>{{ translate({ ident: "D3_IMPORTER_PRICE2ART_IMPORTTYPE2" }) }}</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="edittext"
+                        colspan="4"
+                        style="height:1px; border: 1px #7A7A7A solid; border-bottom: 0"></td>
+                </tr>
+            {% endblock %}
+            {% block d3_d3importer_views_admin_tpl_d3_importer_price2art_items %}
+                {% set count = 1 %}
+                {% for colum in aProfile.IMPORTCOLUM %}
+                    {% if colum.PRICE != '' %}
+                        <tr>
+                            <td class="edittext" style="padding:5px;">
+                                {{ translate({ ident: "D3_IMPORTER_PRICE2ART_PRICE" }) }}&nbsp;{{ count }}&nbsp;
+                            </td>
+                            <td class="edittext" style="padding:5px;">
+                                <select name="xmlval[IMPORTCOLUM][{{ count }}][PRICE]" {{ readonly }}>
+                                    <option value="">{{ translate({ ident: "D3_IMPORTER_CROSS_NOASSIGN" }) }}</option>
+                                    {% for key, name in aCSVLines %}
+                                        <option value="{{ key }}"
+                                                {% if colum.PRICE == key and colum.PRICE != "" %}selected{% endif %}>{{ name|striptags|truncate(70, "&nbsp;...", false) }}</option>
+                                    {% endfor %}
+                                </select>
+                            </td>
+                            <td class="edittext" style="padding:5px;">
+                                {{ translate({ ident: "D3_IMPORTER_PRICE2ART_PERCENTOPTION" }) }}&nbsp;
+                            </td>
+                            <td class="edittext" style="padding:5px;">
+                                <input type="hidden" name="xmlval[IMPORTCOLUM][{{ count }}][PERCENTOPTION]" value="0" {{ readonly }}>
+                                <input type="checkbox" name="xmlval[IMPORTCOLUM][{{ count }}][PERCENTOPTION]" value="1" {% if colum.PERCENTOPTION %} checked{% endif %} {{ readonly }}>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="edittext" style="padding:5px;">
+                                {{ translate({ ident: "D3_IMPORTER_PRICE2ART_AMOUNTFROM" }) }}&nbsp;
+                            </td>
+                            <td class="edittext" style="padding:5px;">
+                                <select name="xmlval[IMPORTCOLUM][{{ count }}][FROM]" {{ readonly }}>
+                                    <option value="">{{ translate({ ident: "D3_IMPORTER_CROSS_NOASSIGN" }) }}</option>
+                                    {% for key, name in aCSVLines %}
+                                        <option value="{{ key }}"
+                                                {% if colum.FROM == key and colum.FROM != "" %}selected{% endif %}>{{ name|striptags|truncate(70, "&nbsp;...", false) }}</option>
+                                    {% endfor %}
+                                </select>
+                            </td>
+                            <td class="edittext" style="padding:5px;">
+                                {{ translate({ ident: "D3_IMPORTER_PRICE2ART_AMOUNTTO" }) }}&nbsp;
+                            </td>
+                            <td class="edittext" style="padding:5px;">
+                                <select name="xmlval[IMPORTCOLUM][{{ count }}][TO]" {{ readonly }}>
+                                    <option value="">{{ translate({ ident: "D3_IMPORTER_CROSS_NOASSIGN" }) }}</option>
+                                    {% for key, name in aCSVLines %}
+                                        <option value="{{ key }}"
+                                                {% if colum.TO == key and colum.TO != "" %}selected{% endif %}>{{ name|striptags|truncate(70, "&nbsp;...", false) }}</option>
+                                    {% endfor %}
+                                </select>
+                            </td>
+                        </tr>
+                        {% set count = count+1 %}
+                        <tr>
+                            <td class="edittext"
+                                colspan="4"
+                                style="height:1px; border: 1px #7A7A7A solid; border-top: 0"></td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+                <tr>
+                    <td class="edittext" style="padding:5px;">
+                        {{ translate({ ident: "D3_IMPORTER_PRICE2ART_PRICE" }) }}&nbsp;{{ count }}&nbsp;
+                        {% include "inputhelp.html.twig" with {'sHelpId': help_id("HELP_D3_IMPORTER_PRICE2ART_PRICE"), 'sHelpText': help_text("HELP_D3_IMPORTER_PRICE2ART_PRICE")} %}
+                    </td>
+                    <td class="edittext" style="padding:5px;">
+                        <select name="xmlval[IMPORTCOLUM][{{ count }}][PRICE]" {{ readonly }}>
+                            <option value="">{{ translate({ ident: "D3_IMPORTER_CROSS_NOASSIGN" }) }}</option>
+                            {% for key, name in aCSVLines %}
+                                <option value="{{ key }}">{{ name|striptags|truncate(70, "&nbsp;...", false) }}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                    <td class="edittext" style="padding:5px;">
+                        {{ translate({ ident: "D3_IMPORTER_PRICE2ART_PERCENTOPTION" }) }}&nbsp;
+                        {% include "inputhelp.html.twig" with {'sHelpId': help_id("HELP_D3_IMPORTER_PRICE2ART_PERCENTOPTION"), 'sHelpText': help_text("HELP_D3_IMPORTER_PRICE2ART_PERCENTOPTION")} %}
+                    </td>
+                    <td class="edittext" style="padding:5px;">
+                        <input type="hidden" name="xmlval[IMPORTCOLUM][{{ count }}][PERCENTOPTION]" value="0" {{ readonly }}>
+                        <input type="checkbox" name="xmlval[IMPORTCOLUM][{{ count }}][PERCENTOPTION]" value="1" {{ readonly }}>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="edittext" style="padding:5px;">
+                        {{ translate({ ident: "D3_IMPORTER_PRICE2ART_AMOUNTFROM" }) }}&nbsp;
+                    </td>
+                    <td class="edittext" style="padding:5px;">
+                        <select name="xmlval[IMPORTCOLUM][{{ count }}][FROM]" {{ readonly }}>
+                            <option value="">{{ translate({ ident: "D3_IMPORTER_CROSS_NOASSIGN" }) }}</option>
+                            {% for key, name in aCSVLines %}
+                                <option value="{{ key }}">{{ name|striptags|truncate(70, "&nbsp;...", false) }}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                    <td class="edittext" style="padding:5px;">
+                        {{ translate({ ident: "D3_IMPORTER_PRICE2ART_AMOUNTTO" }) }}&nbsp;
+                    </td>
+                    <td class="edittext" style="padding:5px;">
+                        <select name="xmlval[IMPORTCOLUM][{{ count }}][TO]" {{ readonly }}>
+                            <option value="">{{ translate({ ident: "D3_IMPORTER_CROSS_NOASSIGN" }) }}</option>
+                            {% for key, name in aCSVLines %}
+                                <option value="{{ key }}">{{ name|striptags|truncate(70, "&nbsp;...", false) }}</option>
+                            {% endfor %}
+                        </select>
+                    </td>
+                </tr>
+            {% endblock %}
+
+            <tr>
+                <td class="edittext" colspan="4" style="height:1px; border: 1px #7A7A7A solid; border-top: 0"></td>
+            </tr>
+            <tr>
+                <td class="edittext" colspan="4" style="text-align:center"><br>
+                    <span class="d3modcfg_btn fixed icon status_ok">
+                        <input type="submit" class="edittext" name="saveImportProfile"
+                               value="{{ translate({ ident: "GENERAL_SAVE" }) }}"
+                               onClick="document.myedit.fnc.value='saveImportProfile'" {{ readonly }}>
+                        <span></span>
+                    </span>
+                </td>
+            </tr>
+        {% endif %}
+    </table>
+</form>
+
+{% include "bottomnaviitem.html.twig" %}
+{% include "bottomitem.html.twig" %}

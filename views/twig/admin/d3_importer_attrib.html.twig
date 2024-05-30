@@ -1,0 +1,304 @@
+{% include "headitem.html.twig" with {title: "GENERAL_ADMIN_TITLE"|translate, box: "box"} %}
+{{ style({ include: oViewConf.getModuleUrl('d3modcfg_lib', 'out/admin/src/d3_mod_cfg.min.css') }) }}
+{{ style() }}
+{% include "@d3importer/admin/errormessages.html.twig" %}
+
+{% if readonly %}
+    {% set readonly = "readonly disabled" %}
+{% else %}
+    {% set readonly = "" %}
+{% endif %}
+<style type="text/css">
+    <!--
+    select {
+        max-width : 375px;
+    }
+    -->
+</style>
+<script type="text/javascript">
+    <!--
+    {% if updatelist == 1 %}
+    UpdateList('{{ oxid }}');
+    {% endif %}
+    function UpdateList(sID) {
+        var oSearch = parent.list.document.getElementById("search");
+        oSearch.oxid.value = sID;
+        oSearch.submit();
+    }
+    function ChangeLine(iLine) {
+        var oFormEdit = document.getElementById("myedit");
+        oFormEdit.line.value = iLine;
+        oFormEdit.fnc.value = '';
+        oFormEdit.submit();
+    }
+    //-->
+</script>
+
+<form name="transfer" id="transfer" action="{{ oViewConf.getSelfLink()|raw }}" method="post">
+    {{ oViewConf.getHiddenSid()|raw }}
+    <input type="hidden" name="oxid" value="{{ oxid }}">
+    <input type="hidden" name="cl" value="{{ oViewConf.getActiveClassName() }}">
+    <input type="hidden" name="editlanguage" value="{{ editlanguage }}">
+</form>
+<form name="myedit" id="myedit" action="{{ oViewConf.getSelfLink()|raw }}" method="post">
+    <div>
+        {{ oViewConf.getHiddenSid()|raw }}
+        <input type="hidden" name="cl" value="{{ oViewConf.getActiveClassName() }}">
+        <input type="hidden" name="fnc" value="">
+        <input type="hidden" name="oxid" value="{{ oxid }}">
+        <input type="hidden" name="line" value="{{ actcsvline }}">
+    </div>
+    <table border="0" width="98%" style="border-collapse: collapse">
+        <colgroup>
+            <col width="25%">
+            <col width="75%">
+        </colgroup>
+        {% include "@d3importer/admin/d3_importer_inc_nav.html.twig" with {colspan: "2"} %}
+        {% if maxcsvline %}
+            {% block d3_d3importer_views_admin_tpl_d3_importer_attrib_head %}
+                <tr>
+                    <td class="edittext" style="padding:5px;">
+                        {{ translate({ ident: "D3_IMPORTER_ATTRIB_IMPORTTYPE" }) }}
+                        {% include "inputhelp.html.twig" with {'sHelpId': help_id("D3_IMPORTER_ATTRIB_IMPORTTYPEINFO_HELP"), 'sHelpText': help_text("D3_IMPORTER_ATTRIB_IMPORTTYPEINFO_HELP")} %}
+                    </td>
+                    <td class="edittext" style="padding:5px;">
+                        <select name="xmlval[IMPORTTYPE]" {{ readonly }}>
+                            <option value="import"
+                                    {% if aProfile.IMPORTTYPE == "import" %}SELECTED{% endif %}>{{ translate({ ident: "D3_IMPORTER_ATTRIB_IMPORTTYPE1" }) }}</option>
+                            <option value="clearbefore"
+                                    {% if aProfile.IMPORTTYPE == "clearbefore" %}SELECTED{% endif %}>{{ translate({ ident: "D3_IMPORTER_ATTRIB_IMPORTTYPE2" }) }}</option>
+                        </select>
+                    </td>
+                </tr>
+            {% endblock %}
+            {% set count = 1 %}
+            {% if attributeOldValues %}
+                {% block d3_d3importer_views_admin_tpl_d3_importer_attrib_oldvalues %}
+                    <tr>
+                        <td class="extension_warning" style="padding:5px;" colspan="2">
+                            {{ translate({ ident: "D3_IMPORTER_ATTRIB_DELETE_OLDSETTINGS_INFO" }) }}
+                            <br>
+                            <button type="submit"
+                                    value="delete"
+                                    name="deleteOldSettings"
+                                    class="d3modcfg_btn fixed icon status_failed"
+                                    onClick="if(confirm('{{ translate({ ident: "D3_IMPORTER_ATTRIB_DELETE_OLDSETTINGS_QUESTION" }) }}')) {document.myedit.fnc.value='saveImportProfile';
+                                            }else {return false;
+                                            }" {{ readonly }}
+                                    style="color:white;font-weight: bold;padding: 0 3px 0 23px;height:22px;line-height: 1; cursor:pointer;float: none;display: inline;">
+                                {{ translate({ ident: "D3_IMPORTER_ATTRIB_DELETE_OLDSETTINGS_BUTTON" }) }}
+                                <span></span>
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="edittext" style="padding:5px;">
+                            {{ translate({ ident: "D3_IMPORTER_ATTRIB_IMPORTCOLUM" }) }} {{ count }}
+                            {% include "inputhelp.html.twig" with {'sHelpId': help_id("D3_IMPORTER_ATTRIB_IMPORTCOLUMINFO_HELP"), 'sHelpText': help_text("D3_IMPORTER_ATTRIB_IMPORTCOLUMINFO_HELP")} %}
+                        </td>
+                        <td class="edittext" style="padding:5px;">
+                            <select name="xmlval[IMPORTCOLUM]" {{ readonly }}>
+                                <option value="">{{ translate({ ident: "D3_IMPORTER_ATTRIB_NOASSIGN" }) }}</option>
+                                {% for key, name in aCSVLines %}
+                                    <option 
+                                        value="{{ key }}"
+                                        {% if aProfile.IMPORTCOLUM == key and aProfile.IMPORTCOLUM != "" %}selected{% endif %}
+                                    >
+                                        {{ name|striptags|truncate(70, "&nbsp;...", false) }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="edittext" style="padding:5px;">
+                            {{ translate({ ident: "D3_IMPORTER_ATTRIB_COLSEP1" }) }}
+                            {% include "inputhelp.html.twig" with {'sHelpId': help_id("D3_IMPORTER_ATTRIB_COLSEPDESCRIPTION1_HELP"), 'sHelpText': help_text("D3_IMPORTER_ATTRIB_COLSEPDESCRIPTION1_HELP")} %}
+                        </td>
+                        <td class="edittext" style="padding:5px;">
+                            <input type="text"
+                                   class="editinput"
+                                   size="3"
+                                   maxlength="10"
+                                   name="xmlval[COLUMSEPARATOR1]"
+                                   value="{{ aProfile.COLUMSEPARATOR1 }}" {{ readonly }}>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="edittext" style="padding:5px;">
+                            {{ translate({ ident: "D3_IMPORTER_ATTRIB_COLSEP2" }) }}
+                            {% include "inputhelp.html.twig" with {'sHelpId': help_id("D3_IMPORTER_ATTRIB_COLSEPDESCRIPTION2_HELP"), 'sHelpText': help_text("D3_IMPORTER_ATTRIB_COLSEPDESCRIPTION2_HELP")} %}
+                        </td>
+                        <td class="edittext" style="padding:5px;">
+                            <input type="text"
+                                   class="editinput"
+                                   size="3"
+                                   maxlength="10"
+                                   name="xmlval[COLUMSEPARATOR2]"
+                                   value="{{ aProfile.COLUMSEPARATOR2 }}" {{ readonly }}>
+                        </td>
+                    </tr>
+                {% endblock %}
+            {% else %}
+                {% block d3_d3importer_views_admin_tpl_d3_importer_attrib_values %}
+                    <tr>
+                        <th class="edittext" style="border-top:1px solid #808080;padding:5px;">
+                            {{ translate({ ident: "D3_IMPORTER_ATTRIB_LEGEND" }) }}
+                        </th>
+                        <td class="edittext" style="border-top:1px solid #808080;padding:5px;">
+                            {% include "inputhelp.html.twig" with {'sHelpId': help_id("D3_IMPORTER_ATTRIB_IMPORTCOLUM_ATTRIBUTE_ASSIGN_HELP"), 'sHelpText': help_text("D3_IMPORTER_ATTRIB_IMPORTCOLUM_ATTRIBUTE_ASSIGN_HELP")} %}
+                            {{ translate({ ident: "D3_IMPORTER_ATTRIB_IMPORTCOLUM_ATTRIBUTE_ASSIGN" }) }}
+                            <br>
+                            {% include "inputhelp.html.twig" with {'sHelpId': help_id("D3_IMPORTER_ATTRIB_IMPORTCOLUM_VALUE_HELP"), 'sHelpText': help_text("D3_IMPORTER_ATTRIB_IMPORTCOLUM_VALUE_HELP")} %}
+                            {{ translate({ ident: "D3_IMPORTER_ATTRIB_IMPORTCOLUM_VALUE" }) }}
+                            <br>
+                            {% include "inputhelp.html.twig" with {'sHelpId': help_id("D3_IMPORTER_ATTRIB_IMPORTCOLUM_NAME_HELP"), 'sHelpText': help_text("D3_IMPORTER_ATTRIB_IMPORTCOLUM_NAME_HELP")} %}
+                            {{ translate({ ident: "D3_IMPORTER_ATTRIB_IMPORTCOLUM_NAME" }) }}
+                            <br>
+                            {% include "inputhelp.html.twig" with {'sHelpId': help_id("D3_IMPORTER_ATTRIB_IMPORTCOLUM_LANGUAGE_HELP"), 'sHelpText': help_text("D3_IMPORTER_ATTRIB_IMPORTCOLUM_LANGUAGE_HELP")} %}
+                            {{ translate({ ident: "D3_IMPORTER_ATTRIB_IMPORTCOLUM_LANGUAGE" }) }}
+                        </td>
+                    </tr>
+                    {% for colum in aProfile.IMPORTCOLUM %}
+                        <tr>
+                            <th class="edittext"
+                                style="padding:5px; border:1px solid #808080;border-right: 0 none; border-bottom: 0 none;">
+                                {{ count }}. {{ translate({ ident: "D3_IMPORTER_ATTRIB_IMPORTCOLUM_ATTRIBUTE_ASSIGN" }) }}
+                            </th>
+                            <td class="edittext"
+                                style="padding:5px; border:1px solid #808080;border-left: 0 none; border-bottom: 0 none;">
+                                {% for sLanguageIdent, aLanguageName in edit.getLanguages() %}
+                                    <fieldset>
+                                        <legend>
+                                            {{ aLanguageName.translation }}
+                                            {% if aLanguageName.active %}
+                                                {{ translate({ ident: "D3_IMPORTER_ATTRIB_LANGUAGE_ACTIVE" }) }}
+                                            {% else %}
+                                                {{ translate({ ident: "D3_IMPORTER_ATTRIB_LANGUAGE_INACTIVE" }) }}
+                                            {% endif %}
+                                        </legend>
+                                        <table width="98%">
+                                            <tr>
+                                                <td>{{ translate({ ident: "D3_IMPORTER_ATTRIB_IMPORTCOLUM_NAME" }) }}</td>
+                                                <td class="edittext">
+                                                    <label>
+                                                        <select name="xmlval[IMPORTCOLUM][{{ count }}][NAME][{{ sLanguageIdent }}]"
+                                                                {{ readonly }}>
+                                                            <option value="">{{ translate({ ident: "D3_IMPORTER_ATTRIB_NOASSIGN" }) }}</option>
+                                                            {% for key, name in aCSVLines %}
+                                                                <option value="{{ key }}"
+                                                                    {% if isset(colum.NAME[sLanguageIdent]) and colum.NAME[sLanguageIdent] != '' and key == colum.NAME[sLanguageIdent] %} selected{% endif %}>
+                                                                    {{ name|striptags|truncate(70, "&nbsp;...", false) }}
+                                                                </option>
+                                                            {% endfor %}
+                                                        </select>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>{{ translate({ ident: "D3_IMPORTER_ATTRIB_IMPORTCOLUM_VALUE" }) }}</td>
+                                                <td class="edittext">
+                                                    <label>
+                                                        <select name="xmlval[IMPORTCOLUM][{{ count }}][VALUE][{{ sLanguageIdent }}]"
+                                                                {{ readonly }}>
+                                                            <option value="">{{ translate({ ident: "D3_IMPORTER_ATTRIB_NOASSIGN" }) }}</option>
+                                                            {% for key, name in aCSVLines %}
+                                                                <option value="{{ key }}"
+                                                                        {% if isset(colum.VALUE[sLanguageIdent]) and colum.VALUE[sLanguageIdent] != '' and key == colum.VALUE[sLanguageIdent] %} selected{% endif %}>
+                                                                    {{ name|striptags|truncate(70, "&nbsp;...", false) }}
+                                                                </option>
+                                                            {% endfor %}
+                                                        </select>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </fieldset>
+                                {% endfor %}
+                                {% set count = count+1 %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    {% if false == empty(aProfile.IMPORTCOLUM) %}
+                        <tr>
+                            <td class="edittext" colspan="2" style="border-top:1px solid #808080;">&nbsp;</td>
+                        </tr>
+                    {% endif %}
+                    <tr>
+                        <th class="edittext"
+                            style="padding:5px; border:1px solid #808080;border-right: 0 none;white-space: nowrap">
+                            {{ translate({ ident: "D3_IMPORTER_ATTRIB_IMPORTCOLUM_NEW_ATTRIBUTE_ASSIGN" }) }}
+                        </th>
+                        <td class="edittext" style="padding:5px; border:1px solid #808080;border-left: 0 none;">
+                            {% for sLanguageIdent, aLanguageName in edit.getLanguages() %}
+                                <fieldset>
+                                    <legend>
+                                        {{ aLanguageName.translation }}
+                                        {% if aLanguageName.active %}
+                                            {{ translate({ ident: "D3_IMPORTER_ATTRIB_LANGUAGE_ACTIVE" }) }}
+                                        {% else %}
+                                            {{ translate({ ident: "D3_IMPORTER_ATTRIB_LANGUAGE_INACTIVE" }) }}
+                                        {% endif %}
+                                    </legend>
+                                    <table width="98%">
+                                        <tr>
+                                            <td>
+                                                {{ translate({ ident: "D3_IMPORTER_ATTRIB_IMPORTCOLUM_NAME" }) }}
+                                            </td>
+                                            <td class="edittext">
+                                                <label>
+                                                    <select name="xmlval[IMPORTCOLUM][{{ count }}][NAME][{{ sLanguageIdent }}]"
+                                                            {{ readonly }}>
+                                                        <option value="">{{ translate({ ident: "D3_IMPORTER_ATTRIB_NOASSIGN" }) }}</option>
+                                                        {% for key, name in aCSVLines %}
+                                                            <option value="{{ key }}">{{ name|striptags|truncate(70, "&nbsp;...", false) }}</option>
+                                                        {% endfor %}
+                                                    </select>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                {{ translate({ ident: "D3_IMPORTER_ATTRIB_IMPORTCOLUM_VALUE" }) }}
+                                            </td>
+                                            <td class="edittext">
+                                                <label>
+                                                    <select name="xmlval[IMPORTCOLUM][{{ count }}][VALUE][{{ sLanguageIdent }}]"
+                                                            {{ readonly }}>
+                                                        <option value="">{{ translate({ ident: "D3_IMPORTER_ATTRIB_NOASSIGN" }) }}</option>
+                                                        {% for key, name in aCSVLines %}
+                                                            <option value="{{ key }}">{{ name|striptags|truncate(70, "&nbsp;...", false) }}</option>
+                                                        {% endfor %}
+                                                    </select>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </fieldset>
+                            {% endfor %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="edittext" colspan="2">&nbsp;</td>
+                    </tr>
+                {% endblock %}
+            {% endif %}
+            <tr>
+                <td class="edittext" colspan="2">
+                    <p class="d3modcfg_btn fixed icon status_ok">
+                        <input type="submit" class="edittext" name="saveImportProfile"
+                               value="{{ translate({ ident: "GENERAL_SAVE" }) }}"
+                               onClick="document.myedit.fnc.value='saveImportProfile'" {{ readonly }}>
+                        <span></span>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="edittext" colspan="2">&nbsp;</td>
+            </tr>
+        {% endif %}
+    </table>
+</form>
+
+{% include "bottomnaviitem.html.twig" %}
+{% include "bottomitem.html.twig" %}

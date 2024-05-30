@@ -1,0 +1,282 @@
+{% include "headitem.html.twig" with {title: "GENERAL_ADMIN_TITLE"|translate, box: "box"} %}
+
+<script type="text/javascript">
+    <!--
+    {% if updatelist == 1 %}
+    UpdateList('{{ oxid }}');
+    {% endif %}
+    function UpdateList(sID) {
+        var oSearch = parent.list.document.getElementById("search");
+        oSearch.oxid.value = sID;
+        oSearch.fnc.value = '';
+        oSearch.submit();
+    }
+    function _groupExp(el) {
+        var _cur = el.parentNode;
+        if (_cur.className === "exp") {
+            _cur.className = "";
+        } else {
+            _cur.className = "exp";
+        }
+    }
+    var sOldSettingElem = '';
+    //-->
+</script>
+
+{% if readonly %}
+    {% set readonly = "readonly disabled" %}
+{% else %}
+    {% set readonly = "" %}
+{% endif %}
+
+<form name="transfer" id="transfer" action="{{ oViewConf.getSelfLink()|raw }}" method="post">
+    {{ oViewConf.getHiddenSid()|raw }}
+    <input type="hidden" name="oxid" value="{{ oxid }}">
+    <input type="hidden" name="cl" value="{{ oViewConf.getActiveClassName() }}">
+    <input type="hidden" name="actshop" value="{{ oViewConf.getActiveShopId() }}">
+    <input type="hidden" name="editlanguage" value="{{ editlanguage }}">
+</form>
+
+<form name="myedit" id="myedit" action="{{ oViewConf.getSelfLink()|raw }}" method="post">
+    <div>
+        {{ oViewConf.getHiddenSid()|raw }}
+        <input type="hidden" name="cl" value="{{ oViewConf.getActiveClassName() }}">
+        <input type="hidden" name="fnc" value="save">
+        <input type="hidden" name="oxid" value="{{ oxid }}">
+        <input type="hidden" name="editval[d3_cfg_mod__oxid]" value="{{ oxid }}">
+
+        {% include "@d3modcfg_lib/admin/inc/active.html.twig" %}
+    </div>
+
+    {% if oView.getValueStatus() == 'error' %}
+        <hr>
+        <strong>{{ translate({ ident: "D3_CFG_MOD_GENERAL_NOCONFIG_DESC" }) }}</strong>
+        <br>
+        <br>
+        <span class="d3modcfg_btn fixed icon status_attention">
+            <input type="submit" value="{{ translate({ ident: "D3_CFG_MOD_GENERAL_NOCONFIG_BTN" }) }}">
+            <span></span>
+        </span>
+    {% else %}
+        {% block d3_d3importer_views_admin_tpl_basesettings__main %}
+            <table width="98%" class="listTable">
+                {% block d3_d3importer_views_admin_tpl_basesetings__settings %}
+                    <tr>
+                        <th colspan="2">{{ translate({ ident: "D3_IMPORTER_MAIN_MAINSETTINGS" }) }}</th>
+                    </tr>
+                    <tr>
+                        <td valign="top">
+                            <label for="aArticleIndentificationFields">{{ translate({ ident: "D3_IMPORTER_MAIN_ARTICLEINDENTIFICATIONFIELDS" }) }}</label>
+                            {% include "inputhelp.html.twig" with {'sHelpId': help_id("D3_IMPORTER_MAIN_ARTICLEINDENTIFICATIONFIELDS_HELP"), 'sHelpText': help_text("D3_IMPORTER_MAIN_ARTICLEINDENTIFICATIONFIELDS_HELP")} %}
+                        </td>
+                        <td>
+                            {% set aFields = oView.getArticleFields() %}
+                            <input type="hidden" name="value[aArticleIndentificationFields]" value="">
+                            <select id="aArticleIndentificationFields"
+                                    name="value[aArticleIndentificationFields][]"
+                                    size="10" multiple
+                                    style="width: 250px;" {{ readonly }}>
+                                {% for aField in aFields %}
+                                    {% set ident = "GENERAL_ARTICLE_"|cat(aField.title) %}
+                                    {% set ident = ident|upper %}
+                                    <option value="{{ aField.title }}" {% if aField.selected == 1 %} selected{% endif %}>
+                                        {{ aField.title }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </td>
+                    </tr>
+                    {% set aDefaultBooleanSettings = edit.getValue('aDefaultBooleanSettings') %}
+                    <tr>
+                        <td valign="top">
+                            <label for="aDefaultBooleanSettingsaTrueSettings">
+                                {{ translate({ ident: "D3_IMPORTER_CONFIG_ATRUESETTINGS" }) }}
+                            </label>
+                            {% include "inputhelp.html.twig" with {'sHelpId': help_id("D3_IMPORTER_CONFIG_ATRUESETTINGS_HELP"), 'sHelpText': help_text("D3_IMPORTER_CONFIG_ATRUESETTINGS_HELP")} %}
+                        </td>
+                        <td>
+                            {% if aDefaultBooleanSettings is iterable and aDefaultBooleanSettings.aTrueSettings is iterable  %}
+                                {% set sTrueSettings = aDefaultBooleanSettings.aTrueSettings|join('\n') %}
+                            {% endif %}
+                            {# 2014-05-06 KH: textarea-element must be in one line #}
+                            <textarea name="value[aDefaultBooleanSettings][aTrueSettings]"
+                                      id="aDefaultBooleanSettingsaTrueSettings"
+                                      cols="60"
+                                      rows="5">{{ sTrueSettings }}</textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="aDefaultBooleanSettingsaFalseSettings">
+                                {{ translate({ ident: "D3_IMPORTER_CONFIG_AFALSESETTINGS" }) }}
+                            </label>
+                            {% include "inputhelp.html.twig" with {'sHelpId': help_id("D3_IMPORTER_CONFIG_AFALSESETTINGS_HELP"), 'sHelpText': help_text("D3_IMPORTER_CONFIG_AFALSESETTINGS_HELP")} %}
+                        </td>
+                        <td>
+                            {% if aDefaultBooleanSettings is iterable and aDefaultBooleanSettings.aFalseSettings is iterable %}
+                                {% set sFalseSettings = aDefaultBooleanSettings.aFalseSettings|join('\n') %}
+                            {% endif %}
+                            {# 2014-05-06 KH: textarea-element must be in one line #}
+                            <textarea name="value[aDefaultBooleanSettings][aFalseSettings]"
+                                      id="aDefaultBooleanSettingsaFalseSettings"
+                                      cols="60"
+                                      rows="5">{{ sFalseSettings }}</textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top">
+                            {{ translate({ ident: "D3_IMPORTER_PICTURE_PICSPERTICK" }) }}
+                            {% include "inputhelp.html.twig" with {'sHelpId': help_id("D3_IMPORTER_PICTURE_PICSPERTICK_HELP"), 'sHelpText': help_text("D3_IMPORTER_PICTURE_PICSPERTICK_HELP")} %}
+                        </td>
+                        <td>
+                            {% set aPictureSettings = edit.getValue('aPictureSettings') %}
+                            <label>
+                                {{ translate({ ident: "D3_IMPORTER_PICTURE_MAXPICTURECOUNT" }) }}
+                                <input name="value[aPictureSettings][iMaxPictureCount]"
+                                       value="{{ aPictureSettings.iMaxPictureCount|default(50) }}">
+                                {{ translate({ ident: "D3_IMPORTER_PICTURE_MAXPICTURECOUNT_2" }) }}
+                            </label>
+                            {% include "inputhelp.html.twig" with {'sHelpId': help_id("D3_IMPORTER_PICTURE_MAXPICTURECOUNT_HELP"), 'sHelpText': help_text("D3_IMPORTER_PICTURE_MAXPICTURECOUNT_HELP")} %}
+                            <label>
+                                {{ translate({ ident: "D3_IMPORTER_PICTURE_MAXIMPORTCOUNT" }) }}
+                                <input name="value[aPictureSettings][iMaxImportCount]"
+                                       value="{{ aPictureSettings.iMaxImportCount|default(5) }}">
+                                {{ translate({ ident: "D3_IMPORTER_PICTURE_MAXIMPORTCOUNT_2" }) }}
+                            </label>
+                            {% include "inputhelp.html.twig" with {'sHelpId': help_id("D3_IMPORTER_PICTURE_MAXIMPORTCOUNT_HELP"), 'sHelpText': help_text("D3_IMPORTER_PICTURE_MAXIMPORTCOUNT_HELP")} %}
+                        </td>
+                    </tr>
+                    {% set aArticleSettings = edit.getValue('aArticleSettings') %}
+                    <tr>
+                        <td valign="top" class="edittext">
+                            <label for="aArticleSettings">
+                                {{ translate({ ident: "D3_IMPORTER_CONFIG_AARTICLESETTINGS" }) }}
+                            </label>
+                            {% include "inputhelp.html.twig" with {'sHelpId': help_id("D3_IMPORTER_CONFIG_AARTICLESETTINGS_HELP"), 'sHelpText': help_text("D3_IMPORTER_CONFIG_AARTICLESETTINGS_HELP")} %}
+                        </td>
+                        <td class="edittext">
+                            {% if aArticleSettings is iterable %}
+                                {% set sArticleSettings = aArticleSettings|join('\n') %}
+                            {% endif %}
+                            <textarea id="aArticleSettings"
+                                      rows="5"
+                                      cols="60"
+                                      name="value[aArticleSettings]">{{ sArticleSettings }}</textarea>
+                        </td>
+                    </tr>
+                    {% set aDefaultImportConfig = edit.getValue('aDefaultImportConfig') %}
+                    <tr>
+                        <td valign="top">
+                            {{ translate({ ident: "D3_IMPORTER_CONFIG_IMPORTTICKER" }) }}
+                            {% include "inputhelp.html.twig" with {'sHelpId': help_id("D3_IMPORTER_CONFIG_IMPORTTICKER_HELP"), 'sHelpText': help_text("D3_IMPORTER_CONFIG_IMPORTTICKER_HELP")} %}
+                        </td>
+                        <td>
+                            <label>
+                                <input name="value[aDefaultImportConfig][iLinesPerRun]"
+                                       value="{{ aDefaultImportConfig.iLinesPerRun|default(100) }}">
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top">
+                            {{ translate({ ident: "D3_IMPORTER_CONFIG_FILEHEADERCOUNT" }) }}
+                            {% include "inputhelp.html.twig" with {'sHelpId': help_id("D3_IMPORTER_CONFIG_FILEHEADERCOUNT_HELP"), 'sHelpText': help_text("D3_IMPORTER_CONFIG_FILEHEADERCOUNT_HELP")} %}
+                        </td>
+                        <td>
+                            <label>
+                                <input name="value[aDefaultImportConfig][iNotImportetNubersOfFileHeader]"
+                                       value="{{ aDefaultImportConfig.iNotImportetNubersOfFileHeader|default(0) }}">
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top">
+                            <label for="aCategorieIndentificationFields">
+                                {{ translate({ ident: "D3_IMPORTER_MAIN_CATEGORIE_INDENTIFICATIONFIELDS" }) }}
+                            </label>
+                            {% include "inputhelp.html.twig" with {'sHelpId': help_id("D3_IMPORTER_MAIN_CATEGORIE_INDENTIFICATIONFIELDS_HELP"), 'sHelpText': help_text("D3_IMPORTER_MAIN_CATEGORIE_INDENTIFICATIONFIELDS_HELP")} %}
+                        </td>
+                        <td>
+                            {% set aFields = oView.getCategorieFields() %}
+                            <input type="hidden" name="value[aCategorieIndentificationFields]" value="">
+                            <select id="aCategorieIndentificationFields"
+                                    name="value[aCategorieIndentificationFields][]"
+                                    size="10" multiple
+                                    style="width: 250px;" {{ readonly }}>
+                                {% for aField in aFields %}
+                                    <option value="{{ aField.title }}" {% if aField.selected == 1 %} selected{% endif %}>
+                                        {{ aField.title }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top">
+                            {{ translate({ ident: "D3_IMPORTER_CONFIG_OVERRIDEEXTERNPICTURES" }) }}
+                            {% include "inputhelp.html.twig" with {'sHelpId': help_id("D3_IMPORTER_CONFIG_OVERRIDEEXTERNPICTURES_HELP"), 'sHelpText': help_text("D3_IMPORTER_CONFIG_OVERRIDEEXTERNPICTURES_HELP")} %}
+                        </td>
+                        <td>
+                            <input type="hidden"
+                                   name="value[aPictureSettings][iOverrideExternPictures]"
+                                   value="0">
+                            <label>
+                                <input type="checkbox"
+                                       name="value[aPictureSettings][iOverrideExternPictures]"
+                                        {% if aPictureSettings.iOverrideExternPictures %}
+                                            checked
+                                        {% endif %}
+                                       value="1">
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top">
+                            {{ translate({ ident: "D3_IMPORTER_CONFIG_BLDELETEMASTERPICTURE" }) }}
+                            {% include "inputhelp.html.twig" with {'sHelpId': help_id("D3_IMPORTER_CONFIG_BLDELETEMASTERPICTURE_HELP"), 'sHelpText': help_text("D3_IMPORTER_CONFIG_BLDELETEMASTERPICTURE_HELP")} %}
+                        </td>
+                        <td>
+                            <input type="hidden"
+                                   name="value[aPictureSettings][blDeleteMasterPicture]"
+                                   value="0">
+                            <label>
+                                <input type="checkbox"
+                                       name="value[aPictureSettings][blDeleteMasterPicture]"
+                                        {% if aPictureSettings.blDeleteMasterPicture %}
+                                            checked
+                                        {% endif %}
+                                       value="1">
+                            </label>
+                        </td>
+                    </tr>
+                {% endblock %}
+            </table>
+        {% endblock %}
+        <div>
+            <span class="d3modcfg_btn icon status_ok">
+                <input type="submit" name="save" value="{{ translate({ ident: "D3_CFG_MOD_GENERAL_SAVE" }) }}">
+                <span></span>
+            </span>
+            <br>
+            <br>
+        </div>
+    {% endif %}
+</form>
+
+{% include "@d3modcfg_lib/admin/inc/inc.html.twig" %}
+
+{% set emptyCapture %}
+    <script type="text/javascript">
+        {% set d3JavaScript %}
+        if (parent.parent) {
+            parent.parent.sShopTitle = "{{ actshopobj.oxshops__oxname.getRawValue()|addslashes }}";
+            parent.parent.sMenuItem = "{{ translate({ ident: "d3mximporter" }) }}";
+            parent.parent.sMenuSubItem = "{{ translate({ ident: "d3tbclimporter_cfg_main" }) }}";
+            parent.parent.sWorkArea = "{{ _act }}";
+            parent.parent.setTitle();
+        }
+        {% endset %}
+    </script>
+{% endset %}
+{{ script({ add: d3JavaScript.__toString(), dynamic: __oxid_include_dynamic }) }}
+{% include "bottomitem.html.twig" %}

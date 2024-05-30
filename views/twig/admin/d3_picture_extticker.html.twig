@@ -1,0 +1,85 @@
+{% if dirinfo.sumfiles and dirinfo.sumfiles > dirinfo.finishedfiles %}
+    {% set showStartButton = true %}
+{% endif %}
+{% if blEOD %}
+    {% include "headitem.html.twig" with {title: "GENERAL_ADMIN_TITLE"|translate, box: "box"} %}
+{% else %}
+    {% set params = oViewConf.getSelfLink()|add_url_parameters("cl=")|cat(oViewConf.getActiveClassName())|cat("&fnc=getexternpictures&d3ief=")|cat(iImportedFiles)|cat("&oxid=")|cat(oxid) %}
+    {% include "headitem.html.twig" with {title: "GENERAL_ADMIN_TITLE"|translate, meta_refresh_sec: "1", meta_refresh_url: params, box: "box"} %}
+{% endif %}
+{{ style({ include: oViewConf.getModuleUrl('d3modcfg_lib', 'out/admin/src/d3_mod_cfg.min.css') }) }}
+{{ style() }}
+{% include "@d3importer/admin/bootstrap.html.twig" %}
+
+<form name="transfer" id="transfer" action="{{ oViewConf.getSelfLink()|raw }}" method="post">
+    {{ oViewConf.getHiddenSid()|raw }}
+    <input type="hidden" name="oxid" value="{{ oxid }}">
+    <input type="hidden" name="cl" value="{{ oViewConf.getActiveClassName() }}">
+    <input type="hidden" name="editlanguage" value="{{ editlanguage }}">
+</form>
+
+<form name="myedit" id="myedit" enctype="multipart/form-data" action="{{ oViewConf.getSelfLink()|raw }}" method="post">
+    {{ oViewConf.getHiddenSid()|raw }}
+    <input type="hidden" name="cl" value="{{ oViewConf.getActiveClassName() }}">
+    <input type="hidden" name="fnc" value="">
+    <input type="hidden" name="oxid" value="{{ oxid }}">
+    <input type="hidden" name="line" value="{{ actcsvline }}">
+
+    <table cellspacing="0" cellpadding="0" border="0" width="98%">
+        {% set iError = oView.getConfigFailure() %}
+        {% if false == iError and false == iSumFiles %}
+            {% set iError = "20" %}
+        {% endif %}
+        {% if iError %}
+            {% block d3_d3importer_views_admin_tpl_d3_picture_extticker_failure %}
+                <tr>
+                    <td valign="top" class="edittext" colspan="2">
+                        <div class="alert alert-danger">{{ translate({ ident: "D3_PICTURE_FAILCONFIG_"|cat(iError) }) }}</div>
+                    </td>
+                </tr>
+            {% endblock %}
+            <tr>
+                {% block d3_d3importer_views_admin_tpl_d3_picture_import_options %}
+                    <td valign="top" class="edittext" width="50%">
+                        {% include "@d3importer/admin/options/picture/import.html.twig" with {showStartButton: showStartButton|default(false), showScanArea: true} %}
+                    </td>
+                {% endblock %}
+                {% block d3_d3importer_views_admin_tpl_d3_picture_import_results %}
+                    <td valign="top" class="edittext" align="left" width="50%">
+                        {% include "@d3importer/admin/options/picture/results.html.twig" %}
+                    </td>
+                {% endblock %}
+            </tr>
+        {% else %}
+            {% block d3_d3importer_views_admin_tpl_d3_picture_extticker_success %}
+                <tr>
+                    <td valign="top" class="edittext">
+                        <div style="text-align: center;">
+                            <h3>{{ translate({ ident: "D3_PICTURE_EXTIMPORT_INFO1" }) }}
+                                : {{ iImportedFiles }} {{ translate({ ident: "D3_PICTURE_IMPORT_INFO2" }) }} {{ iSumFiles }}
+                                .</h3>
+                            {% if blEOD %}
+                                <h3>{{ translate({ ident: "D3_PICTURE_EXTIMPORT_IMPORTEND" }) }}</h3>
+                                {% include "@d3importer/admin/options/picture/import.html.twig" with {showStartButton: showStartButton|default(false), showScanArea: false} %}
+                            {% endif %}
+                            {% set Errorlist = oView.getDisplayErrors() %}
+
+                            {% if count(Errorlist)>0 %}
+                                <div class="errorbox inbox">
+                                    {% for key, oEr in Errorlist %}
+                                        {% set errortype = oEr.sErrorType %}
+                                        {% set errortextident = "D3_PICTURE_IMPORT_ERRORTYPE_"|cat(errortype) %}
+                                        <p> {{ oEr.sText }} -> '{{ translate({ ident: errortextident }) }}'</p>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </td>
+                </tr>
+            {% endblock %}
+        {% endif %}
+    </table>
+</form>
+
+{% include "bottomnaviitem.html.twig" %}
+{% include "bottomitem.html.twig" %}
