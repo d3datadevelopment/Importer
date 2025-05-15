@@ -38,17 +38,17 @@ class InstallRoutine extends d3install_updatebase
     /**
      * @var string
      */
-    public $sModVersion = '6.0.1.0';
+    public $sModVersion = '6.1.0.0';
     /**
      * @var string
      */
     public $sBaseConf = '--------------------------------------------------------------------------------
-r5Kv2==RTN6VTdvUkRGZnFHSXhxZVhrakRhbUJkWXdtZ0twRHJXOEtCRjdsWkYrWXN1THpueVdHT0dCV
-2g1NU5qdTNFeHNLa0hHUWxkMUlERkoxNU1vTms2SUdLS2NxaFNRM253VHlIRnhYcTUzbUF6SFdvcGtFe
-EtpS1RsV3FhM2d2ZVp1ZGtGOFU1SU9NK2E4cDRYSjd6SDRJbjkvSWNmME5QWmxwcU5mVWtlZHVXOTM3Q
-2VFQ3c0OFNWQXlTcVlkclpyaXFiRlVyci9YWnU4Y3dMem0rQzNHbkxkdkVXV1QrYmNqanpVcnRXZno4R
-FVwc3h6eVJUYlNjTUdrV2QwaHlPV2FkRGdUUmU1ZGNjY001SU1NaXRwOVhZaGFpVkJEaXpJM0VJM0NFb
-GxyeFFiZWZGVEY2SVJlaGx6N0Fvd3owMjVKY2Z0eTI1T0laYjZFamdtcjJtaWhRPT0=
+xH3v2==b0k3clpqUmRaSmd4blhsY055SFRjTER6dkUxd2oxUkp1OVNWSy82NS94anpUUmRiTitHalpuR
+1NNVFIvVUhNV2UwY0daWmU1UjI5aEJrWHF6STd3bWd5ZzdacCtUYU1nSE1RVW1KWUw0WDd5cUVRcnBnV
+lQxRDRlbzN5bUNGZ0VpK3d2bTdmUzBKUkoxNWhlQTh6VCtvU21wMVoxSVhFOExCZUNEVnJieldCQVNEY
+jl5QlZKRkl4L1EwZUJFd0tFb21qdVRuOXR3NXBuWDM1cmluVjZXSDNRNVNhRExVSElSM1VzOVQ0VzVDb
+HlsUE5uWm5HcE5vcjMxd3lLaUtyK2NXbUpzT3dvTEx3OThQZDZiQVI2eVE3czBPM1FsUVhDTkZSYUtLZ
+ENXT0luMW9MRWJxUGdvTU1raWxYb0NSSVB4RTZWYk1TSVdqblVzS2pqODdOM293PT0=
 --------------------------------------------------------------------------------';
     /**
      * @var string

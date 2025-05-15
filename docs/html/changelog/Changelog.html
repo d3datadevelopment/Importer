@@ -72,7 +72,7 @@
     <div class="Page__header">
         <h1><a href="../changelog/Changelog.html">Changelog</a></h1>
                 <span class="ModifiedDate">
-                        29.05.2024        </span>
+                        15.05.2025        </span>
                     </div>
 
     <div class="s-content">
@@ -80,6 +80,20 @@
 <p>The format is based on <a href="https://keepachangelog.com/en/1.0.0/" class="Link--external">Keep a Changelog</a>,
 and this project adheres to <a href="https://semver.org/spec/v2.0.0.html" class="Link--external">Semantic Versioning</a>.</p>
 <h2 id="page_Unreleased"><a href="https://git.d3data.de/D3Private/Importer/compare/6.0.1.0...rel_6.x" class="Link--external">Unreleased</a></h2>
+<h2 id="page_6-1-0-0-2025-01-10"><a href="https://git.d3data.de/D3Private/Importer/compare/6.0.1.0...6.0.1.1" class="Link--external">6.1.0.0</a> - 2025-01-10</h2>
+<h3 id="page_Added">Added</h3>
+<ul>
+<li>WebP support</li>
+<li>OXID 7.2 support</li>
+</ul>
+<h3 id="page_Changed">Changed</h3>
+<ul>
+<li>improve performance using Guzzle for HTTP requests</li>
+</ul>
+<h3 id="page_Fixed">Fixed</h3>
+<ul>
+<li>catch profile errors (e.g. missing or invalid file)</li>
+</ul>
 <h2 id="page_6-0-1-0-2024-05-30"><a href="https://git.d3data.de/D3Private/Importer/compare/6.0.0.1...6.0.1.0" class="Link--external">6.0.1.0</a> - 2024-05-30</h2>
 <h3 id="page_added">added</h3>
 <ul>
@@ -108,7 +122,7 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html" class=
 <li>nicht verfügbar mit PHP &lt; 8.0</li>
 </ul>
 <h2 id="page_5-0-7-2-2023-10-26"><a href="https://git.d3data.de/D3Private/Importer/compare/5.0.7.1...5.0.7.2" class="Link--external">5.0.7.2</a> - 2023-10-26</h2>
-<h3 id="page_Fixed">Fixed</h3>
+<h3 id="page_Fixed-2">Fixed</h3>
 <ul>
 <li>fix import attributes in different languages</li>
 </ul>
@@ -122,7 +136,7 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html" class=
 <ul>
 <li>switch data-getter to raw-getter at Article-import</li>
 </ul>
-<h3 id="page_Added">Added</h3>
+<h3 id="page_Added-2">Added</h3>
 <ul>
 <li>multiple assignment for attributes</li>
 </ul>
@@ -181,7 +195,7 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html" class=
 </ul>
 <hr />
 <h2 id="page_5-0-5-0-2021-05-03">5.0.5.0 - (2021-05-03)</h2>
-<h3 id="page_Changed">Changed</h3>
+<h3 id="page_Changed-2">Changed</h3>
 <ul>
 <li>Installierbar in OXID 6.2.4 und 6.3</li>
 <li>Adminmenüeintrag um Icon ergänzt</li>
@@ -239,14 +253,14 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html" class=
 <li>0002805: neue Bildimportoption &quot;Master Bilder am Artikel erst löschen, dann importieren&quot;</li>
 <li>0002002: Alle Update Checkboxen an/abwählen</li>
 <li>0007825: Mall Tab erlaubt keine Leer Möglichkeit</li>
-<li>0000000: <span class="navi_element">fixed</span> category import add's a relationship with oxrootid if column is empty</li>
+<li>0000000: <span class="navi_element">fixed</span> category import add a relationship with oxrootid if column is empty</li>
 <li>0000000: refactored \d3_importer_Application_Models_Models_Import_Article::setUpdate</li>
 <li>0000000: refactored \d3_importer_Application_Models_Models_Import_Article::setInsert</li>
 <li>0000000: added methods in class \d3_importer_Application_Models_Models_Import_Article: setArticleOxid, setRemindActiveFlag, addPriceFields</li>
 <li>0000000: refactored collector -&gt; moved methods to importService: getCsvLines, addOxidToCSVData</li>
 <li>0000000: added class \d3_importer_Application_Models_Service_Import and modified constructor of \d3_importer_Application_Models_Interface_Import + \d3_importer_Application_Models_ImportAbstract</li>
-<li>0000000: refactored import models &gt; moved method's getArticleRecords into \d3_importer_Application_Models_Collector;
-the \d3_importer_Application_Models_Collector assign's oxid's, if they are present in the database</li>
+<li>0000000: refactored import models &gt; moved method getArticleRecords into \d3_importer_Application_Models_Collector;
+the \d3_importer_Application_Models_Collector assigns oxIDs, if they are present in the database</li>
 <li>0000000: added abstract class \d3_importer_Application_Models_ImportAbstract for future refactorings in import models</li>
 <li>0000000: added interface \d3_importer_Application_Models_Interface_Import for future refactorings in import models</li>
 <li>0000000: refactored moved method \d3_importer_Application_Models_Models_Import_Accessories::getImportFields \d3_importer_Application_Controller_Import_Article::getImportFields</li>
@@ -295,7 +309,7 @@ the \d3_importer_Application_Models_Collector assign's oxid's, if they are prese
 <li>0000000: replaced execute to getAll while using select query in category model</li>
 <li>0000000: replaced select to delete query in deleteArticleAssign method in Selectlist model</li>
 <li>0000000: removed unused deleteArticleAssign in vendor model</li>
-<li>0000000: corrected some germans typo's</li>
+<li>0000000: corrected some germans typos</li>
 <li>0000000: added notice for category import</li>
 </ul>
 <h3 id="page_fixed-2">fixed</h3>
@@ -348,7 +362,7 @@ the \d3_importer_Application_Models_Collector assign's oxid's, if they are prese
 <hr />
 <h2 id="page_4-4-1-6">4.4.1.6</h2>
 <ul>
-<li>0003728: seo URl's werden bei der Einstellung &quot;Artikel-Kat.-Zuordnungen vorher löschen&quot; nicht gelöscht</li>
+<li>0003728: seo URls werden bei der Einstellung &quot;Artikel-Kat.-Zuordnungen vorher löschen&quot; nicht gelöscht</li>
 <li>0003724: oxremindactive wird nicht aktualisiert</li>
 </ul>
 <hr />

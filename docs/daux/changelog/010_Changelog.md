@@ -9,6 +9,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://git.d3data.de/D3Private/Importer/compare/6.0.1.0...rel_6.x)
 
+## [6.1.0.0](https://git.d3data.de/D3Private/Importer/compare/6.0.1.0...6.0.1.1) - 2025-01-10
+### Added
+- WebP support
+- OXID 7.2 support
+
+### Changed
+- improve performance using Guzzle for HTTP requests
+
+### Fixed
+- catch profile errors (e.g. missing or invalid file)
+
 ## [6.0.1.0](https://git.d3data.de/D3Private/Importer/compare/6.0.0.1...6.0.1.0) - 2024-05-30
 ### added
 - installierbar in OXID 7.1.x
@@ -146,14 +157,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 0002805: neue Bildimportoption "Master Bilder am Artikel erst löschen, dann importieren"
 - 0002002: Alle Update Checkboxen an/abwählen
 - 0007825: Mall Tab erlaubt keine Leer Möglichkeit
-- 0000000: [fixed] category import add's a relationship with oxrootid if column is empty
+- 0000000: [fixed] category import add a relationship with oxrootid if column is empty
 - 0000000: refactored \d3_importer_Application_Models_Models_Import_Article::setUpdate
 - 0000000: refactored \d3_importer_Application_Models_Models_Import_Article::setInsert
 - 0000000: added methods in class \d3_importer_Application_Models_Models_Import_Article: setArticleOxid, setRemindActiveFlag, addPriceFields
 - 0000000: refactored collector -> moved methods to importService: getCsvLines, addOxidToCSVData
 - 0000000: added class \d3_importer_Application_Models_Service_Import and modified constructor of \d3_importer_Application_Models_Interface_Import + \d3_importer_Application_Models_ImportAbstract
-- 0000000: refactored import models > moved method's getArticleRecords into \d3_importer_Application_Models_Collector;
-         the \d3_importer_Application_Models_Collector assign's oxid's, if they are present in the database
+- 0000000: refactored import models > moved method getArticleRecords into \d3_importer_Application_Models_Collector;
+         the \d3_importer_Application_Models_Collector assigns oxIDs, if they are present in the database
 - 0000000: added abstract class \d3_importer_Application_Models_ImportAbstract for future refactorings in import models
 - 0000000: added interface \d3_importer_Application_Models_Interface_Import for future refactorings in import models
 - 0000000: refactored moved method \d3_importer_Application_Models_Models_Import_Accessories::getImportFields \d3_importer_Application_Controller_Import_Article::getImportFields
@@ -202,7 +213,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 0000000: replaced execute to getAll while using select query in category model
 - 0000000: replaced select to delete query in deleteArticleAssign method in Selectlist model
 - 0000000: removed unused deleteArticleAssign in vendor model
-- 0000000: corrected some germans typo's
+- 0000000: corrected some germans typos
 - 0000000: added notice for category import
 
 ### fixed
@@ -258,7 +269,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ---
 
 ## 4.4.1.6
-- 0003728: seo URl's werden bei der Einstellung "Artikel-Kat.-Zuordnungen vorher löschen" nicht gelöscht
+- 0003728: seo URls werden bei der Einstellung "Artikel-Kat.-Zuordnungen vorher löschen" nicht gelöscht
 - 0003724: oxremindactive wird nicht aktualisiert
 
 ---

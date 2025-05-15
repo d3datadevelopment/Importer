@@ -15,6 +15,8 @@
 
 namespace D3\Importer\Application\Controller\Import;
 
+use D3\Importer\Application\Models\Exceptions\ImporterException;
+use D3\Importer\Application\Models\Exceptions\ProfileException;
 use D3\ModCfg\Application\Model\Exception\d3ShopCompatibilityAdapterException;
 use D3\ModCfg\Application\Model\Exception\d3_cfg_mod_exception;
 use Doctrine\DBAL\DBALException;
@@ -243,49 +245,49 @@ class Article
      * @throws DatabaseConnectionException
      * @throws DatabaseErrorException
      * @throws StandardException
+     * @throws ImporterException
      */
     protected function isStartProcedereSuccessful($importFields)
     {
-        if (false == d3_cfg_mod::get('d3importer')->isActive()) {
-            $this->importFailCode = 20;//TODO: use constant!
-            $this->isEndOfFile    = true;
+        try {
+            if ( false == d3_cfg_mod::get( 'd3importer' )->isActive() ) {
+                $this->importFailCode = 20;//TODO: use constant!
+                $this->isEndOfFile    = true;
 
+                return false;
+            }
+
+            $profiles = $this->importConfig->getImportProfile();
+
+            if ( empty( $profiles ) ) {
+                /** @var StandardException $exception */
+                $exception = oxNew( ProfileException::class, 'import profiles are empty!' );
+                throw $exception;
+            }
+
+            $this->importConfig->validateImportFile();
+
+            $aConfigProfile              = $profiles['d3_importer_config'];
+            $sArticleAssignmentFieldname = (string) $aConfigProfile['ASSIGNIDENT'];
+
+            //<editor-fold desc="TODO:Ueberpruefung der Konfiguration auslagern">
+            //pruefe, ob das Feld fuer die Artikelidentifikation auch zugeordnet ist
+            if ( empty( $sArticleAssignmentFieldname ) //
+                 || false == isset( $importFields[ $sArticleAssignmentFieldname ] ) //
+                 || false == strlen( $importFields[ $sArticleAssignmentFieldname ]->import ) ) {
+                $this->importFailCode = 11; // bedeutet: Artikelidentifikation nicht zugeordnet
+
+                return false;
+            }
+
+            //</editor-fold>
+
+            return true;
+        } catch (ImporterException $e) {
+            // ToDo: requires a strict separation between backend call and CLI call
+            echo $e->getMessage();
             return false;
         }
-
-        $profiles = $this->importConfig->getImportProfile();
-
-        if (empty($profiles)) {
-            /** @var StandardException $exception */
-            $exception = oxNew(
-                StandardException::class,
-                'import profiles are empty!'
-            );
-            throw $exception;
-        }
-
-        $this->importConfig->validateImportFile();
-
-        if (false == isset($this->importConfig->fpCsv)) {
-            $this->importFailCode = 10; //bedeutet "import-datei konnte nicht geoeffnet werden"
-            return false;
-        }
-
-        $aConfigProfile              = $profiles['d3_importer_config'];
-        $sArticleAssignmentFieldname = (string)$aConfigProfile['ASSIGNIDENT'];
-
-        //<editor-fold desc="TODO:Ueberpruefung der Konfiguration auslagern">
-        //pruefe, ob das Feld fuer die Artikelidentifikation auch zugeordnet ist
-        if (empty($sArticleAssignmentFieldname) //
-            || false == isset($importFields[$sArticleAssignmentFieldname]) //
-            || false == strlen($importFields[$sArticleAssignmentFieldname]->import)
-        ) {
-            $this->importFailCode = 11; // bedeutet: Artikelidentifikation nicht zugeordnet
-            return false;
-        }
-        //</editor-fold>
-
-        return true;
     }
 
     /**

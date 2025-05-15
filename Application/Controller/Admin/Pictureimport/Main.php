@@ -62,7 +62,7 @@ class Main extends Base
 
     /**
      * Executes parent method parent::render(), creates oxlist object,
-     * passes it's data to Smarty engine and retutns name of template
+     * passes its data to Smarty engine and retutns name of template
      * file "d3_picture_main.tpl".
      *
      * @return string

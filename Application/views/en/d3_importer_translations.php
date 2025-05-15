@@ -522,11 +522,11 @@ return [
                                                                . 'These articlefields are used in serveral parts of the importer module (article import/article fields, settings/article identification). <br>'//
                                                                . 'With this, you can add or reduce the article fields in importer administration.',
     'D3_IMPORTER_PRICE2ART_PERCENTOPTION'                   => 'is % discount price?',
-    'HELP_D3_IMPORTER_PRICE2ART_PERCENTOPTION'              => 'If this checkbox active, the price will be imported as an percentual price. You will find more Info\'s under /Administer Products/Products/Stock/Scale Prices/.',
-    'HELP_D3_IMPORTER_PRICE2ART_PRICE'                      => 'Set the price for the scale (comma\'s will be replaced by a point, please avoid entries like: 1,234.56<br> better solution: 1234,56 or 1234.56).<br><br>To import percentage scale price\'s, please use the % sign. f.e.: 10% or 1,23% or 1.23%',
+    'HELP_D3_IMPORTER_PRICE2ART_PERCENTOPTION'              => 'If this checkbox active, the price will be imported as an percentual price. You will find more Information under /Administer Products/Products/Stock/Scale Prices/.',
+    'HELP_D3_IMPORTER_PRICE2ART_PRICE'                      => 'Set the price for the scale (commas will be replaced by a point, please avoid entries like: 1,234.56<br> better solution: 1234,56 or 1234.56).<br><br>To import percentage scale prices, please use the % sign. f.e.: 10% or 1,23% or 1.23%',
     'D3_PICTURE_IMPORT_LOAD_PROFILE'                        => 'Please choose an importprofile.',
-    'HELP_D3_PICTURE_EXTPICTURE_START'                      => 'check the box, if the pictures to be imported are located in external URL\'s.<br>For example: https://placeimg.com/1000/1000/any.jpg.' //
-                                                               . '<br><br>The picture import calls the URL\'s and download the pictures into the defined picture import folder.',
+    'HELP_D3_PICTURE_EXTPICTURE_START'                      => 'check the box, if the pictures to be imported are located in external URLs.<br>For example: https://placeimg.com/1000/1000/any.jpg.' //
+                                                               . '<br><br>The picture import calls the URLs and download the pictures into the defined picture import folder.',
     'D3_IMPORTER_PICTURE_IMPORT_STEP1'                      => 'step 1:',
     'D3_IMPORTER_PICTURE_IMPORT_STEP2'                      => 'step 2:',
     'D3_IMPORTER_FIELDS_CHECKALL'                           => 'de/select all update checkboxes',

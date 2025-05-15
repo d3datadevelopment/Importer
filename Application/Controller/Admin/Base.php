@@ -14,6 +14,7 @@
 
 namespace D3\Importer\Application\Controller\Admin;
 
+use D3\Importer\Application\Models\Exceptions\ImporterException;
 use D3\ModCfg\Application\Model\Exception\d3ShopCompatibilityAdapterException;
 use D3\ModCfg\Application\Model\Exception\d3_cfg_mod_exception;
 use Doctrine\DBAL\DBALException;
@@ -254,20 +255,24 @@ abstract class Base extends AdminDetailsController
      */
     public function readCurrentCSVLine()
     {
-        startProfile(__METHOD__);
+        try {
+            startProfile(__METHOD__);
 
-        $oImportConfig = $this->getD3ImporterConfiguration();
-        $aProfileMain  = $oImportConfig->getImportProfile('d3_importer_main');
+            $oImportConfig = $this->getD3ImporterConfiguration();
+            $aProfileMain  = $oImportConfig->getImportProfile('d3_importer_main');
 
-        $lineNumber = (int)oxNew(Request::class)->getRequestParameter("line");
-        $lineNumber = max($lineNumber, $aProfileMain['FILEROWS'] ? 1 : 0);
+            $lineNumber = (int)oxNew(Request::class)->getRequestParameter("line");
+            $lineNumber = max($lineNumber, $aProfileMain['FILEROWS'] ? 1 : 0);
 
-        //open file resource...
-        $aLine = $oImportConfig->getCSVData($lineNumber);
+            //open file resource...
+            $aLine = $oImportConfig->getCSVData($lineNumber);
 
-        $this->addTplParam('actcsvline', $lineNumber);
-        $this->addTplParam('maxcsvline', $aProfileMain['FILEROWS']);
-        $this->addTplParam('aCSVLines', $aLine);
-        stopProfile(__METHOD__);
+            $this->addTplParam('actcsvline', $lineNumber);
+            $this->addTplParam('maxcsvline', $aProfileMain['FILEROWS']);
+            $this->addTplParam('aCSVLines', $aLine);
+            stopProfile(__METHOD__);
+        } catch (ImporterException $e) {
+            Registry::getUtilsView()->addErrorToDisplay($e);
+        }
     }
 }

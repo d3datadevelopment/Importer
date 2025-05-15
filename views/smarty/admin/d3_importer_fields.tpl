@@ -92,6 +92,7 @@
                             [{assign var="color" value="1"}]
                             [{assign var=blShowRow2 value=false}]
                             [{* Wenn wir bei der Haelfe der CSV-Spalten sind, kommt Spalte 2 der Tabelle *}]
+                            [{if !$aCSVLines || !is_array($aCSVLines)}][{assign var="aCSVLines" value=","|explode:""}][{/if}]
                             [{math equation="total / 2" total=$aCSVLines|@count assign="total"}]
 
                         [{foreach name="csvline" from=$aCSVLines item="name" key="key"}]

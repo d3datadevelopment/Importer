@@ -89,6 +89,7 @@
                             {% set color = "1" %}
                             {% set blShowRow2 = false %}
                             {# Wenn wir bei der Haelfe der CSV-Spalten sind, kommt Spalte 2 der Tabelle #}
+                            {% if aCSVLines is not iterable %}{% set aCSVLines = [] %}{% endif %}
                             {% set total = aCSVLines|length / 2 %}
 
                         {% for key, name in aCSVLines %}
