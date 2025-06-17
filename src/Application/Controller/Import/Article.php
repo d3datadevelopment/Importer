@@ -229,7 +229,7 @@ class d3_importer_Application_Controller_Import_Article
      * @throws \Doctrine\DBAL\DBALException
      * @throws \OxidEsales\Eshop\Core\Exception\DatabaseConnectionException
      * @throws \OxidEsales\Eshop\Core\Exception\DatabaseErrorException
-     * @throws \OxidEsales\Eshop\Core\Exception\StandardException
+     * @throws d3_importer_Application_Models_Exceptions_ImporterException
      */
     protected function isStartProcedereSuccessful($importFields)
     {
@@ -245,18 +245,13 @@ class d3_importer_Application_Controller_Import_Article
         if (empty($profiles)) {
             /** @var \OxidEsales\Eshop\Core\Exception\StandardException $exception */
             $exception = oxNew(
-                \OxidEsales\Eshop\Core\Exception\StandardException::class,
+                d3_importer_Application_Models_Exceptions_ProfileException::class,
                 'import profiles are empty!'
             );
             throw $exception;
         }
 
         $this->importConfig->validateImportFile();
-
-        if (false == isset($this->importConfig->fpCsv)) {
-            $this->importFailCode = 10; //bedeutet "import-datei konnte nicht geoeffnet werden"
-            return false;
-        }
 
         $aConfigProfile              = $profiles['d3_importer_config'];
         $sArticleAssignmentFieldname = (string)$aConfigProfile['ASSIGNIDENT'];

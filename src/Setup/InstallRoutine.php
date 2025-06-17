@@ -27,21 +27,21 @@ class d3_importer_Setup_InstallRoutine extends d3install_updatebase
     /**
      * @var string
      */
-    public $sModVersion = '5.0.7.2';
+    public $sModVersion = '5.0.7.4';
     /**
      * @var string
      */
-    public $sModRevision = '5071';
+    public $sModRevision = '5074';
     /**
      * @var string
      */
     public $sBaseConf = '--------------------------------------------------------------------------------
-suuv2==YWdPU3lTS3hsMnllazlxSGZ1a0kxVjdOTTd2c1hGN3pUWjJvNUVzOWFTK3pyMC9aQ1VhNlIxQ
-1FpeUtQb0h0NFBKUzJ4WXFXY3g5VHZEVHFUN2dxOCtXQVlPNlJQMVBsUkptUFJJVnNlUkRFdjM1cW41Q
-lRVU2JUcmJLc0dYUTBYUlJXVUVrMG5ISUs3TGxDVjJiODZXS3hMcVBReVpkUHJiTURFdEZWSHJ4UC93b
-TJtNGF4NUNKNkNHVDdDanN0QVdXWm4yR21WdXdMbENNcW9lV2wzdmRzdWJGZjBNN0t5VE1kbHd6YVhFM
-DhNbEY0akdOU0luNzlJU2NQWWtDMVBDTE5lMG0yaGpvcVMrT0x2Uys5SU9sRHNBMXBUbzJSMU9udXRVV
-FcrQm5QSTBKRHpDV3luM2dxeVhUdE9yOGRpTm03elpaS3Q3eG5hb1NzYXdNSHhRPT0=
+99mv2==RDNrNStqamZENFNZNnI5OHR6OXlPRVJmV2Nqbm5jTG9qQll4U2tPcDAybVNWY28vbFgwdFo0c
+1JDTkR0MXc4YU9wanhtVndNZjkxRFJkVlN2SXdvTDVpeHNLVE0wS1ZHMVN2M2V0TnQvcWdHbks0N2Era
+DdvSjFnSy9QWkVqeFEwVWt0N2VicU9IOEVaY2oyaEhydkc2OG9EODJTQ01SOC9QcmxxNS81MmxLWC9pS
+Dc3eW00eUdhb2tHeHFValJLaTZHMGYxayttUDM2SW5uc084WEFpczBtWFcwVVhUZElyODRqU0RPQ3RKN
+WdVMlF6MUxmcUJzaG1kS052c3gzY0svcXk5NUY5SkJmVkFZTXEydGdmVnphS01lYjdCcGRkeE12KzU3V
+mRjSlRVdGd0aFJLVmV3N0RIQXZZczUxTUVMQVNKRStINVZGOWdnbGxselpwNjBnPT0=
 --------------------------------------------------------------------------------';
     /**
      * @var string

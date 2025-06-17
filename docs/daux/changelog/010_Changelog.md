@@ -2,6 +2,15 @@
 title: Changelog
 ---
 
+## [5.0.7.3](https://git.d3data.de/D3Private/Importer/compare/5.0.7.3...5.0.7.4) - 2025-06-17
+### Fixed
+- typo in table name
+
+
+## [5.0.7.3](https://git.d3data.de/D3Private/Importer/compare/5.0.7.2...5.0.7.3) - 2025-01-10
+### Fixed
+- catch profile errors (e.g. missing or invalid file)
+
 ## [5.0.7.2](https://git.d3data.de/D3Private/Importer/compare/5.0.7.1...5.0.7.2) - 2023-10-26
 ### Fixed
 - fix import attributes in different languages
