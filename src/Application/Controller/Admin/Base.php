@@ -247,19 +247,23 @@ abstract class d3_importer_Application_Controller_Admin_Base extends AdminDetail
      */
     public function readCurrentCSVLine()
     {
-        startProfile(__METHOD__);
-        $lineNumber = (int)oxNew(Request::class)->getRequestParameter("line");
-        $lineNumber = $lineNumber <= 0 ? 1 : $lineNumber;
+        try {
+            startProfile(__METHOD__);
+            $lineNumber = (int)oxNew(Request::class)->getRequestParameter("line");
+            $lineNumber = $lineNumber <= 0 ? 1 : $lineNumber;
 
-        $oImportConfig = $this->getD3ImporterConfiguration();
-        $aProfileMain  = $oImportConfig->getImportProfile('d3_importer_main');
+            $oImportConfig = $this->getD3ImporterConfiguration();
+            $aProfileMain  = $oImportConfig->getImportProfile('d3_importer_main');
 
-        //open file resource...
-        $aLine = $oImportConfig->getCSVData($lineNumber);
+            //open file resource...
+            $aLine = $oImportConfig->getCSVData($lineNumber);
 
-        $this->addTplParam('actcsvline', $lineNumber);
-        $this->addTplParam('maxcsvline', $aProfileMain['FILEROWS']);
-        $this->addTplParam('aCSVLines', $aLine);
-        stopProfile(__METHOD__);
+            $this->addTplParam('actcsvline', $lineNumber);
+            $this->addTplParam('maxcsvline', $aProfileMain['FILEROWS']);
+            $this->addTplParam('aCSVLines', $aLine);
+            stopProfile(__METHOD__);
+        } catch (d3_importer_Application_Models_Exceptions_ImporterException $e) {
+            Registry::getUtilsView()->addErrorToDisplay($e);
+        }
     }
 }

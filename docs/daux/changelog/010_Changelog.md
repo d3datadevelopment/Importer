@@ -2,6 +2,37 @@
 title: Changelog
 ---
 
+## [5.0.7.3](https://git.d3data.de/D3Private/Importer/compare/5.0.7.3...5.0.7.4) - 2025-06-17
+### Fixed
+- typo in table name
+
+
+## [5.0.7.3](https://git.d3data.de/D3Private/Importer/compare/5.0.7.2...5.0.7.3) - 2025-01-10
+### Fixed
+- catch profile errors (e.g. missing or invalid file)
+
+## [5.0.7.2](https://git.d3data.de/D3Private/Importer/compare/5.0.7.1...5.0.7.2) - 2023-10-26
+### Fixed
+- fix import attributes in different languages
+
+## [5.0.7.1](https://git.d3data.de/D3Private/Importer/compare/5.0.7.0...5.0.7.1) - 2023-10-20
+### Fixed
+- switch data-getter to FieldObject to assure Shop-Version independent accessibility at Article-import
+
+## [5.0.7.0](https://git.d3data.de/D3Private/Importer/compare/5.0.6.6...5.0.7.0) - 2023-08-23
+### Fixed
+- switch data-getter to raw-getter at Article-import
+### Added
+- multiple assignment for attributes
+
+## [5.0.6.6](https://git.d3data.de/D3Private/Importer/compare/5.0.6.5...5.0.6.6) - 2023-05-25
+### Fixed
+- typo in table name
+
+## [5.0.6.5](https://git.d3data.de/D3Private/Importer/compare/5.0.6.4...5.0.6.5) - 2023-03-30
+### Added
+- installierbar in OXID 6.5.2 (CE 6.14)
+
 ## 5.0.6.4 - (2023-01-02)
 ### Added
 - installierbar in OXID 6.5

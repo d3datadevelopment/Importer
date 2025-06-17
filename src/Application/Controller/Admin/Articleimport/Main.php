@@ -157,48 +157,66 @@ class d3_importer_Application_Controller_Admin_Articleimport_Main extends d3_imp
      */
     public function saveImportProfile(array $aXMLParams = array())
     {
-        $request    = oxNew(Request::class);
-        $sOxid      = $request->getRequestParameter("oxid");
-        $aParams    = $request->getRequestParameter("editval");
-        $aXMLParams = $request->getRequestParameter("xmlval");
+        try {
+            $request    = oxNew( Request::class );
+            $sOxid      = $request->getRequestParameter( "oxid" );
+            $aParams    = $request->getRequestParameter( "editval" );
+            $aXMLParams = $request->getRequestParameter( "xmlval" );
 
-        $oImportConfig = $this->getD3ImporterConfiguration();
+            $oImportConfig = $this->getD3ImporterConfiguration();
 
-        if (false == $oImportConfig->isLoaded()) {
-            $aParams['d3importconfig__oxvalue'] = '';
+            if ( false == $oImportConfig->isLoaded() ) {
+                $aParams['d3importconfig__oxvalue'] = '';
+            }
+
+            if ( '-1' == $sOxid ) {
+                $aParams['d3importconfig__oxid'] = null;
+
+                $aXMLParams['IMPORTTYPE']   = "standard";
+                $aXMLParams['IMPORTTICKER'] = 100;
+                $aXMLParams['OMITLINES']    = 0;
+                $aXMLParams['ASSIGNIDENT']  = "oxartnum";
+            }
+
+            if ( false == $aParams['d3importconfig__oxtitle'] ) {
+                $aParams['d3importconfig__oxtitle'] = '-- no title --';
+            }
+
+            $aFileData = $_FILES['newuploadfile'];
+
+            if ( $aFileData && $aFileData['name'] ) {
+                $aXMLParams['FILE']       = $this->saveUploadFile( $aFileData );
+                $aXMLParams['FILELENGTH'] = $oImportConfig->getCSVFileLineLength( $aXMLParams['FILE'] );
+//                $oImportConfig->setCSVFileLineCount( $aXMLParams['FILEROWS'], $aXMLParams['FILECOLUMS'] );
+            } elseif ( $aXMLParams['FILE'] ) {
+                $aXMLParams['FILELENGTH'] = $oImportConfig->getCSVFileLineLength( $aXMLParams['FILE'] );
+//                $oImportConfig->setCSVFileLineCount( $aXMLParams['FILEROWS'], $aXMLParams['FILECOLUMS'] );
+            }
+
+            $oImportConfig->assign( $aParams );
+            $blIsSaved = $oImportConfig->save();
+
+            if ( $blIsSaved ) {
+                $this->setEditObjectId( $oImportConfig->getId() );
+                parent::saveImportProfile( $aXMLParams );
+            }
+
+            if ( $aFileData && $aFileData['name'] ) {
+                $oImportConfig->setCSVFileLineCount( $aXMLParams['FILEROWS'], $aXMLParams['FILECOLUMS'] );
+            } elseif ( $aXMLParams['FILE'] ) {
+                $oImportConfig->setCSVFileLineCount( $aXMLParams['FILEROWS'], $aXMLParams['FILECOLUMS'] );
+            }
+
+            $blIsSaved = $oImportConfig->save();
+            if ( $blIsSaved ) {
+                $this->setEditObjectId( $oImportConfig->getId() );
+                parent::saveImportProfile( $aXMLParams );
+            }
+        } catch (d3_importer_Application_Models_Exceptions_ImporterException $e) {
         }
+    {
 
-        if ('-1' == $sOxid) {
-            $aParams['d3importconfig__oxid'] = null;
-
-            $aXMLParams['IMPORTTYPE']   = "standard";
-            $aXMLParams['IMPORTTICKER'] = 100;
-            $aXMLParams['OMITLINES']    = 0;
-            $aXMLParams['ASSIGNIDENT']  = "oxartnum";
-        }
-
-        if (false == $aParams['d3importconfig__oxtitle']) {
-            $aParams['d3importconfig__oxtitle'] = '-- no title --';
-        }
-
-        $aFileData = $_FILES['newuploadfile'];
-
-        if ($aFileData && $aFileData['name']) {
-            $aXMLParams['FILE']       = $this->saveUploadFile($aFileData);
-            $aXMLParams['FILELENGTH'] = $oImportConfig->getCSVFileLineLength($aXMLParams['FILE']);
-            $oImportConfig->setCSVFileLineCount($aXMLParams['FILEROWS'], $aXMLParams['FILECOLUMS']);
-        } elseif ($aXMLParams['FILE']) {
-            $aXMLParams['FILELENGTH'] = $oImportConfig->getCSVFileLineLength($aXMLParams['FILE']);
-            $oImportConfig->setCSVFileLineCount($aXMLParams['FILEROWS'], $aXMLParams['FILECOLUMS']);
-        }
-
-        $oImportConfig->assign($aParams);
-
-        $blIsSaved = $oImportConfig->save();
-        if ($blIsSaved) {
-            $this->setEditObjectId($oImportConfig->getId());
-            parent::saveImportProfile($aXMLParams);
-        }
+    }
     }
 
     /**
