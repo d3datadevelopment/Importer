@@ -70,7 +70,7 @@ class Main extends AdminDetailsController
     /**
      * exampleItem:     array('new' => array(
      *                      'sScript' => 'top.oxid.admin.editThis( -1 );return false;',
-     *                      'sTranslationId' => 'foo',
+     *                      'sTranslationId' => 'foo'
      *                  )
      * @return array
      */

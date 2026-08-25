@@ -55,7 +55,7 @@ class AdminList extends AdminListController
 
         $sTable = oxNew(TableViewNameGenerator::class)->getViewName("d3importconfig");
 
-        $iShopId = Registry::getConfig()->getShopId();
+        $iShopId = Registry::getConfig()->getActiveShop()->getId();
 
         return $sQ . " AND {$sTable}.oxshopid = '{$iShopId}' ";
     }

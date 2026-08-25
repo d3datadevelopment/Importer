@@ -16,7 +16,6 @@
 namespace D3\Importer\Setup;
 
 use D3\ModCfg\Application\Model\d3simplexml;
-use Traversable;
 
 class configurationXml extends d3simplexml
 {
@@ -70,7 +69,7 @@ class configurationXml extends d3simplexml
         $cnt     = 0;
         $arrTemp = [];
         foreach ($this->attributes() as $a => $b) {
-            $arrTemp[$cnt] = (string)$a;
+            $arrTemp[$cnt] = $a;
             $cnt++;
         }
 

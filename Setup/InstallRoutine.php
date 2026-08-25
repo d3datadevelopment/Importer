@@ -38,17 +38,17 @@ class InstallRoutine extends d3install_updatebase
     /**
      * @var string
      */
-    public $sModVersion = '6.1.0.0';
+    public $sModVersion = '6.1.2.0';
     /**
      * @var string
      */
     public $sBaseConf = '--------------------------------------------------------------------------------
-xH3v2==b0k3clpqUmRaSmd4blhsY055SFRjTER6dkUxd2oxUkp1OVNWSy82NS94anpUUmRiTitHalpuR
-1NNVFIvVUhNV2UwY0daWmU1UjI5aEJrWHF6STd3bWd5ZzdacCtUYU1nSE1RVW1KWUw0WDd5cUVRcnBnV
-lQxRDRlbzN5bUNGZ0VpK3d2bTdmUzBKUkoxNWhlQTh6VCtvU21wMVoxSVhFOExCZUNEVnJieldCQVNEY
-jl5QlZKRkl4L1EwZUJFd0tFb21qdVRuOXR3NXBuWDM1cmluVjZXSDNRNVNhRExVSElSM1VzOVQ0VzVDb
-HlsUE5uWm5HcE5vcjMxd3lLaUtyK2NXbUpzT3dvTEx3OThQZDZiQVI2eVE3czBPM1FsUVhDTkZSYUtLZ
-ENXT0luMW9MRWJxUGdvTU1raWxYb0NSSVB4RTZWYk1TSVdqblVzS2pqODdOM293PT0=
+9fQv2==amd6amFNeGRpT1paOWs0ZWdjeis0dEpkeCsyRWlraEpXOG1YRmhKbE9Ed2hUME1udzFaNmZDY
+0dBS1lMSVlhaFFzZWkvNmdqR0g5NWk1MzBpZzBabXZtN1RRTEphaXpRMlRFYlpMS1RDSjhhaVcxSFMzU
+EFLQUdMQVUvSkoxbXYyVko0TzdyZEdxNFhiUUdqbWFwT2ZuSnl5b3dEb1pwS25UaW5TeklMcURPaTdlN
+k5GbXpQRGgvM0d0djhndXE2ZlpxdmdhZnZrL3FFUXEwc2JJb3pvN0JRZXF2cnZLQS9lTjBJVExCMkJkT
+mtjeGIvR3UzU05nanhZNWExN0RZZnFIVUkzQWZLVGFpZjdtSTJxQ0JpMkM3bG1iR3NPclNNdzFYNEg5V
+290N1BaY3hsYnFqWHRsNEhLTmdKL2RCRUFIN2QyTURoN0tweFRwS3F6bXQ2SDh3PT0=
 --------------------------------------------------------------------------------';
     /**
      * @var string
@@ -1063,7 +1063,7 @@ ENXT0luMW9MRWJxUGdvTU1raWxYb0NSSVB4RTZWYk1TSVdqblVzS2pqODdOM293PT0=
     }
 
     /**
-     * Returns true if xml
+     * Returns true if XML
      *
      * @return bool
      * @throws ConnectionException

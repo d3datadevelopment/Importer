@@ -64,12 +64,11 @@ class Afterimport extends Base
     /**
      * doing Import
      *
-     * @return bool|string
      * @throws Exception
      * @throws d3_cfg_mod_exception
      * @throws DatabaseConnectionException
      */
-    public function doAfterImport()
+    public function doAfterImport(): void
     {
         $request = oxNew(Request::class);
         $soxId   = $request->getRequestParameter("oxid");

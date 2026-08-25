@@ -226,11 +226,7 @@ class Main extends Base
                 $this->setEditObjectId( $oImportConfig->getId() );
                 parent::saveImportProfile( $aXMLParams );
             }
-        } catch (ImporterException $e) {
-        }
-    {
-
-    }
+        } catch (ImporterException) {}
     }
 
     /**
